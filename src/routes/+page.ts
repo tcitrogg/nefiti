@@ -7,7 +7,7 @@ import axios from 'axios';
 // import tags from "$lib/tags.json"
 
 // export const load: PageLoad = async ({ event, url }: any) => {
-export const load: PageLoad = async ({ url, fetch }: any) => {
+export const load: PageLoad = async ({ url, fetch, setHeaders }: any) => {
 
   const tags = await axios(`${appinfo.baseUrl}/manga/tag`);
 
@@ -68,6 +68,11 @@ export const load: PageLoad = async ({ url, fetch }: any) => {
 
   // return imgSrc
   // console.log("cover_art_list", cover_art_list)
+  setHeaders({
+		// age: resp.headers.get('content-type'),
+		// 'cache-control': resp.headers.get('cache-control'),
+		'Access-Control-Allow-Origin': true,
+	});
 
   return {
     // title: url.searchParams.get("title"),
