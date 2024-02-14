@@ -5,7 +5,7 @@
   export let data: PageData;
 </script>
 
-<h1 class="text-xl">Welcome to Komiks</h1>
+<h1 class="text-xl font-bold">Welcome to Komiks</h1>
 <!-- <p>{JSON.stringify(data.cover_art_list[0])}</p> -->
 <section class="w-80 h-80 rounded-lg">
   <img src={getThumbnail(data.data[0])} alt="{getThumbnail(data.data[0])}" srcset="" class="w-full h-full object-cover object-top">
