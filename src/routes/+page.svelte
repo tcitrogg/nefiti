@@ -12,6 +12,7 @@
   <h1 class="text-xl font-bold">Welcome to Komiks</h1>
   <section class="w-80 h-80 rounded-lg overflow-hidden">
     <img src={getThumbnail(ndata[0])} alt="{getThumbnail(ndata[0])}" srcset="" class="w-full h-full object-cover object-top">
+    <!-- <iframe title="{getThumbnail(ndata[0])}" src="https://cors-anywhere.herokuapp.com/{getThumbnail(ndata[0])}" width="500" height="500"></iframe> -->
   </section>
   <p>{JSON.stringify(ndata[0])}</p>
 </section>

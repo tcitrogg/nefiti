@@ -10,7 +10,7 @@ export function titleCase(text: string) {
 }
 
 export function getThumbnail(data:any){
-  const imgSrc = `https://mangadex.org/covers/${data.id}/${data.thumbnail?.attributes?.fileName}`
+  const imgSrc = `https://uploads.mangadex.org/covers/${data.id}/${data.thumbnail?.attributes?.fileName}`
   // console.log(imgSrc)
   return imgSrc
 }
