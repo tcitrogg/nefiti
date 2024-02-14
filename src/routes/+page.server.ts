@@ -29,20 +29,29 @@ export const load: PageLoad = async ({ url, fetch, setHeaders }: any) => {
         excludedTags: excludedTagIDs
       }
     });
-    
+
     // Process manga data
     const mangaData = mangaResponse.data.data;
     const mangaWithThumbnail = await Promise.all(mangaData.map(async (manga: any) => {
       const thumbnailId = manga.relationships?.find((relationship: any) => relationship.type === 'cover_art')?.id;
       if (!thumbnailId) return manga;
-      
+
       // Fetch cover art
       const thumbnailResponse = await fetch(`https://api.mangadex.org/cover/${thumbnailId}`);
       const thumbnailData = await thumbnailResponse.json();
+      // / Fetch the image using fetch API
+      const thumbnailSrc = await fetch(`https://uploads.mangadex.org/covers/${manga.id}/${thumbnailData?.attributes?.fileName}`);
       
+      // Get the blob object from the response
+      const blob = await thumbnailSrc.blob();
+      
+      // Convert the blob object to a data URL
+      const thumbnailUrl = URL.createObjectURL(blob);
+
       // Return manga data with cover art
       return {
         ...manga,
+        thumbnailUrl,
         thumbnail: thumbnailData?.data,
       };
     }));
