@@ -16,7 +16,7 @@ export const metainfo = {
   creator: "tcitrogg.vx",
   contact: [
     "https://bnierimi.vercel.app",
-    "mailto:bnierimi@gmail.com",
+    "mailto:tcitrogg@gmail.com",
     "https://github.com/tcitrogg",
     "https://twitter.com/bnierimi",
     "https://instagram.com/bnierimi",
@@ -28,11 +28,10 @@ export const metainfo = {
   isDev: dev ? true : false,
   background_color: "#f5f5f5",
   theme_color: "#f5f5f5",
-  excludedTagNames: ["Harem", "Hentai", "Ecchi", "Girls' Love", "Sexual Violence", "Boys' Love"],
 }
 
 export const appinfo = {
   baseUrl:'https://api.mangadex.org',
   includedTagNames:['Action', 'Romance'],
-  excludedTagNames:["Harem", "Hentai", "Ecchi", "Girls' Love", "Sexual Violence", "Boys' Love"],
+  excludedTagNames:["Harem", "Hentai", "Ecchi", "Girls' Love", "Sexual Violence", "Boys' Love", "Incest", "Rape", "Genderswap", "Crossdressing"],
 }

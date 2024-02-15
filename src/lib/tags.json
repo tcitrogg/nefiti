@@ -3,6 +3,19 @@
   "response": "collection",
   "data": [
     {
+      "id": "1987l80i-l492-7i93-2j5l-8h84b7255c2i",
+      "type": "tag",
+      "attributes": {
+        "name": {
+          "en": "Thy Demigod"
+        },
+        "description": {},
+        "group": "format",
+        "version": 1
+      },
+      "relationships": []
+    },
+    {
       "id": "0234a31e-a729-4e28-9d6a-3f87c4966b9e",
       "type": "tag",
       "attributes": {
@@ -73,19 +86,6 @@
       "attributes": {
         "name": {
           "en": "Time Travel"
-        },
-        "description": {},
-        "group": "theme",
-        "version": 1
-      },
-      "relationships": []
-    },
-    {
-      "id": "2bd2e8d0-f146-434a-9b51-fc9ff2c5fe6a",
-      "type": "tag",
-      "attributes": {
-        "name": {
-          "en": "Genderswap"
         },
         "description": {},
         "group": "theme",
@@ -302,32 +302,6 @@
       "relationships": []
     },
     {
-      "id": "5920b825-4181-4a17-beeb-9918b0ff7a30",
-      "type": "tag",
-      "attributes": {
-        "name": {
-          "en": "Boys' Love"
-        },
-        "description": {},
-        "group": "genre",
-        "version": 1
-      },
-      "relationships": []
-    },
-    {
-      "id": "5bd0e105-4481-44ca-b6e7-7544da56b1a3",
-      "type": "tag",
-      "attributes": {
-        "name": {
-          "en": "Incest"
-        },
-        "description": {},
-        "group": "theme",
-        "version": 1
-      },
-      "relationships": []
-    },
-    {
       "id": "5ca48985-9a9d-4bd8-be29-80dc0303db72",
       "type": "tag",
       "attributes": {
@@ -359,19 +333,6 @@
       "attributes": {
         "name": {
           "en": "Zombies"
-        },
-        "description": {},
-        "group": "theme",
-        "version": 1
-      },
-      "relationships": []
-    },
-    {
-      "id": "65761a2a-415e-47f3-bef2-a9dababba7a6",
-      "type": "tag",
-      "attributes": {
-        "name": {
-          "en": "Reverse Harem"
         },
         "description": {},
         "group": "theme",
@@ -549,63 +510,11 @@
       "relationships": []
     },
     {
-      "id": "97893a4c-12af-4dac-b6be-0dffb353568e",
-      "type": "tag",
-      "attributes": {
-        "name": {
-          "en": "Sexual Violence"
-        },
-        "description": {},
-        "group": "content",
-        "version": 1
-      },
-      "relationships": []
-    },
-    {
-      "id": "9ab53f92-3eed-4e9b-903a-917c86035ee3",
-      "type": "tag",
-      "attributes": {
-        "name": {
-          "en": "Crossdressing"
-        },
-        "description": {},
-        "group": "theme",
-        "version": 1
-      },
-      "relationships": []
-    },
-    {
       "id": "a1f53773-c69a-4ce5-8cab-fffcd90b1565",
       "type": "tag",
       "attributes": {
         "name": {
           "en": "Magic"
-        },
-        "description": {},
-        "group": "theme",
-        "version": 1
-      },
-      "relationships": []
-    },
-    {
-      "id": "a3c67850-4684-404e-9b7f-c69850ee5da6",
-      "type": "tag",
-      "attributes": {
-        "name": {
-          "en": "Girls' Love"
-        },
-        "description": {},
-        "group": "genre",
-        "version": 1
-      },
-      "relationships": []
-    },
-    {
-      "id": "aafb99c1-7f60-43fa-b75f-fc9502ce29c7",
-      "type": "tag",
-      "attributes": {
-        "name": {
-          "en": "Harem"
         },
         "description": {},
         "group": "theme",

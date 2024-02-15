@@ -5,6 +5,7 @@
   export let item: any = {}
   // export let style = ""
 
+  console.log(item)
   let title = Object.values(item.attributes.title)[0]
 </script>
 
@@ -14,7 +15,7 @@
       <h4 class="w-10/12 font-medium text-ellipsis line-clamp-1 ">{title}</h4>
       <p class="text-xs uppercase opacity-60 whitespace-nowrap"># {item.attributes?.status}</p>
     </section>
-    <section class={`w-full h-full overflow-hidden bg-zinc-200 dark:bg-zinc-800`}>
+    <section class={`w-full h-full overflow-hidden bg-zinc-100 dark:bg-zinc-900`}>
       <Image
         src="{getThumbnail(item)}"
         alt="{title}"

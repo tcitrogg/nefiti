@@ -1,9 +1,11 @@
 <script>
 	import { browser } from "$app/environment";
+    // import { text } from "@sveltejs/kit";
 	import { fly, fade, scale, slide } from "svelte/transition";
 
 	export let bg = "bg-zinc-300 dark:bg-zinc-950 hover:bg-transparent/10 dark:hover:bg-zinc-800/70"
 	export let style = ""
+	export let text = ""
 	export let iconSize = "xl"
 
 	let isDarkMode;
@@ -47,4 +49,10 @@
   
 	<i transition:slide class="relative icon icon-ic_fluent_weather_moon_20_regular flex rounded-full p-0.5 text-{iconSize}"/>
 {/if}
+
+	{#if text}
+		<p class="text-">{text}</p>
+	{:else}
+		
+	{/if}
 </button>
