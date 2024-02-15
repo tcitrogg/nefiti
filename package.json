@@ -25,6 +25,13 @@
   },
   "type": "module",
   "dependencies": {
-    "axios": "^1.6.7"
+    "@unpic/svelte": "^0.0.50",
+    "axios": "^1.6.7",
+    "bits-ui": "^0.18.1",
+    "clsx": "^2.1.0",
+    "embla-carousel-svelte": "^8.0.0-rc22",
+    "lucide-svelte": "^0.330.0",
+    "tailwind-merge": "^2.2.1",
+    "tailwind-variants": "^0.2.0"
   }
 }

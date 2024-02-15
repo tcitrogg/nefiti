@@ -70,6 +70,7 @@ export const load: PageLoad = async ({ url, fetch, setHeaders }: any) => {
     };
   } catch (error) {
     console.error('Error loading manga data:', error);
-    throw error; // Rethrow error to be handled by the calling code
+    // throw error; // Rethrow error to be handled by the calling code
+    return {}
   }
 };

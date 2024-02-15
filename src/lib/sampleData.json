@@ -1,0 +1,1391 @@
+{
+  "title": "Shounen",
+  "data": [
+    {
+      "id": "c81b78ce-b6d8-4100-8a4b-cccc253e7eb1",
+      "type": "manga",
+      "attributes": {
+        "title": {
+          "en": "Nana Shimazaki@Looking for Work"
+        },
+        "altTitles": [
+          {
+            "ja-ro": "Shimazaki Nana@Oshigoto Boshuuchuu"
+          },
+          {
+            "ja": "島崎奈々＠お仕事募集中"
+          },
+          {
+            "ja": "島崎奈々アットお仕事募集中"
+          },
+          {
+            "zh-hk": "島崎奈奈@工作募集中"
+          },
+          {
+            "ja-ro": "Shimazaki Nana Atto Oshigoto Bosyutyu"
+          }
+        ],
+        "description": {
+          "en": "One day, manga enthusiast Oshino Yuuta is asked for help by his neighbor, Shimazaki Nana. As she shows  him an H-Illustration she allegedly drew, he realizes: she's the mangaka called “Shimazaki Nana” whom he's been admiring! What's more, she's asking for something rather…‽"
+        },
+        "isLocked": false,
+        "links": {
+          "al": "119075",
+          "ap": "shimazaki-nana-at-oshigoto-boshuuchuu",
+          "bw": "series/280171",
+          "kt": "shimazaki-nana-oshigoto-boshuuchuu-2020",
+          "mu": "156589",
+          "amz": "https://www.amazon.co.jp/dp/B09HHPPXRB",
+          "mal": "126753",
+          "raw": "https://storia.takeshobo.co.jp/manga/shimazakinana/"
+        },
+        "originalLanguage": "ja",
+        "lastVolume": "",
+        "lastChapter": "",
+        "publicationDemographic": "seinen",
+        "status": "ongoing",
+        "year": 2019,
+        "contentRating": "suggestive",
+        "tags": [
+          {
+            "id": "423e2eae-a7a2-4a8b-ac03-a8351462d71d",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Romance"
+              },
+              "description": {},
+              "group": "genre",
+              "version": 1
+            },
+            "relationships": []
+          },
+          {
+            "id": "4d32cc48-9f00-4cca-9b5a-a839f0764984",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Comedy"
+              },
+              "description": {},
+              "group": "genre",
+              "version": 1
+            },
+            "relationships": []
+          }
+        ],
+        "state": "published",
+        "chapterNumbersResetOnNewVolume": false,
+        "createdAt": "2020-06-17T12:23:18+00:00",
+        "updatedAt": "2023-07-19T12:52:13+00:00",
+        "version": 15,
+        "availableTranslatedLanguages": [
+          "pt-br",
+          "en",
+          "ru",
+          "id"
+        ],
+        "latestUploadedChapter": "3d266b3e-8285-49a2-aaa2-f92030fec60e"
+      },
+      "relationships": [
+        {
+          "id": "30211b4c-aa40-433b-9431-deb7c6f81a9f",
+          "type": "author"
+        },
+        {
+          "id": "30211b4c-aa40-433b-9431-deb7c6f81a9f",
+          "type": "artist"
+        },
+        {
+          "id": "b8f111c8-3178-4bfd-8a0e-bc1dfc14899e",
+          "type": "cover_art"
+        },
+        {
+          "id": "960bca85-6258-4aac-8b3b-1f8828e629cb",
+          "type": "manga",
+          "related": "shared_universe"
+        },
+        {
+          "id": "9a713937-2437-4acf-be28-e5f14dae97b2",
+          "type": "manga",
+          "related": "preserialization"
+        }
+      ]
+    },
+    {
+      "id": "0eb1c1ac-34cd-42d3-b88d-e780d54eed8b",
+      "type": "manga",
+      "attributes": {
+        "title": {
+          "en": "Satellite Coin Laundry"
+        },
+        "altTitles": [
+          {
+            "ja": "サテライト・コインランドリー"
+          }
+        ],
+        "description": {
+          "en": "This work depicts the slightly mysterious daily life that happens in a laundromat in a corner of the universe. On this planet blessed with water, today creatures visit again to wash various items. (MTLd?)"
+        },
+        "isLocked": false,
+        "links": {
+          "al": "151775",
+          "ap": "satellite-coin-laundry",
+          "kt": "satellite-coin-laundry",
+          "mu": "dlnxun5",
+          "mal": "149787",
+          "raw": "https://comic-walker.com/contents/detail/KDCW_AP01203162010000_68/"
+        },
+        "originalLanguage": "ja",
+        "lastVolume": "",
+        "lastChapter": "",
+        "publicationDemographic": "seinen",
+        "status": "ongoing",
+        "year": 2022,
+        "contentRating": "safe",
+        "tags": [
+          {
+            "id": "256c8bd9-4904-4360-bf4f-508a76d67183",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Sci-Fi"
+              },
+              "description": {},
+              "group": "genre",
+              "version": 1
+            },
+            "relationships": []
+          },
+          {
+            "id": "4d32cc48-9f00-4cca-9b5a-a839f0764984",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Comedy"
+              },
+              "description": {},
+              "group": "genre",
+              "version": 1
+            },
+            "relationships": []
+          },
+          {
+            "id": "e5301a23-ebd9-49dd-a0cb-2add944c7fe9",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Slice of Life"
+              },
+              "description": {},
+              "group": "genre",
+              "version": 1
+            },
+            "relationships": []
+          },
+          {
+            "id": "e64f6742-c834-471d-8d72-dd51fc02b835",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Aliens"
+              },
+              "description": {},
+              "group": "theme",
+              "version": 1
+            },
+            "relationships": []
+          }
+        ],
+        "state": "published",
+        "chapterNumbersResetOnNewVolume": false,
+        "createdAt": "2022-07-05T02:32:14+00:00",
+        "updatedAt": "2023-09-12T00:08:33+00:00",
+        "version": 13,
+        "availableTranslatedLanguages": [
+          "en",
+          "pt-br"
+        ],
+        "latestUploadedChapter": "26ab1af8-c8ea-4d86-88c1-833304255f89"
+      },
+      "relationships": [
+        {
+          "id": "23da0887-cbe2-4715-926e-e7842bb7fdc6",
+          "type": "author"
+        },
+        {
+          "id": "23da0887-cbe2-4715-926e-e7842bb7fdc6",
+          "type": "artist"
+        },
+        {
+          "id": "5c1c5b6d-3171-45b2-b93e-573c92c8bcbd",
+          "type": "cover_art"
+        },
+        {
+          "id": "33173ea6-a0bb-475a-b81b-da4edc404619",
+          "type": "creator"
+        }
+      ]
+    },
+    {
+      "id": "1bf054f3-e164-40af-9d45-21750e2daffd",
+      "type": "manga",
+      "attributes": {
+        "title": {
+          "en": "Return of Top Class Master"
+        },
+        "altTitles": [
+          {
+            "ko": "탑클래스 마스터의 귀환"
+          }
+        ],
+        "description": {
+          "en": "The star admired by all the strong, the top-class master of Haons, 'Ray.'\n\nRay, on the verge of the final gateway to becoming a god, is betrayed and killed by the boss master 'Anus.'\nRegressing to the time when he was 'the ultimate loser Kang Tae-wook,' trampled by the bullies and unable to protect his fiancée...\n\nKang Tae-wook, who once was the biggest loser, takes up the sword of revenge against those who ignored and betrayed him in the past, facing the things he couldn't achieve in his past.\n\nHowever, there was a reason he had to live through that miserable past.\n\nAs Kang Tae-wook dives into the depths of a conspiracy that only deepens as he uncovers it,\nhis second life, soaked in blood, begins anew!"
+        },
+        "isLocked": false,
+        "links": {
+          "mu": "5jzmi7x",
+          "raw": "https://page.kakao.com/content/62942265"
+        },
+        "originalLanguage": "ko",
+        "lastVolume": "",
+        "lastChapter": "",
+        "publicationDemographic": null,
+        "status": "ongoing",
+        "year": 2023,
+        "contentRating": "safe",
+        "tags": [
+          {
+            "id": "391b0423-d847-456f-aff0-8b0cfc03066b",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Action"
+              },
+              "description": {},
+              "group": "genre",
+              "version": 1
+            },
+            "relationships": []
+          },
+          {
+            "id": "3e2b8dae-350e-4ab8-a8ce-016e844b9f0d",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Long Strip"
+              },
+              "description": {},
+              "group": "format",
+              "version": 1
+            },
+            "relationships": []
+          },
+          {
+            "id": "799c202e-7daa-44eb-9cf7-8a3c0441531e",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Martial Arts"
+              },
+              "description": {},
+              "group": "theme",
+              "version": 1
+            },
+            "relationships": []
+          },
+          {
+            "id": "b9af3a63-f058-46de-a9a0-e0c13906197a",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Drama"
+              },
+              "description": {},
+              "group": "genre",
+              "version": 1
+            },
+            "relationships": []
+          },
+          {
+            "id": "caaa44eb-cd40-4177-b930-79d3ef2afe87",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "School Life"
+              },
+              "description": {},
+              "group": "theme",
+              "version": 1
+            },
+            "relationships": []
+          },
+          {
+            "id": "cdc58593-87dd-415e-bbc0-2ec27bf404cc",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Fantasy"
+              },
+              "description": {},
+              "group": "genre",
+              "version": 1
+            },
+            "relationships": []
+          },
+          {
+            "id": "e197df38-d0e7-43b5-9b09-2842d0c326dd",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Web Comic"
+              },
+              "description": {},
+              "group": "format",
+              "version": 1
+            },
+            "relationships": []
+          },
+          {
+            "id": "f5ba408b-0e7a-484d-8d49-4e9125ac96de",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Full Color"
+              },
+              "description": {},
+              "group": "format",
+              "version": 1
+            },
+            "relationships": []
+          }
+        ],
+        "state": "published",
+        "chapterNumbersResetOnNewVolume": false,
+        "createdAt": "2024-01-28T23:34:42+00:00",
+        "updatedAt": "2024-01-28T23:34:47+00:00",
+        "version": 2,
+        "availableTranslatedLanguages": [
+          "en"
+        ],
+        "latestUploadedChapter": "31c08e56-7dfb-4a4b-9f2b-cd8e06eb29f9"
+      },
+      "relationships": [
+        {
+          "id": "2cc9db31-e717-45f8-b403-44c8241cef0b",
+          "type": "author"
+        },
+        {
+          "id": "5365a08e-5b12-4f0d-b4b2-0cd600ebee8f",
+          "type": "artist"
+        },
+        {
+          "id": "f7a6ac95-f2c4-4d0a-8d18-e21184b8fe0b",
+          "type": "cover_art"
+        },
+        {
+          "id": "c55f8354-ec7c-4543-afaf-71a5e7088124",
+          "type": "creator"
+        }
+      ]
+    },
+    {
+      "id": "f90b44ff-b6a5-4f44-a19c-f02af0572ed0",
+      "type": "manga",
+      "attributes": {
+        "title": {
+          "en": "Katekyo Hitman Reborn! - Overexcited? (Doujinshi)"
+        },
+        "altTitles": [],
+        "description": {
+          "en": "Pairing: Yamamoto x Gokudera - 8059"
+        },
+        "isLocked": false,
+        "links": {
+          "mu": "9freaa7"
+        },
+        "originalLanguage": "ja",
+        "lastVolume": "",
+        "lastChapter": "",
+        "publicationDemographic": null,
+        "status": "completed",
+        "year": 2008,
+        "contentRating": "suggestive",
+        "tags": [
+          {
+            "id": "0234a31e-a729-4e28-9d6a-3f87c4966b9e",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Oneshot"
+              },
+              "description": {},
+              "group": "format",
+              "version": 1
+            },
+            "relationships": []
+          },
+          {
+            "id": "5920b825-4181-4a17-beeb-9918b0ff7a30",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Boys' Love"
+              },
+              "description": {},
+              "group": "genre",
+              "version": 1
+            },
+            "relationships": []
+          },
+          {
+            "id": "b13b2a48-c720-44a9-9c77-39c9979373fb",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Doujinshi"
+              },
+              "description": {},
+              "group": "format",
+              "version": 1
+            },
+            "relationships": []
+          }
+        ],
+        "state": "published",
+        "chapterNumbersResetOnNewVolume": false,
+        "createdAt": "2024-01-28T23:57:14+00:00",
+        "updatedAt": "2024-01-29T00:03:42+00:00",
+        "version": 3,
+        "availableTranslatedLanguages": [
+          "en"
+        ],
+        "latestUploadedChapter": "46117066-a7b8-4f5f-8d14-4de4b51aa31b"
+      },
+      "relationships": [
+        {
+          "id": "61133cda-1a4d-4f6e-89df-9c76db8e3ec5",
+          "type": "author"
+        },
+        {
+          "id": "a39c6d89-e9b0-4740-9237-364373abca8a",
+          "type": "author"
+        },
+        {
+          "id": "61133cda-1a4d-4f6e-89df-9c76db8e3ec5",
+          "type": "artist"
+        },
+        {
+          "id": "a39c6d89-e9b0-4740-9237-364373abca8a",
+          "type": "artist"
+        },
+        {
+          "id": "9753d001-8e51-4970-8eed-b9fed730df40",
+          "type": "cover_art"
+        },
+        {
+          "id": "26937cf3-0fba-4651-995d-5ebcc8a15eb2",
+          "type": "manga",
+          "related": "based_on"
+        },
+        {
+          "id": "ce198e8f-91f9-46f2-8aa6-02b9ecc189b7",
+          "type": "creator"
+        }
+      ]
+    },
+    {
+      "id": "911f2f01-9718-4a42-8e2a-1b684b695cba",
+      "type": "manga",
+      "attributes": {
+        "title": {
+          "en": "303-Goushitsu no Kami-sama"
+        },
+        "altTitles": [
+          {
+            "ja": "303号室の神さま"
+          },
+          {
+            "ja": "神様です。サービスするよ"
+          },
+          {
+            "ja": "神様と陰気な少年"
+          },
+          {
+            "ja-ro": "Kami-sama desu. Service suru yo."
+          },
+          {
+            "ja-ro": "Kami-sama to Inki na Shounen"
+          },
+          {
+            "en": "The God of Room 303"
+          },
+          {
+            "en": "I'm a God. I'll serve you."
+          },
+          {
+            "en": "God and the Gloomy Boy"
+          },
+          {
+            "vi": "Vị thần ở phòng 303"
+          },
+          {
+            "vi": "Tôi là một vị thần. Tôi sẽ giúp bạn"
+          },
+          {
+            "vi": "Thần và cậu bé u ám"
+          }
+        ],
+        "description": {},
+        "isLocked": false,
+        "links": {
+          "mu": "hcunupw",
+          "raw": "https://twitter.com/funi_mu9/status/1736021871165165617"
+        },
+        "originalLanguage": "ja",
+        "lastVolume": "",
+        "lastChapter": "",
+        "publicationDemographic": null,
+        "status": "ongoing",
+        "year": 2023,
+        "contentRating": "safe",
+        "tags": [
+          {
+            "id": "3bb26d85-09d5-4d2e-880c-c34b974339e9",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Ghosts"
+              },
+              "description": {},
+              "group": "theme",
+              "version": 1
+            },
+            "relationships": []
+          },
+          {
+            "id": "423e2eae-a7a2-4a8b-ac03-a8351462d71d",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Romance"
+              },
+              "description": {},
+              "group": "genre",
+              "version": 1
+            },
+            "relationships": []
+          },
+          {
+            "id": "4d32cc48-9f00-4cca-9b5a-a839f0764984",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Comedy"
+              },
+              "description": {},
+              "group": "genre",
+              "version": 1
+            },
+            "relationships": []
+          },
+          {
+            "id": "e197df38-d0e7-43b5-9b09-2842d0c326dd",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Web Comic"
+              },
+              "description": {},
+              "group": "format",
+              "version": 1
+            },
+            "relationships": []
+          },
+          {
+            "id": "eabc5b4c-6aff-42f3-b657-3e90cbd00b75",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Supernatural"
+              },
+              "description": {},
+              "group": "theme",
+              "version": 1
+            },
+            "relationships": []
+          }
+        ],
+        "state": "published",
+        "chapterNumbersResetOnNewVolume": false,
+        "createdAt": "2024-01-01T08:40:21+00:00",
+        "updatedAt": "2024-01-27T17:00:02+00:00",
+        "version": 14,
+        "availableTranslatedLanguages": [
+          "vi",
+          "en",
+          "ja",
+          "ru"
+        ],
+        "latestUploadedChapter": "81729a5b-b821-4e52-8a18-ea5539090725"
+      },
+      "relationships": [
+        {
+          "id": "07030bd8-970c-4978-9bba-232ca688b8a5",
+          "type": "author"
+        },
+        {
+          "id": "07030bd8-970c-4978-9bba-232ca688b8a5",
+          "type": "artist"
+        },
+        {
+          "id": "58d88be0-cf28-4e4d-a9a3-cb296f758bef",
+          "type": "cover_art"
+        },
+        {
+          "id": "c53caf9a-95b6-4400-b41b-d1b09167ef7a",
+          "type": "manga",
+          "related": "shared_universe"
+        },
+        {
+          "id": "f97a9a67-01cc-48d0-a542-59ea341174c0",
+          "type": "creator"
+        }
+      ]
+    },
+    {
+      "id": "f9ae1606-573f-4da0-a814-5a1751877bfd",
+      "type": "manga",
+      "attributes": {
+        "title": {
+          "en": "Rock"
+        },
+        "altTitles": [
+          {
+            "ja": "ロック"
+          }
+        ],
+        "description": {
+          "en": "We begin the story as Rock has left her husband, Astro, and their children and wants a divorce because Astro has cheated on Rock (again). As the five year old twins, Rockette and Astro Junior, find pictures of their parents when they were young, we flash back to the ever so popular romcom scenario of when Rock met Astro... except it's Kyoko Okazaki so it's messy, it's kooky, it's funny and it's all in a way that's unique to Kyoko Okazaki.\nBetween romantic comedy and hallucinated fairy tail, Kyoko Okazaki blows a wind of hysteria in the fashion world and it's nights saturated with music and drugs."
+        },
+        "isLocked": false,
+        "links": {
+          "al": "111203",
+          "mu": "fqksf14",
+          "mal": "102599"
+        },
+        "originalLanguage": "ja",
+        "lastVolume": "1",
+        "lastChapter": "14",
+        "publicationDemographic": "josei",
+        "status": "completed",
+        "year": 1989,
+        "contentRating": "suggestive",
+        "tags": [
+          {
+            "id": "423e2eae-a7a2-4a8b-ac03-a8351462d71d",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Romance"
+              },
+              "description": {},
+              "group": "genre",
+              "version": 1
+            },
+            "relationships": []
+          },
+          {
+            "id": "4d32cc48-9f00-4cca-9b5a-a839f0764984",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Comedy"
+              },
+              "description": {},
+              "group": "genre",
+              "version": 1
+            },
+            "relationships": []
+          },
+          {
+            "id": "b9af3a63-f058-46de-a9a0-e0c13906197a",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Drama"
+              },
+              "description": {},
+              "group": "genre",
+              "version": 1
+            },
+            "relationships": []
+          },
+          {
+            "id": "e5301a23-ebd9-49dd-a0cb-2add944c7fe9",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Slice of Life"
+              },
+              "description": {},
+              "group": "genre",
+              "version": 1
+            },
+            "relationships": []
+          }
+        ],
+        "state": "published",
+        "chapterNumbersResetOnNewVolume": false,
+        "createdAt": "2023-11-20T02:14:50+00:00",
+        "updatedAt": "2023-12-27T12:53:57+00:00",
+        "version": 5,
+        "availableTranslatedLanguages": [
+          "en",
+          "pt-br"
+        ],
+        "latestUploadedChapter": "fab6ffaa-676e-44ca-bbef-89ec795b182c"
+      },
+      "relationships": [
+        {
+          "id": "3064d7e8-cd44-4564-8e14-51bec6879a3f",
+          "type": "author"
+        },
+        {
+          "id": "3064d7e8-cd44-4564-8e14-51bec6879a3f",
+          "type": "artist"
+        },
+        {
+          "id": "90bcdf22-c4ba-49e9-8b2d-797b7e21bbfe",
+          "type": "cover_art"
+        },
+        {
+          "id": "e8cf0494-5240-47b6-92b5-8bb1880fa3d5",
+          "type": "creator"
+        }
+      ]
+    },
+    {
+      "id": "ed8a6312-14c1-4e15-a5c1-fac9ba62ef8f",
+      "type": "manga",
+      "attributes": {
+        "title": {
+          "en": "Iljin Romance"
+        },
+        "altTitles": [
+          {
+            "ko": "일찐로맨스"
+          },
+          {
+            "ja": "カーストロマンス"
+          }
+        ],
+        "description": {
+          "en": "Jin Daim has no friends, but likes drawing. Iljina is the most popular girl in school, even though she rejects every confession. Daim thinks she and her friends are an annoyance and disturbs his drawing time before class, but all he ever draws is her. Things get complicated when his secret sketch books gets discovered by one of Iljina's friends."
+        },
+        "isLocked": false,
+        "links": {
+          "mu": "g6wkzcw",
+          "raw": "https://novelpia.com/comic_episode/109"
+        },
+        "originalLanguage": "ko",
+        "lastVolume": "",
+        "lastChapter": "",
+        "publicationDemographic": null,
+        "status": "ongoing",
+        "year": 2023,
+        "contentRating": "suggestive",
+        "tags": [
+          {
+            "id": "3e2b8dae-350e-4ab8-a8ce-016e844b9f0d",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Long Strip"
+              },
+              "description": {},
+              "group": "format",
+              "version": 1
+            },
+            "relationships": []
+          },
+          {
+            "id": "423e2eae-a7a2-4a8b-ac03-a8351462d71d",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Romance"
+              },
+              "description": {},
+              "group": "genre",
+              "version": 1
+            },
+            "relationships": []
+          },
+          {
+            "id": "4d32cc48-9f00-4cca-9b5a-a839f0764984",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Comedy"
+              },
+              "description": {},
+              "group": "genre",
+              "version": 1
+            },
+            "relationships": []
+          },
+          {
+            "id": "caaa44eb-cd40-4177-b930-79d3ef2afe87",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "School Life"
+              },
+              "description": {},
+              "group": "theme",
+              "version": 1
+            },
+            "relationships": []
+          },
+          {
+            "id": "e197df38-d0e7-43b5-9b09-2842d0c326dd",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Web Comic"
+              },
+              "description": {},
+              "group": "format",
+              "version": 1
+            },
+            "relationships": []
+          }
+        ],
+        "state": "published",
+        "chapterNumbersResetOnNewVolume": false,
+        "createdAt": "2023-11-28T10:24:27+00:00",
+        "updatedAt": "2024-01-28T23:55:52+00:00",
+        "version": 8,
+        "availableTranslatedLanguages": [
+          "en"
+        ],
+        "latestUploadedChapter": "f6cdf719-401d-4f46-9368-52f98f8481ee"
+      },
+      "relationships": [
+        {
+          "id": "a12ae0f6-4643-42ef-8a9d-1668323405ef",
+          "type": "author"
+        },
+        {
+          "id": "a12ae0f6-4643-42ef-8a9d-1668323405ef",
+          "type": "artist"
+        },
+        {
+          "id": "f8b515fa-3248-467b-a90e-f008ac1d5696",
+          "type": "cover_art"
+        },
+        {
+          "id": "38bdd27c-e73f-4ebe-b754-18b1e352d803",
+          "type": "creator"
+        }
+      ]
+    },
+    {
+      "id": "e0969782-cec4-4382-9366-4c69ecd1f3a2",
+      "type": "manga",
+      "attributes": {
+        "title": {
+          "en": "I Thought She Was a Yandere, but Apparently She's Even Worse"
+        },
+        "altTitles": [
+          {
+            "ja": "ヤンデレかと思ったらもっとヤベー女だった"
+          },
+          {
+            "id": "Ku kira dia yandere tapi ternyata lebih parah"
+          },
+          {
+            "ja": "ヤンデレかと思ったらラブコメっぽくなる彼女"
+          },
+          {
+            "ja-ro": "Yandere ka to Omottara Motto Yabe Onna Datta"
+          },
+          {
+            "es-la": "Pensé que era una yandere, pero resultó ser una chica mucho más peligrosa."
+          },
+          {
+            "tr": "Onun Yandere Olduğunu Sanıyordum Ama Durum Daha Betermiş"
+          }
+        ],
+        "description": {
+          "en": "A man who no longer can turn a blind eye saves a girl who's being bullied by the other classmate, but little did he know.",
+          "id": "Seorang pria yang tidak lagi bisa menutup mata menyelamatkan seorang gadis yang di-bully oleh teman sekelasnya,tapi sedikit yang dia tahu.",
+          "tr": "Artık sınıf arkadaşının zorbalanmasına göz yumamayan çocuk sınıf arkadaşını kurtarır, oysa...",
+          "es-la": "Psicópata se enamora de un chico normal."
+        },
+        "isLocked": false,
+        "links": {
+          "al": "172110",
+          "kt": "i-thought-she-was-a-yandere-but-apparently-she-s-even-worse",
+          "mu": "camjg5g",
+          "raw": "https://twitter.com/yakitomahawk/status/1706186834404090042?s=19"
+        },
+        "originalLanguage": "ja",
+        "lastVolume": "",
+        "lastChapter": "",
+        "publicationDemographic": null,
+        "status": "ongoing",
+        "year": 2023,
+        "contentRating": "safe",
+        "tags": [
+          {
+            "id": "423e2eae-a7a2-4a8b-ac03-a8351462d71d",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Romance"
+              },
+              "description": {},
+              "group": "genre",
+              "version": 1
+            },
+            "relationships": []
+          },
+          {
+            "id": "caaa44eb-cd40-4177-b930-79d3ef2afe87",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "School Life"
+              },
+              "description": {},
+              "group": "theme",
+              "version": 1
+            },
+            "relationships": []
+          },
+          {
+            "id": "e197df38-d0e7-43b5-9b09-2842d0c326dd",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Web Comic"
+              },
+              "description": {},
+              "group": "format",
+              "version": 1
+            },
+            "relationships": []
+          },
+          {
+            "id": "e5301a23-ebd9-49dd-a0cb-2add944c7fe9",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Slice of Life"
+              },
+              "description": {},
+              "group": "genre",
+              "version": 1
+            },
+            "relationships": []
+          }
+        ],
+        "state": "published",
+        "chapterNumbersResetOnNewVolume": false,
+        "createdAt": "2023-09-25T14:41:36+00:00",
+        "updatedAt": "2024-01-11T17:48:39+00:00",
+        "version": 19,
+        "availableTranslatedLanguages": [
+          "id",
+          "es-la",
+          "uk",
+          "en",
+          "pl",
+          "pt-br",
+          "tl"
+        ],
+        "latestUploadedChapter": "2bc7a293-45e2-4bec-8b15-571df1714763"
+      },
+      "relationships": [
+        {
+          "id": "16f4a4f1-0613-4ee8-91d0-e58b90622d29",
+          "type": "author"
+        },
+        {
+          "id": "16f4a4f1-0613-4ee8-91d0-e58b90622d29",
+          "type": "artist"
+        },
+        {
+          "id": "9b3d511f-41b0-48d5-92da-50707b2f58a0",
+          "type": "cover_art"
+        },
+        {
+          "id": "fd057701-8338-4118-8a0a-748ca9f8e7fc",
+          "type": "manga",
+          "related": "colored"
+        },
+        {
+          "id": "906e407a-fca8-4512-9a9f-f93c79fcfd39",
+          "type": "creator"
+        }
+      ]
+    },
+    {
+      "id": "9d9b04ad-9a83-49f4-8ae4-a9a3780fe9c0",
+      "type": "manga",
+      "attributes": {
+        "title": {
+          "en": "Sakamoto Days"
+        },
+        "altTitles": [
+          {
+            "ru": "Дни Сакамото"
+          },
+          {
+            "ja": "サカモト デイズ"
+          },
+          {
+            "ne": "साकामोतो डेज"
+          },
+          {
+            "pt-br": "Sakamoto Days"
+          },
+          {
+            "fr": "Sakamoto Days"
+          }
+        ],
+        "description": {
+          "en": "Taro Sakamoto was the ultimate assassin, feared by villains and admired by hitmen. But one day…he fell in love! Retirement, marriage, fatherhood and then… Sakamoto gained weight! The chubby guy who runs the neighborhood store is actually a former legendary hitman! Can he protect his family from danger? Get ready to experience a new kind of action comedy series!",
+          "fr": "Taro Sakamoto est un assassin légendaire, le meilleur d'entre tous, craint par tous les gangsters, adulé par ses pairs. Mais un beau jour... il tombe amoureux ! S'ensuivent retraite, mariage, paternité... et prise de poids.\nSakamoto est aujourd'hui patron d'une petite épicerie de quartier et coule des jours heureux avec sa famille. Mais lorsque son passé le rattrape sous les traits de Shin, un jeune assassin télépathe, Sakamoto reprend du service...\nEt malgré son apparence, il est toujours aussi charismatique lorsqu'il passe à l'action !",
+          "ja": "町の商店を営むふくよかな男・坂本太郎。その正体は全ての悪党が恐れ、憧れた元・伝説の殺し屋!!　襲い来る危険から家族と日常を守る、坂本の日々とは…!?",
+          "ru": "Таро Сакамото был профессиональным киллером. Другие наёмники им восхищались, а злодеи боялись. Но однажды… Сакамото влюбился! Завязал с криминалом, женился, стал отцом и в итоге… Разжирел! Толстый дядька из соседнего магазина — в прошлом непревзойдённый убийца! Сможет ли он уберечь свою семью от опасности? Приготовьтесь к новой остросюжетной комедии!",
+          "pt-br": "Taro Sakamoto era o assassino supremo, temido pelos vilões e admirado pelos assassinos. Mas um dia... ele se apaixonou! Aposentadoria, casamento, paternidade e depois… Sakamoto engordou! O cara gordinho que administra a loja do bairro é na verdade um ex-assassino lendário! Ele pode proteger sua família do perigo? Prepare-se para experimentar um novo tipo de série de comédia de ação!"
+        },
+        "isLocked": false,
+        "links": {
+          "al": "125828",
+          "ap": "sakamoto-days",
+          "bw": "series/292319",
+          "kt": "58159",
+          "mu": "174038",
+          "amz": "https://www.amazon.co.jp/dp/B093L398V9",
+          "cdj": "https://www.cdjapan.co.jp/product/NEOBK-2665803",
+          "ebj": "https://ebookjapan.yahoo.co.jp/books/631855/",
+          "mal": "131334",
+          "raw": "https://shonenjumpplus.com/episode/3269754496468136056",
+          "engtl": "https://mangaplus.shueisha.co.jp/titles/100127"
+        },
+        "originalLanguage": "ja",
+        "lastVolume": "",
+        "lastChapter": "",
+        "publicationDemographic": "shounen",
+        "status": "ongoing",
+        "year": 2020,
+        "contentRating": "safe",
+        "tags": [
+          {
+            "id": "256c8bd9-4904-4360-bf4f-508a76d67183",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Sci-Fi"
+              },
+              "description": {},
+              "group": "genre",
+              "version": 1
+            },
+            "relationships": []
+          },
+          {
+            "id": "391b0423-d847-456f-aff0-8b0cfc03066b",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Action"
+              },
+              "description": {},
+              "group": "genre",
+              "version": 1
+            },
+            "relationships": []
+          },
+          {
+            "id": "4d32cc48-9f00-4cca-9b5a-a839f0764984",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Comedy"
+              },
+              "description": {},
+              "group": "genre",
+              "version": 1
+            },
+            "relationships": []
+          },
+          {
+            "id": "799c202e-7daa-44eb-9cf7-8a3c0441531e",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Martial Arts"
+              },
+              "description": {},
+              "group": "theme",
+              "version": 1
+            },
+            "relationships": []
+          },
+          {
+            "id": "85daba54-a71c-4554-8a28-9901a8b0afad",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Mafia"
+              },
+              "description": {},
+              "group": "theme",
+              "version": 1
+            },
+            "relationships": []
+          },
+          {
+            "id": "da2d50ca-3018-4cc0-ac7a-6b7d472a29ea",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Delinquents"
+              },
+              "description": {},
+              "group": "theme",
+              "version": 1
+            },
+            "relationships": []
+          },
+          {
+            "id": "e5301a23-ebd9-49dd-a0cb-2add944c7fe9",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Slice of Life"
+              },
+              "description": {},
+              "group": "genre",
+              "version": 1
+            },
+            "relationships": []
+          },
+          {
+            "id": "eabc5b4c-6aff-42f3-b657-3e90cbd00b75",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Supernatural"
+              },
+              "description": {},
+              "group": "theme",
+              "version": 1
+            },
+            "relationships": []
+          }
+        ],
+        "state": "published",
+        "chapterNumbersResetOnNewVolume": false,
+        "createdAt": "2020-12-16T09:54:30+00:00",
+        "updatedAt": "2023-12-31T14:45:32+00:00",
+        "version": 34,
+        "availableTranslatedLanguages": [
+          "pt-br",
+          "it",
+          "en",
+          "ru",
+          "tr",
+          "es-la",
+          "sr",
+          "ar",
+          "fr",
+          "pl",
+          "id",
+          "bn",
+          "th",
+          "fa"
+        ],
+        "latestUploadedChapter": "77dc1550-4469-42df-9cce-6b75ee7c35ac"
+      },
+      "relationships": [
+        {
+          "id": "1db239cc-9392-43f7-9806-f6fcb9ca4e9d",
+          "type": "author"
+        },
+        {
+          "id": "1db239cc-9392-43f7-9806-f6fcb9ca4e9d",
+          "type": "artist"
+        },
+        {
+          "id": "041ecd17-e116-4438-80eb-76514c1daa64",
+          "type": "cover_art"
+        },
+        {
+          "id": "e9c2f0e9-40ad-4f86-a63f-d6d5f36f4831",
+          "type": "manga",
+          "related": "preserialization"
+        },
+        {
+          "id": "f819bdb3-5230-401e-9156-f6f55c9fb1f7",
+          "type": "manga",
+          "related": "shared_universe"
+        }
+      ]
+    },
+    {
+      "id": "456a4bd8-630c-46bc-b6fd-e0a96a5babc6",
+      "type": "manga",
+      "attributes": {
+        "title": {
+          "en": "A God's Invitation to Eat"
+        },
+        "altTitles": [
+          {
+            "zh": "神明请吃饭"
+          }
+        ],
+        "description": {
+          "en": "The God of Rain is finally able to go on vacation, and for three years at that! With the dreams of an independent life, he goes to the mortal realm.\n\nOne night, a neighbor collapses on his doorstep in danger of starvation. With no other choice, he lets her eat his dinner. \n\nThat should've been the end of it. However, because of the neighbour's kindness, the two become quickly acquainted.\n\nIn the end, the neighbour discovers the Rain God's identity, and her life becomes a little more magical..."
+        },
+        "isLocked": false,
+        "links": {
+          "raw": "https://www.kuaikanmanhua.com/web/topic/21829/"
+        },
+        "originalLanguage": "zh",
+        "lastVolume": "",
+        "lastChapter": "",
+        "publicationDemographic": null,
+        "status": "ongoing",
+        "year": 2023,
+        "contentRating": "safe",
+        "tags": [
+          {
+            "id": "320831a8-4026-470b-94f6-8353740e6f04",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Official Colored"
+              },
+              "description": {},
+              "group": "format",
+              "version": 1
+            },
+            "relationships": []
+          },
+          {
+            "id": "3e2b8dae-350e-4ab8-a8ce-016e844b9f0d",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Long Strip"
+              },
+              "description": {},
+              "group": "format",
+              "version": 1
+            },
+            "relationships": []
+          },
+          {
+            "id": "423e2eae-a7a2-4a8b-ac03-a8351462d71d",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Romance"
+              },
+              "description": {},
+              "group": "genre",
+              "version": 1
+            },
+            "relationships": []
+          },
+          {
+            "id": "4d32cc48-9f00-4cca-9b5a-a839f0764984",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Comedy"
+              },
+              "description": {},
+              "group": "genre",
+              "version": 1
+            },
+            "relationships": []
+          },
+          {
+            "id": "92d6d951-ca5e-429c-ac78-451071cbf064",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Office Workers"
+              },
+              "description": {},
+              "group": "theme",
+              "version": 1
+            },
+            "relationships": []
+          },
+          {
+            "id": "e5301a23-ebd9-49dd-a0cb-2add944c7fe9",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Slice of Life"
+              },
+              "description": {},
+              "group": "genre",
+              "version": 1
+            },
+            "relationships": []
+          },
+          {
+            "id": "ea2bc92d-1c26-4930-9b7c-d5c0dc1b6869",
+            "type": "tag",
+            "attributes": {
+              "name": {
+                "en": "Cooking"
+              },
+              "description": {},
+              "group": "theme",
+              "version": 1
+            },
+            "relationships": []
+          }
+        ],
+        "state": "published",
+        "chapterNumbersResetOnNewVolume": false,
+        "createdAt": "2024-01-28T23:41:13+00:00",
+        "updatedAt": "2024-01-28T23:41:24+00:00",
+        "version": 2,
+        "availableTranslatedLanguages": [
+          "en"
+        ],
+        "latestUploadedChapter": "cb15aad8-3ccc-4378-a9b7-b1533e1b8f9e"
+      },
+      "relationships": [
+        {
+          "id": "7225b2e9-5ba7-4041-bf94-91951c25ad73",
+          "type": "author"
+        },
+        {
+          "id": "7225b2e9-5ba7-4041-bf94-91951c25ad73",
+          "type": "artist"
+        },
+        {
+          "id": "ab56d260-8aed-465c-9721-e15710b22854",
+          "type": "cover_art"
+        },
+        {
+          "id": "7ac0f810-1c01-4a12-9ddf-fd789f93b10f",
+          "type": "creator"
+        }
+      ]
+    }
+  ],
+  "isLoading": false
+}

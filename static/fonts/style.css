@@ -1,0 +1,88 @@
+@font-face {
+    font-family: 'Space Grotesk';
+    src: url('SpaceGrotesk/SpaceGrotesk-VariableFontwght.eot');
+    src: url('SpaceGrotesk/SpaceGrotesk-VariableFontwght.eot?#iefix') format('embedded-opentype'),
+         url('SpaceGrotesk/SpaceGrotesk-VariableFontwght.woff2') format('woff2'),
+         url('SpaceGrotesk/SpaceGrotesk-VariableFontwght.woff') format('woff'),
+         url('SpaceGrotesk/SpaceGrotesk-VariableFontwght.ttf')  format('truetype'),
+         url('SpaceGrotesk/SpaceGrotesk-VariableFontwght.svg#Space Grotesk Light') format('svg');
+}
+
+.font-space_grotesk{
+    font-family: "Space Grotesk";
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Quanta Grotesk Pro Med';
+    src: url('QuantaGroteskPro/QuantaGroteskPro-Medium.eot');
+    src: url('QuantaGroteskPro/QuantaGroteskPro-Medium.eot?#iefix') format('embedded-opentype'),
+         url('QuantaGroteskPro/QuantaGroteskPro-Medium.woff2') format('woff2'),
+         url('QuantaGroteskPro/QuantaGroteskPro-Medium.woff') format('woff'),
+         url('QuantaGroteskPro/QuantaGroteskPro-Medium.ttf')  format('truetype'),
+         url('QuantaGroteskPro/QuantaGroteskPro-Medium.svg#Quanta Grotesk Pro Med') format('svg');
+}
+
+.font-quanta_grotesk{
+    font-family: "Quanta Grotesk Pro Med";
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Eurostile';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Eurostile'), url('Eurostile/eurostile.woff') format('woff');
+    }
+
+.font-eurostile{
+    font-family: "Eurostile";
+    font-weight: normal;
+}
+
+    @font-face {
+    font-family: 'EuroStyle Normal';
+    font-style: normal;
+    font-weight: normal;
+    src: local('EuroStyle Normal'), url('Eurostile/EuroStyle Normal.woff') format('woff');
+    }
+
+.font-eurostyle{
+    font-family: "EuroStyle Normal";
+    font-weight: normal;
+}
+
+
+/*  */
+@font-face{
+    font-family: "Roc Grotesk W05 Wide Bold";
+    src: url("RocGrotesk/dc0c9cb78690bb482ae3bb782c3cc693.eot");
+    src: url("RocGrotesk/dc0c9cb78690bb482ae3bb782c3cc693.eot?#iefix")format("embedded-opentype"),
+        url("RocGrotesk/dc0c9cb78690bb482ae3bb782c3cc693.woff")format("woff"),
+        url("RocGrotesk/dc0c9cb78690bb482ae3bb782c3cc693.woff2")format("woff2"),
+        url("RocGrotesk/dc0c9cb78690bb482ae3bb782c3cc693.ttf")format("truetype"),
+        url("RocGrotesk/dc0c9cb78690bb482ae3bb782c3cc693.svg#Roc Grotesk W05 Wide Bold")format("svg");
+    font-weight:normal;
+    font-style:normal;
+    font-display:swap;
+}
+
+.font-roc_grotesk{
+    font-family: "Roc Grotesk W05 Wide Bold";
+    font-weight: normal;
+}
+
+
+/*  */
+@font-face{
+    font-family: "SchibstedGrotesk";
+    src: url("SchibstedGrotesk.ttf") format("truetype");
+    /* font-weight:normal; */
+    font-style:normal;
+    /* font-display:swap; */
+}
+
+.font-schibsted_grotesk{
+    font-family: "SchibstedGrotesk";
+    font-weight: normal;
+}
