@@ -1,5 +1,5 @@
 import { appinfo } from '$lib/config';
-import { getCovertArt } from '$lib/utils';
+import { getThumbnail } from '$lib/utils';
 import type { PageLoad } from './$types';
 
 
@@ -21,7 +21,7 @@ export const load: PageLoad = async ({ params }:any) => {
 
   return {
     id: params.id,
-    cover_art: getCovertArt(data),
+    cover_art: getThumbnail(data),
     data,
     chapters
   };
