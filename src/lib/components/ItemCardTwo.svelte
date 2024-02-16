@@ -5,7 +5,7 @@
   export let item: any = {}
   // export let style = ""
 
-  console.log(item)
+  // console.log(item)
   let title = Object.values(item.attributes.title)[0]
 </script>
 

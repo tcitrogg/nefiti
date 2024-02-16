@@ -2,6 +2,7 @@
   import { getThumbnail } from "$lib/utils";
   import { Image } from "@unpic/svelte";
     import Pill from "./Pill.svelte";
+    import Button from "./ui/button/button.svelte";
 
   export let item: any = {}
   // export let style = ""
@@ -46,9 +47,10 @@
     </section>
     
     <section class="flex mt-3 pb-1">
-      <a href={`/${item.id}`} title={`title`} class="focus:ring-0 focus:outline-none relative bg-green-500 w-28 py-1.5 rounded-lg flex items-center justify-center">
+      <a href={`/${item.id}`} title={`${title}`} class="focus:ring-0 focus:outline-none relative bg-green-500 w-28 py-1.5 rounded-lg flex items-center justify-center font-medium">
         Read
       </a>
+      <Button href={`/${item.id}`}>Read</Button>
     </section>
   </section>
 </section>
