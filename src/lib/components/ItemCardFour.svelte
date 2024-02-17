@@ -48,7 +48,7 @@
     </section>
     
     <section class="flex mt-3 pb-1">
-      <a href={`/${item.id}`} title={`${title}`} class="focus:ring-0 focus:outline-none relative bg-green-500 w-28 py-1.5 rounded-lg flex items-center justify-center font-semibold">
+      <a href={`/m/${item.id}`} title={`${title}`} class="focus:ring-0 focus:outline-none relative bg-green-500 w-28 py-1.5 rounded-lg flex items-center justify-center font-semibold">
         Read
       </a>
       <!-- <Button href={`/${item.id}`}>Read</Button> -->

@@ -13,7 +13,7 @@
   let title = `${Object.values(item.attributes.title)[0]}`
 </script>
 
-<a href={`/${item.id}`} title={`${title}`} class="w-full h-full focus:ring-0 focus:outline-none flex flex-col gap-2 relative">
+<a href={`/m/${item.id}`} title={`${title}`} class="w-full h-full focus:ring-0 focus:outline-none flex flex-col gap-2 relative">
   <section class={`${style} w-full h-full overflow-hidden md:rounded-xl relative flex flex-col`}>
     <section class="w-full h- flex flex-col bg-zinc-200/70 dark:bg-zinc-800/70 backdrop-blur-sm absolute top-0 left-0 z-10 p-2 space-y-1">
       <h4 class="font-medium text-ellipsis line-clamp-1">{title}</h4>
