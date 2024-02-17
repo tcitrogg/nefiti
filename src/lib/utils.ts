@@ -75,13 +75,9 @@ export function titleCase(text: string) {
   return `${start}${remaining}`
 }
 
-export function getThumbnail(data:any){
-  const imgSrc = `https://api.allorigins.win/raw?url=https://mangadex.org/covers/${data.id}/${data.thumbnail?.attributes?.fileName}`
-  // console.log(imgSrc)
-  return imgSrc
-}
+export const getThumbnail = (data:any) => `https://api.allorigins.win/raw?url=https://mangadex.org/covers/${data.id}/${data.thumbnail?.attributes?.fileName}`
 
-export function shuffle(array: any[]) {
+export const shuffle = (array: any[]) => {
   let currentIndex = array.length;
   let randomIndex;
 
@@ -96,3 +92,5 @@ export function shuffle(array: any[]) {
 
   return array;
 }
+
+export const getRandomColor = () => `#${(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0')}`;

@@ -1,0 +1,1 @@
+// declare "svelte-boring-avatars"

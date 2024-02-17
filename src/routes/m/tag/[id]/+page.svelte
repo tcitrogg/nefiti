@@ -2,6 +2,7 @@
   import { page } from '$app/stores';
   import Metahead from '$lib/components/Metahead.svelte';
   import Pill from '$lib/components/Pill.svelte';
+  import Avatar from 'svelte-boring-avatars';
   // import type { PageData } from './$types';
 
   // export let data: PageData;
@@ -9,6 +10,10 @@
   const description = `data.data.attributes.description.en ? data.data.attributes.description.en : Object.values(data.data.attributes.description)[0]`
   const year = 2023
   // handleFetch()
+
+  let avatarColors = ["#1DB954", "#121212"]
+
+  // variants = ["marble", "beam", "pixel", "sunset", "ring", "bauhaus"]
 
   const listOfBook = [
     "Extended Realm",
@@ -42,9 +47,17 @@
         <section class="flex flex-col gap-3">
           <section class="flex items-start gap-4">
   
-            <section class="w-12 md:w-20 h-12 md:h-20 bg-gradient-to-br from-slate-700 to-amber-500 ring-4 ring-emerald-500/50 rounded-full overflow-hidden">
+            <Avatar
+              name={title}
+              size={20}
+              square={false}
+              colors={avatarColors}
+              variant={"sunset"}
+            />
+
+            <!-- <section class="w-12 md:w-20 h-12 md:h-20 bg-gradient-to-br from-slate-700 to-amber-500 ring-4 ring-emerald-500/50 rounded-full overflow-hidden">
               <img src="/imgs/thumbnails/extended-realm.jfif" alt={`extended-realm.jfif`} class="z-0 w-full h-full object-cover"/>
-            </section>
+            </section> -->
   
             <h2 class="font-semibold text-3xl pt-0.5">{title}</h2>
           </section>

@@ -32,6 +32,7 @@
     "clsx": "^2.1.0",
     "embla-carousel-svelte": "^8.0.0-rc22",
     "lucide-svelte": "^0.330.0",
+    "svelte-boring-avatars": "^1.2.5",
     "svelte-inview": "^4.0.2",
     "svelte-lazy-loader": "^1.0.0",
     "tailwind-merge": "^2.2.1",

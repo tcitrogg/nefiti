@@ -1,8 +1,12 @@
 <script>
+  import Image from "$lib/components/Image.svelte";
   import ThemeBtn from "$lib/components/ThemeBtn.svelte";
-import Button from "$lib/components/ui/button/button.svelte";
-    import { metainfo } from "$lib/config";
-import "../app.pcss";
+  import Button from "$lib/components/ui/button/button.svelte";
+  import { metainfo } from "$lib/config";
+    import { getRandomColor } from "$lib/utils";
+  import "../app.pcss";
+  import { layoutData } from "../stores/layoutData";
+  import Avatar from 'svelte-boring-avatars';
 </script>
 
 <section class="w-full max-h-smscreen md:max-h-screen bg-zinc-50 text-zinc-950 dark:bg-zinc-950 dark:text-zinc-100 font-schibsted_grotesk flex md:flex-row flex-col relative overflow-hidden">
@@ -36,8 +40,20 @@ import "../app.pcss";
           </a>
         </section>
 
-        <section class="w-full h-3/6 rounded-lg bg-zinc-200 dark:bg-zinc-900">
-          
+        <section class="w-full h-3/6 rounded-lg bg-zinc-200 dark:bg-zinc-900 flex flex-col gap-1 p-1">
+          {#each $layoutData as eachManga}
+            <section class="w-full rounded-lg hover: bg-zinc-300 dark:hover:bg-zinc-800 p-2">
+              <Avatar
+                name={`${Object.values(eachManga.attributes.title)[0]}`}
+                size={20}
+                square={false}
+                colors={Array.from({ length: 5 }, () => getRandomColor)}
+                variant={"sunset"}
+              />
+              <p class="line-clamp-1">{`${Object.values(eachManga.attributes.title)[0]}`}</p>
+              <!-- <Image src={} alt={}/> -->
+            </section>
+          {/each}
         </section>
 
         <section class="w-full flex flex-col gap-2">

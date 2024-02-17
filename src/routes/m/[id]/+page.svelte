@@ -4,8 +4,8 @@
   import Pill from '$lib/components/Pill.svelte';
   import CopyLinkBtn from '$lib/components/CopyLinkBtn.svelte';
   import type { PageData } from './$types';
-    import Image from '$lib/components/Image.svelte';
-    import { getThumbnail } from '$lib/utils';
+  import Image from '$lib/components/Image.svelte';
+  import { getThumbnail } from '$lib/utils';
 
   export let data: PageData;
   const mangaData = data
@@ -78,7 +78,7 @@
               /></section>
               {#each mangaData.attributes.tags as eachTag}
                 <section class="flex"><Pill
-                  link={`/tag/${eachTag.id}`}
+                  link={`/m/tag/${eachTag.id}`}
                   title={`${Object.values(eachTag.attributes.name)[0]}`}
                   style={"text-sm py-1"}
                 /></section>

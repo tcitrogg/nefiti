@@ -15,6 +15,13 @@ const config = {
 		},
 		extend: {
 			colors: {
+				"main-green": "#1DB954",
+				"main-black": "#121212",
+				"zaffre": "#3626A7",
+				"malachite": "#3626A7",
+				"schoolbus": "#FDE10D",
+				"princeton-orange": "#FF9505",
+				"azul": "#016FB9",
 				border: "hsl(var(--border) / <alpha-value>)",
 				input: "hsl(var(--input) / <alpha-value>)",
 				ring: "hsl(var(--ring) / <alpha-value>)",

@@ -3,6 +3,8 @@ import axios from 'axios';
 import { writable } from 'svelte/store';
 import { appinfo } from '$lib/config';
 import type { PageLoad } from './$types';
+import { layoutData } from '../stores/layoutData';
+import { shuffle } from '$lib/utils';
 
 // Define a writable store to hold the fetched data
 const data = writable<any>(null);
@@ -58,6 +60,8 @@ export const load: PageLoad = async ({ url, fetch, setHeaders }: any) => {
 
     // Update data store
     data.set(mangaWithThumbnail);
+
+    layoutData.set(shuffle(mangaWithThumbnail).slice(0,3))
 
     // Set headers
     setHeaders({
