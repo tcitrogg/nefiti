@@ -15,9 +15,9 @@ import "../app.pcss";
           <button class="px-2 py-2 hover:bg-zinc-200 dark:hover:bg-zinc-900 focus:ring-2 focus:ring-green-500/50 focus:outline-none rounded-full">
             <i class="icon icon-ic_fluent_navigation_20_regular flex text-3xl"/>
           </button>
-          <h1 class="font-bold text-xl">
+          <h1 class="text-xl">
             <span class="opacity-40">t/</span>
-            <span class="">{metainfo.title}</span>
+            <span class="font-semibold">{metainfo.title}</span>
           </h1>
         </section>
 
@@ -36,7 +36,7 @@ import "../app.pcss";
           </a>
         </section>
 
-        <section class="w-full h-3/6 rounded-lg bg-zinc-100 dark:bg-zinc-900">
+        <section class="w-full h-3/6 rounded-lg bg-zinc-200 dark:bg-zinc-900">
           
         </section>
 
