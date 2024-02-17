@@ -90,9 +90,8 @@ export async function GET({ url }: {url: URL}) {
   // const base_url = "https://villaxlnc.vercel.app"; // Replace with your website's base URL
   const pages = [
     { route: "/", changefreq: "daily", priority: 1.0 },
-    { route: "/community", changefreq: "daily", priority: 0.9 },
-    { route: "/learn", changefreq: "weekly", priority: 0.8 },
-    { route: "/bfm-blog", changefreq: "weekly", priority: 0.8 },
+    { route: "/m", changefreq: "daily", priority: 0.9 },
+    { route: "/g", changefreq: "weekly", priority: 0.8 },
     { route: "bnierimi.vercel.app/wiki", changefreq: "weekly", priority: 0.8 },
     { route: "bnierimi.vercel.app/d/playg", changefreq: "weekly", priority: 0.8 },
     { route: "bnierimi.vercel.app/d/akada", changefreq: "weekly", priority: 0.8 },

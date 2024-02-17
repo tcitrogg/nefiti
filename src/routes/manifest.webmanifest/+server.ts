@@ -17,9 +17,12 @@ export const GET = function get({ setHeaders }: any) {
 		theme_color: metainfo.theme_color,
 		display: 'standalone',
 		icons: [
-			{ src: '/favicon.svg', type: 'image/png', sizes: '512x512' },
-			{ src: '/favicon-16x16.svg', type: 'image/png', sizes: '16x16' },
-			{ src: '/favicon-32x32.svg', type: 'image/png', sizes: '32x32' },
+			{ src: '/favicon.png', type: 'image/png', sizes: '512x512' },
+			{ src: '/favicon.svg', type: 'image/svg', sizes: '512x512' },
+			{ src: '/favicon-16x16.png', type: 'image/png', sizes: '16x16' },
+			{ src: '/favicon-16x16.svg', type: 'image/svg', sizes: '16x16' },
+			{ src: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+			{ src: '/favicon-32x32.svg', type: 'image/svg', sizes: '32x32' },
 		],
 	};
 

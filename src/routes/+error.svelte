@@ -6,7 +6,7 @@
   const focusStyle = "focus:outline-none focus:ring-1 focus:ring-blue-700/70"
 </script>
 
-<Metahead ogtitle={`${$page.status} Error`}/>
+<Metahead title={`${$page.status} Error`} description={`${$page.status} | ${$page.error?.message}`}/>
 
 <section class="w-full md:w-11/12 md:ml-auto h-smscreen md:h-screen flex flex-col justify-center">
 

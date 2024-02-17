@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW 2017 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="0.0533386in" height="0.0533386in" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 5 5"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <font id="FontID0" horiz-adv-x="655" font-variant="normal" style="fill-rule:nonzero" font-style="normal" font-weight="400">
+	<font-face 
+		font-family="Ciento">
+		<font-face-src>
+			<font-face-name name="Ciento-Regular"/>
+		</font-face-src>
+	</font-face>
+   <missing-glyph><path d="M0 0z"/></missing-glyph>
+   <glyph unicode="n" horiz-adv-x="554" d="M466.02 334.023c-21.9996,120.998 -81.0281,181.006 -176.977,181.006 -64.0383,0 -113.047,-26.0292 -148.007,-76.9985l-8.05925 61.9691 -71.0085 0 0 -500 80.0479 0 0 334.023c4.02962,32.9993 18.9501,60.0087 43.9991,79.939 26.0292,20.0392 51.9495,30.0588 77.9787,30.0588 69.0481,0 109.998,-39.9695 125.027,-120.998l54.0187 -323.023 79.939 0 -56.9593 334.023z"/>
+   <glyph unicode="i" horiz-adv-x="223" d="M160.967 638.968c0,27.0094 -21.9996,49.0089 -49.9891,49.0089 -27.9895,0 -49.9891,-21.0194 -49.9891,-49.0089 0,-27.9895 21.9996,-50.9693 49.9891,-50.9693 27.9895,0 49.9891,22.9797 49.9891,50.9693zm-90.9388 -638.968l79.939 0 0 500 -79.939 0 0 -500z"/>
+  </font>
+  <style type="text/css">
+   <![CDATA[
+    @font-face { font-family:"Ciento";font-variant:normal;font-style:normal;font-weight:normal;src:url("#FontID0") format(svg)}
+    .fil1 {fill:#1DB954}
+    .fil0 {fill:#FAFAFA}
+    .fnt0 {font-weight:normal;font-size:3.60527px;font-family:'Ciento'}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_2594328334768">
+   <path class="fil0" d="M3 0c2,0 3,0 3,3 0,2 0,3 -3,3 -2,0 -3,0 -3,-3 0,-2 0,-3 3,-3z"/>
+   <text x="1" y="5"  class="fil1 fnt0">ni</text>
+  </g>
+ </g>
+</svg>

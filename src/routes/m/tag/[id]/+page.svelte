@@ -29,9 +29,9 @@
 
 
 <Metahead
-  ogtitle={`${title}`}
-  ogdescription={`${description}`}
-  ogkeywords={title}
+  title={`${title}`}
+  description={`${description}`}
+  keywords={title}
 />
 
 <!-- <section class="w-full h-full hidden md:block bg-gradient-to-b from-neutral-100/50 to-neutral-100 dark:from-neutral-950/50 dark:to-neutral-950 -z-10 absolute top-0"/> -->
@@ -80,7 +80,7 @@
       <section class="w-full space-y-2 pt-2 md:pt-4 flex flex-col gap-1">
         {#each listOfBook as eachBook, index}
           <a href={`/eachBook`} class="">
-            <section class="w-full hover:bg-green-500/10 border-bborder-b-main-green/5 flex px-4 divide-xdivide-zinc-300dark:divide-zinc-700 gap-1">
+            <section class="w-full hover:bg-main/10 border-bborder-b-main-green/5 flex px-4 divide-xdivide-zinc-300dark:divide-zinc-700 gap-1">
               <!-- <section class="w-1/12 flex items-center justify-center gap-2">
                 <article class="" title="Book">00{index+1}</article>
               </section> -->

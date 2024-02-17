@@ -1,18 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Creator: CorelDRAW 2017 -->
-<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="2.68817in" height="2.68817in" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
-viewBox="0 0 2811 2811"
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="2.00933in" height="2.00933in" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 648 648"
  xmlns:xlink="http://www.w3.org/1999/xlink">
  <defs>
+  <font id="FontID0" horiz-adv-x="656" font-variant="normal" style="fill-rule:nonzero" font-weight="400">
+	<font-face 
+		font-family="Ciento">
+		<font-face-src>
+			<font-face-name name="Ciento-Regular"/>
+		</font-face-src>
+	</font-face>
+   <missing-glyph><path d="M0 0z"/></missing-glyph>
+   <glyph unicode="n" horiz-adv-x="553" d="M466.001 334c-22.0011,120.999 -81.0011,180.999 -177,180.999 -63.9994,0 -113.001,-25.9999 -148.002,-76.9994l-7.99776 61.9985 -70.9996 0 0 -499.999 79.9978 0 0 334c4.00177,33.0001 18.9997,60.0005 44.0021,80.0007 25.9999,20.0002 51.9999,29.9988 77.9998,29.9988 68.9987,0 110,-40.0003 124.997,-120.999l54.0008 -323.001 80.0007 0 -56.9992 334z"/>
+   <glyph unicode="i" horiz-adv-x="223" d="M160.999 638.999c0,27.0004 -21.9982,49.0014 -49.999,49.0014 -28.0008,0 -49.999,-21.0006 -49.999,-49.0014 0,-27.9979 21.9982,-50.9994 49.999,-50.9994 28.0008,0 49.999,23.0015 49.999,50.9994zm-90.9998 -638.999l80.0007 0 0 499.999 -80.0007 0 0 -499.999z"/>
+  </font>
   <style type="text/css">
    <![CDATA[
-    .fil0 {fill:#ED3237}
+    @font-face { font-family:"Ciento";font-variant:normal;font-weight:normal;src:url("#FontID0") format(svg)}
+    .fil0 {fill:#121212}
+    .fil1 {fill:#1DB954}
+    .fnt0 {font-weight:normal;font-size:438.913px;font-family:'Ciento'}
    ]]>
   </style>
  </defs>
  <g id="Layer_x0020_1">
   <metadata id="CorelCorpID_0Corel-Layer"/>
-  <path class="fil0" d="M422 0l1968 0c232,0 422,190 422,422l0 1968c0,232 -190,422 -422,422l-1968 0c-232,0 -422,-190 -422,-422l0 -1968c0,-76 21,-148 57,-210l156 582 213 794 581 -581 581 -581 -794 -213 -582 -156c62,-36 134,-57 210,-57z"/>
+  <g id="_2594420654448">
+   <path class="fil0" d="M325 0c300,0 323,25 323,325 0,300 -25,323 -325,323 -300,0 -323,-25 -323,-325 0,-300 25,-323 325,-323z"/>
+   <text x="153" y="552"  class="fil1 fnt0">ni</text>
+  </g>
  </g>
 </svg>

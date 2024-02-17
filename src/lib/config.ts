@@ -11,7 +11,8 @@ export const metainfo = {
   description: `From manga to webnovels, ${title} ignites your passion for stories. Read anything, anywhere, discover hidden gems through personalized recommendations, and join a vibrant community of readers and writers. Share your own novels, discuss trending news, and dive into spoiler-filled forums. With Scroll, every turn of the page unlocks a new world. A Manga reader for, reading and sharing your favourite manga collection with family and friends.`,
   caption: `More than just pages, it's an experience. Share and unfold endless stories with ${title}`,
   logo: "",
-  ogimg: "/api/og",
+  ogimg: "/favicon.svg",
+  // ogimg: "/api/og",
   organisation: "Tcitrogg",
   creator: "tcitrogg.vx",
   contact: [

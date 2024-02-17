@@ -21,9 +21,12 @@
 </script>
 
 <Metahead
-  ogtitle={`${title}`}
-  ogdescription={`${description}`}
-  ogkeywords={keywords}
+  title={`${title}`}
+  description={`${description}`}
+  keywords={keywords}
+  seoType="NewsArticle"
+  createdAt={`${mangaData.attributes.createdAt}`}
+  updatedAt={`${mangaData.attributes.updatedAt}`}
 />
 
 <!-- <section class="w-full h-full hidden md:block bg-gradient-to-b from-neutral-100/50 to-neutral-100 dark:from-neutral-950/50 dark:to-neutral-950 -z-10 absolute top-0"/> -->
@@ -106,7 +109,7 @@
         <section class="w-full space-y-2 pt-2 md:pt-4">
           {#each data.chapters as eachChapter, index}
             <a href={`/${$page.params.id}/c/${eachChapter.id}`} class="">
-              <section class="w-full hover:bg-green-500/10 border-bborder-b-main-green/5 flex p-2 px-4 md:py-4 md:rounded-md divide-x divide-zinc-200 dark:divide-zinc-800 gap-3">
+              <section class="w-full hover:bg-main/10 border-bborder-b-main-green/5 flex p-2 px-4 md:py-4 md:rounded-md divide-x divide-zinc-200 dark:divide-zinc-800 gap-3">
                 <section class="flex items-center justify-center gap-2">
                   <!-- <article class="opacity-60" title="Volume">Vol. {eachChapter.attributes.volume}</article> -->
                   <article class="" title="Chapter">Chp. {eachChapter.attributes.chapter  }</article>

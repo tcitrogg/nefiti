@@ -15,7 +15,7 @@ const config = {
 		},
 		extend: {
 			colors: {
-				"main-green": "#1DB954",
+				"main": "#1DB954",
 				"main-black": "#121212",
 				"zaffre": "#3626A7",
 				"malachite": "#3626A7",
