@@ -53,6 +53,6 @@
 	{#if text}
 		<p class="text-">{text}</p>
 	{:else}
-		
+		{""}
 	{/if}
 </button>

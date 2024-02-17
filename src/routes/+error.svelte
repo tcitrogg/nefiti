@@ -1,9 +1,12 @@
 <script lang="ts">
   import { fly, fade, scale, slide } from "svelte/transition";
   import { page } from '$app/stores';
+    import Metahead from "$lib/components/Metahead.svelte";
 
   const focusStyle = "focus:outline-none focus:ring-1 focus:ring-blue-700/70"
 </script>
+
+<Metahead ogtitle={`${$page.status} Error`}/>
 
 <section class="w-full md:w-11/12 md:ml-auto h-smscreen md:h-screen flex flex-col justify-center">
 

@@ -3,12 +3,14 @@
 
     // import { getCovertArt } from "$lib/utils";
   import Pill from "./Pill.svelte";
-  import { Image } from "@unpic/svelte";
+  import Image from "./Image.svelte";
+  // import { Image } from "@unpic/svelte";
+	import { Picture } from 'svelte-lazy-loader';
 
   export let item: any = {}
   export let style = ""
 
-  let title = Object.values(item.attributes.title)[0]
+  let title = `${Object.values(item.attributes.title)[0]}`
 </script>
 
 <a href={`/${item.id}`} title={`${title}`} class="w-full h-full focus:ring-0 focus:outline-none flex flex-col gap-2 relative">
@@ -29,7 +31,6 @@
       <Image
         src="{getThumbnail(item)}"
         alt="{title}"
-        layout="constrained"
       />
     </section>
   </section>

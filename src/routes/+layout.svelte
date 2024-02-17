@@ -1,6 +1,7 @@
 <script>
   import ThemeBtn from "$lib/components/ThemeBtn.svelte";
 import Button from "$lib/components/ui/button/button.svelte";
+    import { metainfo } from "$lib/config";
 import "../app.pcss";
 </script>
 
@@ -16,7 +17,7 @@ import "../app.pcss";
           </button>
           <h1 class="font-bold text-xl">
             <span class="opacity-40">t/</span>
-            <span class="">Books</span>
+            <span class="">{metainfo.title}</span>
           </h1>
         </section>
 

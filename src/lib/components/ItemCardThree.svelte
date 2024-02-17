@@ -1,11 +1,12 @@
 <script lang="ts">
   import { getThumbnail } from "$lib/utils";
-  import { Image } from "@unpic/svelte";
+  // import { Image } from "@unpic/svelte";
+  import Image from "./Image.svelte";
 
   export let item: any = {}
   // export let style = ""
 
-  let title = Object.values(item.attributes.title)[0]
+  let title = `${Object.values(item.attributes.title)[0]}`
   // console.log(title)
 </script>
 
@@ -15,8 +16,8 @@
       <Image
         src="{getThumbnail(item)}"
         alt="{title}"
-        layout="constrained"
       />
+        <!-- layout="constrained" -->
     </section>
     <section class="w-full h- flex flex-col z-10 p-2">
       <h4 class="w-full font-medium text-ellipsis line-clamp-1">{title}</h4>

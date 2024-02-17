@@ -12,11 +12,13 @@
   import * as Carousel from "$lib/components/ui/carousel/index.js";
   // import Autoplay from "embla-carousel-autoplay";
 
+  import Metahead from '$lib/components/Metahead.svelte';
   import Pill from "$lib/components/Pill.svelte"
   import ItemCard from '$lib/components/ItemCard.svelte';
   import ItemCardTwo from '$lib/components/ItemCardTwo.svelte';
   import ItemCardThree from '$lib/components/ItemCardThree.svelte';
   import ItemCardFour from '$lib/components/ItemCardFour.svelte';
+    import { metainfo } from '$lib/config';
     
   export let data: PageData;
   // import { data } from './+page';
@@ -33,6 +35,8 @@
 
   // console.log(tags.data.map((value)=>value.attributes.name))
 </script>
+
+<Metahead/>
 
 <section class="w-full py-2 md:px-4 md:py-4 flex flex-col gap-2.5 md:gap-4 snap snap-y snap-mandatory">
 
@@ -53,7 +57,6 @@
 
   <section class="w-full flex flex-col gap-8 md:gap-12 md:pb-0">
 
-    
     <!-- autoplay
     pauseOnFocus
     autoplayDuration={2000}
@@ -61,17 +64,17 @@
     class={"w-full h-full"} -->
     <section class="w-full md:mx-auto h-full flex flex-col md:flex-row gap-4">
       <!-- lay 1 -->
-      <section class="w-full md:w-6/12 h-80 md:h-[27rem] relative bg-zinc-100 dark:bg-zinc-900 md:rounded-lg overflow-hidden">
+      <section class="w-full md:w-6/12 h-80 md:h-[28rem] relative bg-zinc-100 dark:bg-zinc-900 md:rounded-lg overflow-hidden">
           <!-- plugins={[
             Autoplay({
               delay: 2000,
             }),
           ]} -->
         <Carousel.Root
-          class="w-full h-80 md:h-[27rem] relative">
+          class="w-full h-80 md:h-[28rem] relative">
           <Carousel.Content>
             {#each shuffle(mangaData).slice(0, 7) as eachManga, i}
-              <Carousel.Item class="w-full h-80 md:h-[27rem]">
+              <Carousel.Item class="w-full h-80 md:h-[28rem]">
                 <ItemCard item={eachManga}/>
               </Carousel.Item>
             {/each}

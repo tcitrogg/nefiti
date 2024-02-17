@@ -141,5 +141,19 @@
     }
   }
   </script>`}
-{/if} -->
+  {/if} -->
+  {@html `<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "${ogtitle}",
+    "description": "${ogdescription}",
+    "publisher": {
+      "@type": "ProfilePage",
+      "name": "tcitrogg",
+      "username": "${metainfo.handle}"
+      "website": "${metainfo.contact[0]}"
+    }
+  }
+  </script>`}
 </svelte:head>
