@@ -9,7 +9,7 @@
   import Avatar from 'svelte-boring-avatars';
   import sampleData from "$lib/sampleData.json"
 
-  const data = $layoutData.length !== 0 ? $layoutData : shuffle(sampleData.data).slice(0,3)
+  const data = $layoutData.length !== 0 ? $layoutData : shuffle(sampleData.data).slice(0,5)
 </script>
 
 <section class="w-full max-h-smscreen md:max-h-screen bg-zinc-50 text-zinc-950 dark:bg-zinc-950 dark:text-zinc-100 font-schibsted_grotesk flex md:flex-row flex-col relative overflow-hidden">
@@ -17,46 +17,48 @@
   <section class="w-full h-smscreen md:h-screen overflow-y-auto rounded-scrollbar sm-scrollbar flex">
 
     <section class="w-[20%] h-full md:flex hidden items-center justify-center fixed z-50 top-0 left-0">
-      <aside class="w-full h-full px-4 py-5 flex flex-col gap-5">
-        <section class="w-full flex items-center gap-2 pl-1">
-          <button class="px-2 py-2 hover:bg-zinc-200 dark:hover:bg-zinc-900 focus:ring-2 focus:ring-main/50 focus:outline-none rounded-full">
-            <i class="icon icon-ic_fluent_navigation_20_regular flex text-3xl"/>
-          </button>
-          <h1 class="text-xl">
-            <span class="opacity-40">t/</span>
-            <span class="font-semibold">{metainfo.title}</span>
-          </h1>
-        </section>
-
-        <section class="w-full flex flex-col gap-2">
-          <a href='/' class="py-1.5 px-3 flex items-center justify- ring-2 ring-transparent focus:ring-main/50 focus:outline-none text-main rounded-lg gap-4 bg-main/10">
-            <i class="icon icon-ic_fluent_home_20_filled flex text-3xl"/>
-            <p class="text-">Home</p>
-          </a>
-          <a href='/' class="py-1.5 px-3 flex items-center justify- ring-2 ring-transparent focus:ring-main/50 focus:outline-none rounded-lg gap-4 hover:bg-zinc-200 dark:hover:bg-zinc-900">
-            <i class="icon icon-ic_fluent_library_20_regular flex text-3xl"/>
-            <p class="text-">Library</p>
-          </a>
-          <a href='/' class="py-1.5 px-3 flex items-center justify- ring-2 ring-transparent focus:ring-main/50 focus:outline-none rounded-lg gap-4 hover:bg-zinc-200 dark:hover:bg-zinc-900">
-            <i class="icon icon-ic_fluent_search_20_regular flex text-3xl"/>
-            <p class="text-">Search</p>
-          </a>
-        </section>
-
-        <section class="w-full h-3/6 rounded-lg bg-zinc-200 dark:bg-zinc-900 flex flex-col gap-1 p-1">
-          {#each data as eachManga}
-            <section class="w-full rounded-lg hover: bg-zinc-300 dark:hover:bg-zinc-800 p-2 flex items-center gap-2">
-              <Avatar
-                name={eachManga.id}
-                size={35}
-                square={false}
-                colors={Array.from({ length: 3 }, () => getRandomColor())}
-                variant={"sunset"}
-              />
-              <p class="w-10/12 line-clamp-1">{`${Object.values(eachManga.attributes.title)[0]}`}</p>
-              <!-- <Image src={} alt={}/> -->
-            </section>
-          {/each}
+      <aside class="w-full h-full px-4 py-5 flex flex-col gap-5 items-center justify-between">
+        <section class="w-full flex flex-col gap-5">
+          <section class="w-full flex items-center gap-2 pl-1">
+            <button class="px-2 py-2 hover:bg-zinc-200 dark:hover:bg-zinc-900 focus:ring-2 focus:ring-main/50 focus:outline-none rounded-full">
+              <i class="icon icon-ic_fluent_navigation_20_regular flex text-3xl"/>
+            </button>
+            <h1 class="text-xl">
+              <span class="opacity-40">t/</span>
+              <span class="font-semibold">{metainfo.title}</span>
+            </h1>
+          </section>
+  
+          <section class="w-full flex flex-col gap-2">
+            <a href='/' class="py-1.5 px-3 flex items-center justify- ring-2 ring-transparent focus:ring-main/50 focus:outline-none text-main rounded-lg gap-4 bg-main/10">
+              <i class="icon icon-ic_fluent_home_20_filled flex text-3xl"/>
+              <p class="text-">Home</p>
+            </a>
+            <a href='/' class="py-1.5 px-3 flex items-center justify- ring-2 ring-transparent focus:ring-main/50 focus:outline-none rounded-lg gap-4 hover:bg-zinc-200 dark:hover:bg-zinc-900">
+              <i class="icon icon-ic_fluent_library_20_regular flex text-3xl"/>
+              <p class="text-">Library</p>
+            </a>
+            <a href='/' class="py-1.5 px-3 flex items-center justify- ring-2 ring-transparent focus:ring-main/50 focus:outline-none rounded-lg gap-4 hover:bg-zinc-200 dark:hover:bg-zinc-900">
+              <i class="icon icon-ic_fluent_search_20_regular flex text-3xl"/>
+              <p class="text-">Search</p>
+            </a>
+          </section>
+  
+          <section class="w-full h3/6 rounded-lg bg-zinc-200 dark:bg-zinc-900 flex flex-col gap-1 p-1">
+            {#each data as eachManga}
+              <section class="w-full rounded-lg hover:bg-zinc-300 dark:hover:bg-zinc-800 p-2 flex items-center gap-2">
+                <Avatar
+                  name={eachManga.id}
+                  size={35}
+                  square={false}
+                  colors={Array.from({ length: 3 }, () => getRandomColor())}
+                  variant={"sunset"}
+                />
+                <p class="w-10/12 line-clamp-1">{`${Object.values(eachManga.attributes.title)[0]}`}</p>
+                <!-- <Image src={} alt={}/> -->
+              </section>
+            {/each}
+          </section>
         </section>
 
         <section class="w-full flex flex-col gap-2">
