@@ -17,7 +17,8 @@
     // lengthOfDataIfAsideBarIsMinimised.set($isAsideBarMinimised ? 3 : 5)
   }
 
-  const data = metainfo.isDev ? $layoutData : shuffle(sampleData.data).slice(0,$isAsideBarMinimised ? 4 : 5)
+  const data = $layoutData
+  // const data = $layoutData.length !== 0 ? $layoutData : shuffle(sampleData.data).slice(0,$isAsideBarMinimised ? 4 : 5)
 </script>
 
 <section class="{$isAsideBarMinimised ? "md:w-[10%] lg:w-[7%]" : "md:w-[30%] lg:w-[20%]"} h-full md:block hidden items-center justify-center fixed z-50 top-0 left-0">

@@ -61,7 +61,7 @@ export const load: PageLoad = async ({ url, fetch, setHeaders }: any) => {
     // Update data store
     data.set(mangaWithThumbnail);
 
-    layoutData.set(shuffle(mangaWithThumbnail).slice(0,3))
+    layoutData.set(shuffle(mangaWithThumbnail).slice(0,4))
 
     // Set headers
     setHeaders({

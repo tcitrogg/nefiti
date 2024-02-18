@@ -22,7 +22,8 @@
     
   export let data: PageData;
   // import { data } from './+page';
-  const mangaData = !metainfo.isDev ? data.data : sampleData.data
+  const mangaData = data.data
+  // const mangaData = !metainfo.isDev ? data.data : sampleData.data
   // .data.map((value)=>value.attributes.tags)
   // console.log(mangaData)
 
