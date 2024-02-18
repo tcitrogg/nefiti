@@ -18,6 +18,8 @@
   // handleFetch()
 
   console.log(mangaData)
+
+  let mangaThumbnail = getThumbnail(mangaData);
 </script>
 
 <Metahead
@@ -27,13 +29,14 @@
   seoType="NewsArticle"
   createdAt={`${mangaData.attributes.createdAt}`}
   updatedAt={`${mangaData.attributes.updatedAt}`}
+  image={mangaThumbnail}
 />
 
 <!-- <section class="w-full h-full hidden md:block bg-gradient-to-b from-neutral-100/50 to-neutral-100 dark:from-neutral-950/50 dark:to-neutral-950 -z-10 absolute top-0"/> -->
 
 <section class="w-full h-full">
   
-  <img src="{getThumbnail(mangaData)}" alt={title} class="w-full h-full object-cover fixed top-0 left-0 blur-sm opacity-20 dark:opacity-40">
+  <img src="{mangaThumbnail}" alt={title} class="w-full h-full object-cover fixed top-0 left-0 blur-sm opacity-20 dark:opacity-40">
   <section class="w-full h-smscreen md:h-screen fixed top-0 left-0 z-10 bg-gradient-to-b from-zinc-100/80 dark:from-zinc-950/80 via-zinc-100/95 dark:via-zinc-950/95 to-zinc-100 dark:to-zinc-950"/>  
 
   <section class="w-full h-full relative z-10 md:px-4 overflow-y-auto">
@@ -44,10 +47,10 @@
           <section class="w-full h-96">
             <section class="skew-b w-full h-full md:rounded-2xl sticky top-0 left-0 bg-zinc-300 dark:bg-zinc-800 overflow-hidden">
               <Image
-                src="{getThumbnail(mangaData)}"
+                src="{mangaThumbnail}"
                 alt="{title}"
               />
-              <!-- <img src={getThumbnail(mangaData)} alt={`${title}`} class="z-0 w-full h-full object-cover object-top" loading="lazy"> -->
+              <!-- <img src={mangaThumbnail} alt={`${title}`} class="z-0 w-full h-full object-cover object-top" loading="lazy"> -->
             </section>
           </section>
         </section>
@@ -60,7 +63,7 @@
               <CopyLinkBtn content={`${$page.url}`}/>
             </section>
   
-            <!-- {getThumbnail(mangaData)} -->
+            <!-- {mangaThumbnail} -->
             
             <!-- <p class="whitespace-nowrap">{$page.url}</p> -->
             <article class="">{description}</article>
