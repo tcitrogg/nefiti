@@ -2,7 +2,7 @@
   import "../app.pcss";
   import Nav from "$lib/components/Nav.svelte";
   import NavAside from "$lib/components/NavAside.svelte";
-    import { isAsideBarMinimised } from "../stores/layoutData";
+  import { isAsideBarMinimised } from "../stores/layoutData";
 </script>
 
 <section class="w-full max-h-smscreen md:max-h-screen bg-zinc-50 text-zinc-950 dark:bg-zinc-950 dark:text-zinc-100 font-schibsted_grotesk flex md:flex-row flex-col relative overflow-hidden">
