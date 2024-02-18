@@ -41,7 +41,6 @@
   
   <link rel="canonical" href={`${$page.url}`} />
   
-  <link rel="manifest" href="/manifest.webmanifest" />
   <meta name="category" content="Digital Content Platform" />
   <meta name="classification" content="Web App" />
   <meta name="apple-mobile-web-app-capable" content="yes" />

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW 2017 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="0.64in" height="0.64in" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 84 84"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <font id="FontID0" horiz-adv-x="655" font-variant="normal" style="fill-rule:nonzero" font-weight="400">
+	<font-face 
+		font-family="Ciento">
+		<font-face-src>
+			<font-face-name name="Ciento-Regular"/>
+		</font-face-src>
+	</font-face>
+   <missing-glyph><path d="M0 0z"/></missing-glyph>
+   <glyph unicode="n" horiz-adv-x="554" d="M466.002 333.996c-22.0025,121 -80.9996,181.005 -177,181.005 -64.0006,0 -113,-25.998 -148.006,-77.0041l-8.00007 62.0028 -70.9927 0 0 -500 80.0007 0 0 333.996c3.9955,33.0082 18.9968,60.0051 43.9959,80.0007 25.998,20.0047 52.005,30.0025 78.003,30.0025 68.995,0 109.994,-40.0004 124.995,-121l54.0028 -323 80.0007 0 -56.9994 333.996z"/>
+   <glyph unicode="i" horiz-adv-x="223" d="M161 638.998c0,27.0059 -22.0025,48.9993 -49.9982,48.9993 -28.0048,0 -49.9982,-20.9945 -49.9982,-48.9993 0,-27.9957 21.9934,-50.9971 49.9982,-50.9971 27.9957,0 49.9982,23.0013 49.9982,50.9971zm-90.9974 -638.998l80.0007 0 0 500 -80.0007 0 0 -500z"/>
+  </font>
+  <style type="text/css">
+   <![CDATA[
+    @font-face { font-family:"Ciento";font-variant:normal;font-weight:normal;src:url("#FontID0") format(svg)}
+    .fil0 {fill:#121212}
+    .fil1 {fill:#1DB954}
+    .fnt0 {font-weight:normal;font-size:57.0485px;font-family:'Ciento'}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_1994343016272">
+   <path class="fil0" d="M42 0c39,0 42,3 42,42 0,39 -3,42 -42,42 -39,0 -42,-3 -42,-42 0,-39 3,-42 42,-42z"/>
+   <text x="20" y="72"  class="fil1 fnt0">ni</text>
+  </g>
+ </g>
+</svg>

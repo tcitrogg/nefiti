@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW 2017 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="0.64in" height="0.64in" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 7901 7901"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <font id="FontID0" horiz-adv-x="656" font-variant="normal" style="fill-rule:nonzero" font-style="normal" font-weight="400">
+	<font-face 
+		font-family="Ciento">
+		<font-face-src>
+			<font-face-name name="Ciento-Regular"/>
+		</font-face-src>
+	</font-face>
+   <missing-glyph><path d="M0 0z"/></missing-glyph>
+   <glyph unicode="n" horiz-adv-x="554" d="M465.999 333.999c-21.9986,121.001 -80.9972,180.998 -176.996,180.998 -63.9991,0 -113.006,-26.0008 -148,-76.995l-8.00443 61.9935 -70.9962 0 0 -499.995 79.9989 0 0 333.999c4.00221,32.9978 18.9946,59.9969 43.9971,79.9989 26.0008,20.002 52.0016,30.003 78.0023,30.003 68.9996,0 110.002,-40.004 125.003,-121.001l53.9981 -323 79.9989 0 -57.0021 333.999z"/>
+   <glyph unicode="i" horiz-adv-x="222" d="M160.996 639.002c0,26.9991 -21.9986,48.9976 -49.9959,48.9976 -27.9974,0 -49.9959,-21.0003 -49.9959,-48.9976 0,-28.0064 21.9986,-51.0033 49.9959,-51.0033 27.9974,0 49.9959,22.9969 49.9959,51.0033zm-90.9982 -639.002l79.9989 0 0 499.995 -79.9989 0 0 -499.995z"/>
+  </font>
+  <style type="text/css">
+   <![CDATA[
+    @font-face { font-family:"Ciento";font-variant:normal;font-style:normal;font-weight:normal;src:url("#FontID0") format(svg)}
+    .fil1 {fill:#1DB954}
+    .fil0 {fill:#FAFAFA}
+    .fnt0 {font-weight:normal;font-size:5355.48px;font-family:'Ciento'}
+   ]]>
+  </style>
+ </defs>
+ <g id="Layer_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_1959845791312">
+   <path class="fil0" d="M3961 0c3655,3 3944,301 3940,3961 -3,3655 -301,3944 -3961,3940 -3655,-3 -3944,-301 -3940,-3961 3,-3655 301,-3944 3961,-3940z"/>
+   <text x="1870" y="6727"  class="fil1 fnt0">ni</text>
+  </g>
+ </g>
+</svg>
