@@ -17,7 +17,7 @@
 <!-- <img src={value} alt={`${Object.values(mangaData[0].attributes.title)[0]}`} class="w-full md:w-5/12 h-full object-cover object-top sticky md:relative md:rounded-lg"> -->
 <!-- {/await} -->
 <section class="w-full h-full overflow-hidden relative flex gap-3">
-  <section class={`w-full md:w-5/12 h-full object-fill object-top sticky md:relative md:rounded-lg overflow-hidden bg-zinc-100 dark:bg-zinc-900`}>
+  <section class={`w-full lg:w-5/12 h-full object-fill object-top sticky lg:relative lg:rounded-lg overflow-hidden bg-zinc-100 dark:bg-zinc-900`}>
     <Image
       src="{getThumbnail(item)}"
       alt="{title}"
@@ -25,9 +25,9 @@
       <!-- layout="constrained" -->
   </section>
   
-  <section class="w-full h-full absolute top-0 left-0 z-10 bg-gradient-to-b from-transparent via-zinc-100/90 dark:via-zinc-950/90 to-zinc-100 dark:to-zinc-950 md:hidden"/>
+  <section class="w-full h-full absolute top-0 left-0 z-10 bg-gradient-to-b from-transparent via-zinc-100/90 dark:via-zinc-950/90 to-zinc-100 dark:to-zinc-950 lg:hidden"/>
   
-  <section class="w-full md:w-7/12 flex flex-col gap-6 md:gap-4 justify-between z-10 p-4 md:px-2 md:py-4 absolute md:relative bottom-0">
+  <section class="w-full lg:w-7/12 flex flex-col gap-6 lg:gap-4 justify-between z-10 p-4 lg:px-2 lg:py-4 absolute lg:relative bottom-0">
     <section class="flex flex-col gap-6 md:gap-4">
       <section class="flex flex-col gap-1.5">
         <!-- <Skeleton type="p" /> -->

@@ -40,8 +40,18 @@
 
 <section class="w-full py-2 md:px-4 md:py-4 flex flex-col gap-2.5 md:gap-4 snap snap-y snap-mandatory">
 
-  <section class="w-full mt-1">
-    <section class="flex overflow-x-scroll sm-scrollbar rounded-scrollbar sm-hide-scrollbar py-1 px-4 md:px-0">
+  <section class="w-full flex gap-5 py-0.5">
+    <section class="flex md:hidden items-center gap-2 px-4">
+      <img src="/favicon.svg" alt="[ni]" class="w-6 block dark:hidden">
+      <img src="/favicon-light.svg" alt="[ni]" class="w-6 hidden dark:block">
+
+      <!-- <span class="opacity-40">t/</span> -->
+      <h1 class="text-xl font-semibold">
+        {metainfo.title}
+      </h1>
+    </section>
+
+    <section class="w-full my-1 flex overflow-x-scroll sm-scrollbar rounded-scrollbar sm-hide-scrollbar md:py-1 px-4 md:px-0 rounded-l-lg">
       <section class="flex flex-nowrap gap-2.5 snap-x snap-mandatory">
         {#each listOfTags as eachTag}
           <section class="flex"><Pill
@@ -62,9 +72,9 @@
     autoplayDuration={2000}
     dots={false}
     class={"w-full h-full"} -->
-    <section class="w-full md:mx-auto h-full flex flex-col md:flex-row gap-4">
+    <section class="w-full md:mx-auto h-full flex flex-col lg:flex-row gap-4">
       <!-- lay 1 -->
-      <section class="w-full md:w-6/12 h-80 md:h-[28rem] relative bg-zinc-100 dark:bg-zinc-900 md:rounded-lg overflow-hidden">
+      <section class="w-full lg:w-6/12 h-80 md:h-[28rem] relative bg-zinc-100 dark:bg-zinc-900 md:rounded-lg overflow-hidden">
           <!-- plugins={[
             Autoplay({
               delay: 2000,
@@ -103,7 +113,7 @@
       </section>
       
       <!-- lay 3 -->
-      <section class="w-full md:w-6/12 md:h-[27rem] flex flex-col gap-4 px-4 py-2 md:p-0">
+      <section class="w-full lg:w-6/12 md:h-[27rem] flex flex-col gap-4 px-4 py-2 md:p-0">
         <section class="w-full h-64 md:h-3/6 flex gap-4">
           <section class="w-6/12 h-full rounded-lg">
             <ItemCardTwo item={mangaData[0]}/>

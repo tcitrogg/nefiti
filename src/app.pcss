@@ -75,6 +75,16 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* For current page tracking */
+  @layer base{
+    a.navbtn[aria-current='page']{
+      @apply text-main md:bg-main/10;
+    }
+    a.navbtn:not([aria-current='page']){
+      @apply md:hover:bg-zinc-200 md:dark:hover:bg-zinc-900;
+    }
+  }
 }
 
 @tailwind base;
