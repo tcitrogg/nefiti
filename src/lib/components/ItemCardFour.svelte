@@ -47,7 +47,7 @@
       <article class="text-sm font-bold opacity-70 line-clamp-4 md:line-clamp-5 lg:line-clamp-6">{item.attributes.description.en ? item.attributes.description.en : description}</article>
     </section>
     
-    <section class="flex mt-3 pb-1">
+    <section class="flex justify-end md:justify-start mt-3 pb-1">
       <a href={`/m/${item.id}`} title={`${title}`} class="focus:ring-0 focus:outline-none relative bg-main w-28 py-1.5 rounded-lg flex items-center justify-center font-semibold">
         Read
       </a>
