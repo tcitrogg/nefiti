@@ -46,7 +46,7 @@
     // Convert the groupedChapters object into an array of objects
     const volumesWithChapters = Object.entries(groupedChapters).map(([volume, chapters]: [any, any]) => ({
       volume,
-      chapters: chapters.sort((a:any, b:any) => a.chapter.localeCompare(b.chapter) ),
+      chapters: chapters.sort((a:any, b:any) => Number(a.chapter) - Number(b.chapter)),
     }));
 
     // console.log(volumesWithChapters[0].chapters)
@@ -141,31 +141,24 @@
       <section class="divide-ydivide-zinc-300dark:divide-zinc-700 flex flex-col py-4 gap-4">
         {#each volumesWithChapters as item}
           <section class="flex flex-col">
-            <h4 class="text-lg px-4">
-              <span class="font-semibold text-main">Volume {item.volume}</span>
+            <h4 class="px-4">
+              <span class="font-semibold text-lg text-main">Volume {item.volume}</span>
+              <span class="font-medium text-sm opacity-40"># Chapters</span>
             </h4>
   
-            <section class="">
-              <h5 class="text- px-4 opacity-50">
-                <span class="">#</span>
-                <!-- <span class="font-semibold">Volumes & Chapters</span> -->
-                <span class="font-medium">Chapters</span>
-              </h5>
-  
-              <section class="w-full space-y-2 pt-2 md:pt-4">
-                {#each item.chapters as eachChapter, index}
-                  <a href={`/m/${$page.params.id}/c/${eachChapter.id}`} class="">
-                    <section class="w-full hover:bg-main/10 border-bborder-b-main-green/5 flex p-2 px-4 md:py-4 md:rounded-md divide-x divide-zinc-200 dark:divide-zinc-800 gap-3 items-center justify-between">
-                        <!-- <article class="opacity-60" title="Volume">Vol. {eachChapter.attributes.volume}</article> -->
-                      <article class="flex gap-2 items-center" title="Chapter">
-                        <i class="icon icon-ic_fluent_bookmark_20_regular flex text-xl"></i>
-                        <span>{eachChapter.chapter}</span>
-                      </article>
-                      <!-- <article class="w-7/12 flex items-center pl-3">{eachChapter.attributes.title}</article> -->
-                    </section>
-                  </a>
-                {/each}
-              </section>
+            <section class="w-full space-y-2 pt-2 md:pt-4">
+              {#each item.chapters as eachChapter, index}
+                <a href={`/m/${$page.params.id}/c/${eachChapter.id}`} class="">
+                  <section class="w-full hover:bg-main/10 border-bborder-b-main-green/5 flex p-2 px-4 md:py-4 md:rounded-md divide-x divide-zinc-200 dark:divide-zinc-800 gap-3 items-center justify-between">
+                      <!-- <article class="opacity-60" title="Volume">Vol. {eachChapter.attributes.volume}</article> -->
+                    <article class="flex gap-2 items-center" title="Chapter">
+                      <i class="icon icon-ic_fluent_bookmark_20_regular flex text-xl"></i>
+                      <span>{eachChapter.chapter}</span>
+                    </article>
+                    <article class="flex items-center text-xs opacity-30">{eachChapter.pages} pages</article>
+                  </section>
+                </a>
+              {/each}
             </section>
           </section>
         {/each}
