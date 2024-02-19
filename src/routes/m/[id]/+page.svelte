@@ -5,7 +5,8 @@
   import CopyLinkBtn from '$lib/components/CopyLinkBtn.svelte';
   import type { PageData } from './$types';
   import Image from '$lib/components/Image.svelte';
-  import { getThumbnail } from '$lib/utils';
+  import { getThumbnail, titleCase } from '$lib/utils';
+    import { slide } from 'svelte/transition';
 
   export let data: PageData;
   const mangaData = data
@@ -15,11 +16,40 @@
   const keywords = mangaData.attributes.tags.map((eachTag:any)=>Object.values(eachTag.attributes.name)[0])
   // const date = new Date(mangaData.attributes.createdAt)
   const year = mangaData.attributes.year ?? mangaData.attributes.createdAt.slice(0,4)
+  const status = titleCase(mangaData.attributes.status) ?? "Don't Know"
   // handleFetch()
 
-  console.log(mangaData)
+  console.log(mangaData.chapters)
 
   let mangaThumbnail = getThumbnail(mangaData);
+    // Create an object to store the grouped chapters
+    const groupedChapters:any = {};
+
+    // Iterate through each chapter
+    for (const chapter of data.chapters) {
+      let { volume, ...rest } = chapter.attributes; // Extract volume and other attributes
+      if (volume === null) volume = 1
+
+      // If the volume doesn't exist in the groupedChapters object, create an empty array
+      if (!groupedChapters[volume]) {
+        groupedChapters[volume] = [];
+      }
+
+      // Push the chapter (with only attributes) into the corresponding volume group
+      groupedChapters[volume].push({
+        id: chapter.id,
+        type: chapter.type,
+        ...rest
+      });
+    }
+
+    // Convert the groupedChapters object into an array of objects
+    const volumesWithChapters = Object.entries(groupedChapters).map(([volume, chapters]: [any, any]) => ({
+      volume,
+      chapters: chapters.sort((a:any, b:any) => a.chapter.localeCompare(b.chapter) ),
+    }));
+
+    // console.log(volumesWithChapters[0].chapters)
 </script>
 
 <Metahead
@@ -34,7 +64,7 @@
 
 <!-- <section class="w-full h-full hidden md:block bg-gradient-to-b from-neutral-100/50 to-neutral-100 dark:from-neutral-950/50 dark:to-neutral-950 -z-10 absolute top-0"/> -->
 
-<section class="w-full h-full">
+<section transition:slide={{duration:300}} class="w-full h-full">
   
   <img src="{mangaThumbnail}" alt={title} class="w-full h-full object-cover fixed top-0 left-0 blur-sm opacity-20 dark:opacity-40">
   <section class="w-full h-smscreen md:h-screen fixed top-0 left-0 z-10 bg-gradient-to-b from-zinc-100/80 dark:from-zinc-950/80 via-zinc-100/95 dark:via-zinc-950/95 to-zinc-100 dark:to-zinc-950"/>  
@@ -45,7 +75,7 @@
       <section class="w-full flex md:flex-row flex-col md:gap-4 md:pt-8 lg:pt-14">
         <section class="w-full md:w-4/12">
           <section class="w-full h-96">
-            <section class="skew-b w-full h-full md:rounded-2xl sticky top-0 left-0 bg-zinc-300 dark:bg-zinc-800 overflow-hidden">
+            <section class="skew-b w-full h-full md:rounded-2xl sticky top-0 left-0 bg-zinc-300 dark:bg-zinc-800 overflow-hidden shadow-md">
               <Image
                 src="{mangaThumbnail}"
                 alt="{title}"
@@ -76,12 +106,18 @@
           </section>
           <section class="flex flex-col gap-4">
             <section class="flex flex-wrap gap-2.5 snap-x snap-mandatory">
-              <section class="flex"><Pill
-                link={`about:blank`}
+              <Pill
+                link={`#`}
                 title={year}
                 style={"text-sm py-1"}
                 isActive={true}
-              /></section>
+              />
+              <Pill
+                link={`#`}
+                title={`# ${status}`}
+                style={"text-sm py-1"}
+                isActive={true}
+              />
               {#each mangaData.attributes.tags as eachTag}
                 <section class="flex"><Pill
                   link={`/m/tag/${eachTag.id}`}
@@ -102,28 +138,40 @@
       </section>
   
       <!-- {/* chapters */} -->
-      <section class="divide-ydivide-zinc-300dark:divide-zinc-700 flex flex-col py-4">
-        <h4 class="text-lg px-4">
-          <span class="opacity-50">#</span>
-          <!-- <span class="font-semibold">Volumes & Chapters</span> -->
-          <span class="font-semibold">Chapters</span>
-        </h4>
+      <section class="divide-ydivide-zinc-300dark:divide-zinc-700 flex flex-col py-4 gap-4">
+        {#each volumesWithChapters as item}
+          <section class="flex flex-col">
+            <h4 class="text-lg px-4">
+              <span class="font-semibold text-main">Volume {item.volume}</span>
+            </h4>
   
-        <section class="w-full space-y-2 pt-2 md:pt-4">
-          {#each data.chapters as eachChapter, index}
-            <a href={`/${$page.params.id}/c/${eachChapter.id}`} class="">
-              <section class="w-full hover:bg-main/10 border-bborder-b-main-green/5 flex p-2 px-4 md:py-4 md:rounded-md divide-x divide-zinc-200 dark:divide-zinc-800 gap-3">
-                <section class="flex items-center justify-center gap-2">
-                  <!-- <article class="opacity-60" title="Volume">Vol. {eachChapter.attributes.volume}</article> -->
-                  <article class="" title="Chapter">Chp. {eachChapter.attributes.chapter  }</article>
-                </section>
-                <article class="w-7/12 flex items-center pl-3">{eachChapter.attributes.title}</article>
+            <section class="">
+              <h5 class="text- px-4 opacity-50">
+                <span class="">#</span>
+                <!-- <span class="font-semibold">Volumes & Chapters</span> -->
+                <span class="font-medium">Chapters</span>
+              </h5>
+  
+              <section class="w-full space-y-2 pt-2 md:pt-4">
+                {#each item.chapters as eachChapter, index}
+                  <a href={`/m/${$page.params.id}/c/${eachChapter.id}`} class="">
+                    <section class="w-full hover:bg-main/10 border-bborder-b-main-green/5 flex p-2 px-4 md:py-4 md:rounded-md divide-x divide-zinc-200 dark:divide-zinc-800 gap-3 items-center justify-between">
+                        <!-- <article class="opacity-60" title="Volume">Vol. {eachChapter.attributes.volume}</article> -->
+                      <article class="flex gap-2 items-center" title="Chapter">
+                        <i class="icon icon-ic_fluent_bookmark_20_regular flex text-xl"></i>
+                        <span>{eachChapter.chapter}</span>
+                      </article>
+                      <!-- <article class="w-7/12 flex items-center pl-3">{eachChapter.attributes.title}</article> -->
+                    </section>
+                  </a>
+                {/each}
               </section>
-            </a>
-          {/each}
-          <section class="h-20"></section>
-        </section>
+            </section>
+          </section>
+        {/each}
+        <section class="h-20"></section>
       </section>
+      <!-- <section>{@html JSON.stringify(volumesWithChapters, null, 3)}</section> -->
       
       <!-- <h1>{data.id}</h1> -->
       <!-- <section>{@html JSON.stringify(data, null, 3)}</section> -->

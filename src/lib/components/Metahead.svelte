@@ -35,19 +35,19 @@
   <meta name="application-name" content={metainfo.title} />
   <meta name="apple-mobile-web-app-title" content={metainfo.title} />
   
-  <meta property="og:description" content={description} />
   <meta name="description" content={description}/>
   <meta name="keywords" content={keywords} />
-  
-  <link rel="canonical" href={`${$page.url}`} />
-  
+  <meta name="og:image" content={image} />
   <meta name="category" content="Digital Content Platform" />
   <meta name="classification" content="Web App" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   
+  <link rel="canonical" href={`${$page.url}`} />
+  
   <meta property="og:title" content={ogtitle} />
   <meta property="og:url" content={metainfo.url} />
+  <meta property="og:description" content={description} />
   <meta property="og:site_name" content={ogtitle} />
   <meta property="og:image" content={image} />
   <meta property="og:type" content="website" />

@@ -66,7 +66,7 @@
     <!-- </section> -->
 
     <section class="w-full px-4">
-      <hr class="border-zinc-300 dark:border-zinc-700 rounded-full">
+      <hr class="border-zinc-200 dark:border-zinc-800 rounded-full">
     </section>
 
     <!-- {/* books */} -->

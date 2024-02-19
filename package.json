@@ -30,6 +30,7 @@
     "axios": "^1.6.7",
     "bits-ui": "^0.18.1",
     "clsx": "^2.1.0",
+    "embla-carousel-autoplay": "^8.0.0-rc22",
     "embla-carousel-svelte": "^8.0.0-rc22",
     "lucide-svelte": "^0.330.0",
     "svelte-boring-avatars": "^1.2.5",

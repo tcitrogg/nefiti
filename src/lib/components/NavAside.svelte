@@ -17,7 +17,7 @@
     // lengthOfDataIfAsideBarIsMinimised.set($isAsideBarMinimised ? 3 : 5)
   }
 
-  const data = $layoutData
+  const data = $layoutData ?? shuffle(sampleData.data).slice(0, 4)
   // const data = $layoutData.length !== 0 ? $layoutData : shuffle(sampleData.data).slice(0,$isAsideBarMinimised ? 4 : 5)
 </script>
 
@@ -92,7 +92,7 @@
       <!-- <a href='#' class="py-1.5 px-3 flex items-center justify- ring-2 ring-transparent focus:ring-main focus:outline-none text-main rounded-lg gap-4 bg-main/10">
         <p class="text-">Mode</p>
       </a> -->
-      <ThemeBtn style="py-1.5 px-3 flex items-center {$isAsideBarMinimised ? 'justify-center' : ''} ring-2 ring-transparent focus:ring-main/50 focus:outline-none rounded-lg gap-4 bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-900 dark:hover:bg-zinc-900" bg={""} iconSize={"3xl"}>
+      <ThemeBtn style="py-1.5 px-3 flex items-center {$isAsideBarMinimised ? 'justify-center' : ''} ring-2 ring-transparent focus:ring-main/50 focus:outline-none rounded-lg gap-3 bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-900 dark:hover:bg-zinc-900" bg={""} iconSize={"3xl"}>
         {#if !$isAsideBarMinimised}
           <p class="text-">Theme</p>
         {/if}

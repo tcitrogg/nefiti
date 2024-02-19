@@ -10,6 +10,9 @@
   import Skeleton from '$lib/components/ui/skeleton/skeleton.svelte';
   import * as Card from "$lib/components/ui/card/index.js";
   import * as Carousel from "$lib/components/ui/carousel/index.js";
+  
+  import Autoplay from "embla-carousel-autoplay";
+  
   // import Autoplay from "embla-carousel-autoplay";
 
   import Metahead from '$lib/components/Metahead.svelte';
@@ -18,11 +21,12 @@
   import ItemCardTwo from '$lib/components/ItemCardTwo.svelte';
   import ItemCardThree from '$lib/components/ItemCardThree.svelte';
   import ItemCardFour from '$lib/components/ItemCardFour.svelte';
-    import { metainfo } from '$lib/config';
+  import { metainfo } from '$lib/config';
+  // import Drawer from '$lib/components/Drawer.svelte';
     
   export let data: PageData;
   // import { data } from './+page';
-  const mangaData = data.data
+  const mangaData = data.data ?? sampleData.data
   // const mangaData = !metainfo.isDev ? data.data : sampleData.data
   // .data.map((value)=>value.attributes.tags)
   // console.log(mangaData)
@@ -35,11 +39,28 @@
   const precious_her = "08059585629"
 
   // console.log(tags.data.map((value)=>value.attributes.name))
+
+  $: unlockDrawer = true
+  const handleUnlockDrawer = ()=>{
+    unlockDrawer = !unlockDrawer
+  }
+
+  const plugin = Autoplay({ delay: 5000, stopOnInteraction: true });
+
 </script>
 
 <Metahead/>
 
 <section class="w-full py-2 md:px-4 md:py-4 flex flex-col gap-2.5 md:gap-4 snap snap-y snap-mandatory">
+
+  <!-- <Drawer/> -->
+  <!-- {#if unlockDrawer}
+    <section class="w-full h-full fixed top-0 left-0">
+    </section>
+  {/if} -->
+  <!-- <button on:click={handleUnlockDrawer} class="bg-red-500 rounded-lg px-4 py-1.5">
+    Lit up
+  </button> -->
 
   <section class="w-full flex gap-5 py-0.5">
     <section class="flex md:hidden items-center gap-2 px-4">
@@ -82,6 +103,9 @@
             }),
           ]} -->
         <Carousel.Root
+          plugins={[plugin]}
+          on:mousenter={plugin.stop}
+          on:mouseleave={plugin.reset}
           class="w-full h-80 md:h-[28rem] relative">
           <Carousel.Content>
             {#each shuffle(mangaData).slice(0, 7) as eachManga, i}

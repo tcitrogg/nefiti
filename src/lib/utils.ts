@@ -70,7 +70,7 @@ import { appinfo } from "./config";
 export const noOutlineRingStyle = "outline-none ring-0"
 
 export function titleCase(text: string) {
-  const start = text.slice(0, 1)
+  const start = text.slice(0, 1).toUpperCase()
   const remaining = text.slice(1)
   return `${start}${remaining}`
 }
@@ -94,3 +94,5 @@ export const shuffle = (array: any[]) => {
 }
 
 export const getRandomColor = () => `#${(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0')}`;
+
+export const getTimestamp = () => new Date().getTime()

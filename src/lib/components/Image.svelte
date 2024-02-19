@@ -8,5 +8,5 @@
 <Image
   {src}
   {alt} {placeholder}
-  classes={"--filter: blur(2px); --opacity:20 w-full h-full object-cover"}
+  classes={"--filter: blur(2px); --opacity:20 w-full h-full object-cover object-top"}
   loading="lazy" on:load />
