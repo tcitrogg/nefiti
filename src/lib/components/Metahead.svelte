@@ -3,7 +3,7 @@
   import { metainfo } from "$lib/config";
 
   export let title: string = "";
-  let ogtitle = title.length !== 0 ? `${metainfo.title} | ${title}` : metainfo.title
+  let ogtitle = title.length !== 0 ? `${metainfo.title} - ${title}` : metainfo.title
   export let keywords: string = metainfo.keywords;
   export let description: string = metainfo.description;
   export let caption: string = "";
