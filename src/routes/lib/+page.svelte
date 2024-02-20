@@ -4,7 +4,7 @@
   import { getRandomColor, shuffle } from "$lib/utils";
   import Avatar from 'svelte-boring-avatars';
 
-  import Drawer from "$lib/components/Drawer.svelte";
+  import { Drawer } from 'vaul-svelte';
   import Metahead from "$lib/components/Metahead.svelte";
   import { slide } from "svelte/transition";
   import ThemeBtn from "$lib/components/ThemeBtn.svelte";
@@ -46,32 +46,37 @@
     <hr class="border-zinc-200 dark:border-zinc-800 rounded-full">
   </section>
   
-  <section class="w-full flex flex-col gap-1">
-    <a href='/' class="py-2 px-3 flex items-center hover:bg-zinc-200 dark:hover:bg-zinc-900 focus:ring-2 focus:ring-main/50 focus:outline-none rounded-lg gap-4">
-      <i class="icon icon-ic_fluent_collections_20_regular flex text-3xl"/>
-      <p class="text-">Readlist</p>
-    </a>
-    <a href='/' class="py-2 px-3 flex items-center hover:bg-zinc-200 dark:hover: bg-zinc-900 focus:ring-2 focus:ring-main/50 focus:outline-none rounded-lg gap-4">
-      <i class="icon icon-ic_fluent_star_20_regular flex text-3xl"/>
-      <p class="text-">Favourites</p>
-    </a>
-    <ThemeBtn style="py-2 px-3 flex items-center ring-2 ring-transparent focus:ring-main/50 focus:outline-none rounded-lg gap-3 bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-900 dark:hover:bg-zinc-900" bg={""} iconSize={"3xl"}>
-      <p class="text-">Theme</p>
-    </ThemeBtn>
+  <section class="w-full flex flex-col gap-7 justify-between">
+    <section class="w-full flex flex-col gap-1 border-2 border-zinc-200 dak:border-zinc-900 rounded-lg p-1">
+      <a href='/' class="py-1 px-2 flex items-center hover:bg-zinc-200 dark:hover:bg-zinc-900 focus:ring-2 focus:ring-main/50 focus:outline-none rounded-lg gap-4">
+        <i class="icon icon-ic_fluent_collections_20_regular flex text-3xl"/>
+        <p class="text-">Readlist</p>
+      </a>
+      <a href='/' class="py-1 px-2 flex items-center hover:bg-zinc-200 dark:hover:bg-zinc-900 focus:ring-2 focus:ring-main/50 focus:outline-none rounded-lg gap-4">
+        <i class="icon icon-ic_fluent_star_20_regular flex text-3xl"/>
+        <p class="text-">Favourites</p>
+      </a>
+      <ThemeBtn style="py-1 px-2 flex items-center ring-2 ring-transparent focus:ring-main/50 focus:outline-none rounded-lg gap-3 hover:bg-zinc-200 dark:hover:bg-zinc-900" bg={""} iconSize={"3xl"}>
+        <p class="text-">Theme</p>
+      </ThemeBtn>
+    </section>
+  
+    <Drawer.Root>
+      <Drawer.Trigger>
+        <button class="py-1 px-2 flex items-center hover:bg-zinc-200 dark:hover:bg-zinc-900 focus:ring-2 focus:ring-main/50 focus:outline-none rounded-lg gap-4">
+          <i class="icon icon-ic_fluent_info_20_regular flex text-3xl"/>
+          <p class="text-">About the app</p>
+        </button>
+      </Drawer.Trigger>
+        <Drawer.Overlay class="fixed inset-0 bg-zinc-950/40" />
+        <Drawer.Portal>
+          <Drawer.Content class="w-full h-60 fixed flex flex-col bottom-0 left-0 p-1">
+            <section class="w-full h-full bg-zinc-200 dark:bg-zinc-800 shadow-md rounded-t-lg p-3">
+              Bling bang bang born
+            </section>
+          </Drawer.Content>
+      </Drawer.Portal>
+    </Drawer.Root>
   </section>
-
-  <Card.Root>
-    <Card.Header>
-      <Card.Title>Card Title</Card.Title>
-      <Card.Description>Card Description</Card.Description>
-    </Card.Header>
-    <Card.Content>
-      <p>Card Content</p>
-    </Card.Content>
-    <Card.Footer>
-      <p>Page 85</p>
-    </Card.Footer>
-  </Card.Root>
-
-  <Drawer/>
+  
 </section>
