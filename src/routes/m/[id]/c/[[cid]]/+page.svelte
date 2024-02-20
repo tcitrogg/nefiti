@@ -92,7 +92,7 @@ let thisPage = 0;
   seoType="NewsArticle"
   createdAt={`${mangaData.attributes.createdAt}`}
   updatedAt={`${mangaData.attributes.updatedAt}`}
-  image={mangaThumbnail}
+  image={getThumbnail(mangaThumbnail)}
 />
 
 <section transition:slide={{duration:300}} class="w-full md:pl-4 md:pr-3 flex relative">

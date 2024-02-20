@@ -30,7 +30,7 @@
   seoType="NewsArticle"
   createdAt={`${mangaData.attributes.createdAt}`}
   updatedAt={`${mangaData.attributes.updatedAt}`}
-  image={mangaThumbnail}
+  image={getThumbnail(mangaThumbnail)}
 />
 
 <!-- <section class="w-full h-full hidden md:block bg-gradient-to-b from-neutral-100/50 to-neutral-100 dark:from-neutral-950/50 dark:to-neutral-950 -z-10 absolute top-0"/> -->
