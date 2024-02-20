@@ -1,6 +1,6 @@
 // src/routes/og/+server.ts
 import { ImageResponse } from '@ethercorps/sveltekit-og';
-import { RequestHandler } from './$types';
+// import { RequestHandler } from './$types';
 
 const template = `
  <div tw="bg-zinc-50 flex w-full h-full items-center justify-center">
@@ -24,7 +24,7 @@ const template = `
 // const fontFile = await fetch('https://og-playground.vercel.app/inter-latin-ext-400-normal.woff');
 // const fontData: ArrayBuffer = await fontFile.arrayBuffer();
 
-export const GET: RequestHandler = async () => {
+export const GET = async () => {
   return await new ImageResponse(template, {
     height: 630,
     width: 1200,
