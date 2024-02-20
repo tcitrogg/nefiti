@@ -46,8 +46,8 @@
     <hr class="border-zinc-200 dark:border-zinc-800 rounded-full">
   </section>
   
-  <section class="w-full flex flex-col gap-7 justify-between">
-    <section class="w-full flex flex-col gap-1 border-2 border-zinc-200 dak:border-zinc-900 rounded-lg p-1">
+  <section class="w-full h-full flex flex-col gap-7 justify-between">
+    <section class="w-full flex flex-col gap-1 border border-zinc-200 dark:border-zinc-900 rounded-lg p-1">
       <a href='/' class="py-1 px-2 flex items-center hover:bg-zinc-200 dark:hover:bg-zinc-900 focus:ring-2 focus:ring-main/50 focus:outline-none rounded-lg gap-4">
         <i class="icon icon-ic_fluent_collections_20_regular flex text-3xl"/>
         <p class="text-">Readlist</p>
@@ -63,7 +63,7 @@
   
     <Drawer.Root>
       <Drawer.Trigger>
-        <button class="py-1 px-2 flex items-center hover:bg-zinc-200 dark:hover:bg-zinc-900 focus:ring-2 focus:ring-main/50 focus:outline-none rounded-lg gap-4">
+        <button class="w-full py-1 px-2 flex items-center hover:bg-zinc-200 dark:hover:bg-zinc-900 focus:ring-2 focus:ring-main/50 focus:outline-none rounded-lg gap-4">
           <i class="icon icon-ic_fluent_info_20_regular flex text-3xl"/>
           <p class="text-">About the app</p>
         </button>
