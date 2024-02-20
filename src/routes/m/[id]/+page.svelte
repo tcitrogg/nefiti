@@ -125,7 +125,7 @@
                     <article class="flex gap-2 items-center" title="Chapter">
                       <i class="icon icon-ic_fluent_bookmark_20_regular flex text-xl"></i>
                       <span>{eachChapter.chapter}</span>
-                      <span>c/{eachChapter.id}</span>
+                      <!-- <span>c/{eachChapter.id}</span> -->
                     </article>
                     <article class="flex items-center text-xs opacity-30">{eachChapter.pages} {eachChapter.pages > 1 ? 'pages' : 'page'}</article>
                   </section>

@@ -109,7 +109,7 @@ let thisPage = 0;
     <Drawer.Root>
       <Drawer.Trigger>
         <!-- <Button builders={[builder]} variant="outline">Open Drawer</Button> -->
-        <button class="block lg:hidden px-2 py-0.5 bg-zinc-200/40 hover:bg-zinc-200/70 dark:bg-zinc-900/40 dark:hover:bg-zinc-900/70 text-zinc-100 backdrop-blur- focus:ring-2 focus:ring-main/50 focus:outline-none rounded-full fixed top-1 left-[45%] z-10">
+        <button class="block lg:hidden px-2 py-0.5 bg-zinc-300/40 hover:bg-zinc-300/70 dark:bg-zinc-900/40 dark:hover:bg-zinc-900/70 text-zinc-100 backdrop-blur- focus:ring-2 focus:ring-main/50 focus:outline-none rounded-full fixed top-1 left-[45%] z-10">
           <i transition:slide class="icon icon-ic_fluent_re_order_dots_horizontal_20_regular flex text-2xl"/>
         </button>
       </Drawer.Trigger>
