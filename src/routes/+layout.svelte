@@ -3,7 +3,12 @@
   import Nav from "$lib/components/Nav.svelte";
   import NavAside from "$lib/components/NavAside.svelte";
   import { isAsideBarMinimised } from "../stores/layoutData";
+  import { Toaster } from "$lib/components/ui/sonner";
+  import { ProgressBar } from "@prgm/sveltekit-progress-bar";
 </script>
+
+<Toaster />
+<ProgressBar class="text-main z-[70]" />
 
 <section class="w-full max-h-smscreen md:max-h-screen bg-zinc-50 text-zinc-950 dark:bg-zinc-950 dark:text-zinc-100 font-schibsted_grotesk flex md:flex-row flex-col relative overflow-hidden">
 
@@ -14,7 +19,5 @@
     <section class="w-full {$isAsideBarMinimised ? 'md:w-[90%] lg:w-[94%]' : 'md:w-[70%] lg:w-[80%]'} md:ml-auto flex flex-col relative">
       <slot />
     </section>
-  
-    <Nav/>
   </section>
 </section>

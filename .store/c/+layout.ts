@@ -53,7 +53,7 @@ export const load: PageLoad = async ({ params, }:any) => {
   const usingDataSaver = resp.data.chapter.dataSaver;
   
   const result = {
-    id: params.id,
+    id: params.cid,
     baseUrl, chapterHash, usingData, usingDataSaver,
     result: resp.data.result,
     mangaInfo: {
@@ -68,7 +68,7 @@ export const load: PageLoad = async ({ params, }:any) => {
 
   } catch (error) {
     console.log(`(x) Error : ${error}`)
-    return error
+    return { error }
   }
 
 };

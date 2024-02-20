@@ -2,11 +2,11 @@
   import { page } from '$app/stores';
   import Metahead from '$lib/components/Metahead.svelte';
   import Pill from '$lib/components/Pill.svelte';
-  import CopyLinkBtn from '$lib/components/CopyLinkBtn.svelte';
+  import CopyBtn from '$lib/components/CopyBtn.svelte';
   import type { PageData } from './$types';
   import Image from '$lib/components/Image.svelte';
-  import { getThumbnail, titleCase } from '$lib/utils';
-    import { slide } from 'svelte/transition';
+  import { getThumbnail, sortWithVolume, titleCase } from '$lib/utils';
+    import { fly, scale, slide } from 'svelte/transition';
 
   export let data: PageData;
   const mangaData = data
@@ -17,39 +17,10 @@
   // const date = new Date(mangaData.attributes.createdAt)
   const year = mangaData.attributes.year ?? mangaData.attributes.createdAt.slice(0,4)
   const status = titleCase(mangaData.attributes.status) ?? "Don't Know"
-  // handleFetch()
-
-  console.log(mangaData.chapters)
 
   let mangaThumbnail = getThumbnail(mangaData);
-    // Create an object to store the grouped chapters
-    const groupedChapters:any = {};
 
-    // Iterate through each chapter
-    for (const chapter of data.chapters) {
-      let { volume, ...rest } = chapter.attributes; // Extract volume and other attributes
-      if (volume === null) volume = 1
-
-      // If the volume doesn't exist in the groupedChapters object, create an empty array
-      if (!groupedChapters[volume]) {
-        groupedChapters[volume] = [];
-      }
-
-      // Push the chapter (with only attributes) into the corresponding volume group
-      groupedChapters[volume].push({
-        id: chapter.id,
-        type: chapter.type,
-        ...rest
-      });
-    }
-
-    // Convert the groupedChapters object into an array of objects
-    const volumesWithChapters = Object.entries(groupedChapters).map(([volume, chapters]: [any, any]) => ({
-      volume,
-      chapters: chapters.sort((a:any, b:any) => Number(a.chapter) - Number(b.chapter)),
-    }));
-
-    // console.log(volumesWithChapters[0].chapters)
+  const volumesWithChapters = sortWithVolume(data)
 </script>
 
 <Metahead
@@ -75,7 +46,7 @@
       <section class="w-full flex md:flex-row flex-col md:gap-4 md:pt-8 lg:pt-14">
         <section class="w-full md:w-4/12">
           <section class="w-full h-96">
-            <section class="skew-b w-full h-full md:rounded-2xl sticky top-0 left-0 bg-zinc-300 dark:bg-zinc-800 overflow-hidden shadow-md">
+            <section transition:slide={{axis: 'y'}} class="skew-b w-full h-full md:rounded-2xl sticky top-0 left-0 bg-zinc-300 dark:bg-zinc-800 overflow-hidden shadow-md">
               <Image
                 src="{mangaThumbnail}"
                 alt="{title}"
@@ -88,9 +59,9 @@
         <section class="w-full md:w-8/12 flex flex-col gap-6 p-4 lg:p-10 md:pt-4">
           <section class="flex flex-col gap-3">
             <section class="flex items-start justify-between">
-              <h2 class="font-semibold text-3xl">{title}</h2>
+              <h2 transition:fly class="font-semibold text-3xl">{title}</h2>
               
-              <CopyLinkBtn content={`${$page.url}`}/>
+              <CopyBtn content={`${$page.url}`}/>
             </section>
   
             <!-- {mangaThumbnail} -->
@@ -148,14 +119,15 @@
   
             <section class="w-full space-y-2 pt-2 md:pt-4">
               {#each item.chapters as eachChapter, index}
-                <a href={`/m/${$page.params.id}/c/${eachChapter.id}`} class="">
+                <a href={`/m/${$page.params.id}/c/${eachChapter.id}`} id="{eachChapter.id}" class="">
                   <section class="w-full hover:bg-main/10 border-bborder-b-main-green/5 flex p-2 px-4 md:py-4 md:rounded-md divide-x divide-zinc-200 dark:divide-zinc-800 gap-3 items-center justify-between">
                       <!-- <article class="opacity-60" title="Volume">Vol. {eachChapter.attributes.volume}</article> -->
                     <article class="flex gap-2 items-center" title="Chapter">
                       <i class="icon icon-ic_fluent_bookmark_20_regular flex text-xl"></i>
                       <span>{eachChapter.chapter}</span>
+                      <span>c/{eachChapter.id}</span>
                     </article>
-                    <article class="flex items-center text-xs opacity-30">{eachChapter.pages} pages</article>
+                    <article class="flex items-center text-xs opacity-30">{eachChapter.pages} {eachChapter.pages > 1 ? 'pages' : 'page'}</article>
                   </section>
                 </a>
               {/each}
@@ -164,8 +136,7 @@
         {/each}
         <section class="h-20"></section>
       </section>
-      <!-- <section>{@html JSON.stringify(volumesWithChapters, null, 3)}</section> -->
-      
+
       <!-- <h1>{data.id}</h1> -->
       <!-- <section>{@html JSON.stringify(data, null, 3)}</section> -->
       <!-- <section>{@html JSON.stringify(data.chapters, null, 3)}</section> -->

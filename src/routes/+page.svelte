@@ -22,6 +22,7 @@
   import ItemCardThree from '$lib/components/ItemCardThree.svelte';
   import ItemCardFour from '$lib/components/ItemCardFour.svelte';
   import { metainfo } from '$lib/config';
+    import Nav from '$lib/components/Nav.svelte';
   // import Drawer from '$lib/components/Drawer.svelte';
     
   export let data: PageData;
@@ -50,6 +51,8 @@
 </script>
 
 <Metahead/>
+
+<Nav/>
 
 <section class="w-full py-2 md:px-4 md:py-4 flex flex-col gap-2.5 md:gap-4 snap snap-y snap-mandatory">
 
@@ -188,7 +191,7 @@
       <!-- lay 6 -->
       <section class="w-full space-y-3 snapstart">
         <h4 class="text-xl font-semibold px-4 md:px-0">
-          Bling Bang Bang Born
+          Bada boom bada bang
         </h4>
         <section class="flex overflow-x-scroll sm-scrollbar rounded-scrollbar sm-hide-scrollbar py-1 px-4 md:px-0">
           <section class="flex flex-nowrap gap-2 md:gap-3 snap-x snap-mandatory">

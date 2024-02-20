@@ -1,12 +1,16 @@
 import { appinfo } from '$lib/config';
 import { getThumbnail } from '$lib/utils';
-// import { mangaData } from '../../../stores/eachPage';
 import type { PageLoad } from './$types';
 
 
 import axios from 'axios';
 
-export const load: PageLoad = async ({ params }:any) => {
+// const chapterID = '27cd0902-ad4c-490a-b752-ae032f0503c9';
+
+export const load: PageLoad = async ({ params, }:any) => {
+
+  // console.log(params)
+
   try {
     const dataResp = await axios({
       method: 'GET',
@@ -37,19 +41,34 @@ export const load: PageLoad = async ({ params }:any) => {
     // Convert the blob object to a data URL
     const thumbnailUrl = URL.createObjectURL(blob);
   
-    data = {
+    const resp = await axios({
+      method: 'GET',
+      // url: `${appinfo.baseUrl}/at-home/server/${chapterID}`,
+      url: `${appinfo.baseUrl}/at-home/server/${params.cid}`,
+    }); 
+  
+  const baseUrl = resp.data.baseUrl;
+  const chapterHash = resp.data.chapter.hash;
+  const usingData = resp.data.chapter.data;
+  const usingDataSaver = resp.data.chapter.dataSaver;
+  
+  const result = {
+    id: params.cid,
+    baseUrl, chapterHash, usingData, usingDataSaver,
+    result: resp.data.result,
+    mangaInfo: {
       thumbnail: thumbnailData?.data,
       chapters,
-      ...data
+      ...data,
     }
-    // mangaData.set(data)
-
-    return data
+  }
+  // console.log(result)
+  
+  return result
 
   } catch (error) {
     console.log(`(x) Error : ${error}`)
     return { error }
   }
-
 
 };

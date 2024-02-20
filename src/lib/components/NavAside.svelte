@@ -17,7 +17,8 @@
     // lengthOfDataIfAsideBarIsMinimised.set($isAsideBarMinimised ? 3 : 5)
   }
 
-  const data = $layoutData ?? shuffle(sampleData.data).slice(0, 4)
+  const data = $layoutData
+  // ?? shuffle(sampleData.data).slice(0, 4)
   // const data = $layoutData.length !== 0 ? $layoutData : shuffle(sampleData.data).slice(0,$isAsideBarMinimised ? 4 : 5)
 </script>
 

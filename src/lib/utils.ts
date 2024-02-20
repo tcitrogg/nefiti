@@ -77,6 +77,9 @@ export function titleCase(text: string) {
 
 export const getThumbnail = (data:any) => `https://api.allorigins.win/raw?url=https://mangadex.org/covers/${data.id}/${data.thumbnail?.attributes?.fileName}`
 
+// Fetch an image using a proxy server
+export const fetchImage = (url:any) => `https://api.allorigins.win/raw?url=${url}`
+
 export const shuffle = (array: any[]) => {
   let currentIndex = array.length;
   let randomIndex;
@@ -96,3 +99,32 @@ export const shuffle = (array: any[]) => {
 export const getRandomColor = () => `#${(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0')}`;
 
 export const getTimestamp = () => new Date().getTime()
+
+export const sortWithVolume = (data:any) => {
+    // Create an object to store the grouped chapters
+  const groupedChapters:any = {};
+
+  // Iterate through each chapter
+  for (const chapter of data.chapters) {
+    let { volume, ...rest } = chapter.attributes; // Extract volume and other attributes
+    if (volume === null) volume = 1
+
+    // If the volume doesn't exist in the groupedChapters object, create an empty array
+    if (!groupedChapters[volume]) {
+      groupedChapters[volume] = [];
+    }
+
+    // Push the chapter (with only attributes) into the corresponding volume group
+    groupedChapters[volume].push({
+      id: chapter.id,
+      type: chapter.type,
+      ...rest
+    });
+  }
+
+  // Convert the groupedChapters object into an array of objects
+  return Object.entries(groupedChapters).map(([volume, chapters]: [any, any]) => ({
+    volume,
+    chapters: chapters.sort((a:any, b:any) => Number(a.chapter) - Number(b.chapter)),
+  }));
+}
