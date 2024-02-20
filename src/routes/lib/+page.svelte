@@ -22,8 +22,8 @@
   title={`${user.name.split(" ")[0]}'s Library`}
 />
 
-<section transition:slide={{duration: 300}} class="w-full px-4 py-4 flex flex-col gap-7 snap snap-y snap-mandatory">
-  <section class="flex items-center gap-3 p-3">
+<section transition:slide={{duration: 300}} class="w-full px-3 py-4 flex flex-col gap-7 snap snap-y snap-mandatory">
+  <section class="flex items-center gap-3 py-3 px-4">
     <Avatar
       name={user.username}
       size={55}
@@ -42,7 +42,7 @@
     </section>
   </section>
 
-  <section class="w-full px-4">
+  <section class="w-full px-5">
     <hr class="border-zinc-200 dark:border-zinc-800 rounded-full">
   </section>
   
