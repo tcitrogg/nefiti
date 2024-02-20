@@ -10,7 +10,7 @@
   // export let ogcwd: string = "page";
   let ogcaption = caption.slice(caption.indexOf(":")+1) ?? `${description.slice(0, 50)}...`
   
-  export let image: string = "/favicon.svg";
+  export let image: string = `${metainfo.url}/favicon.svg`;
   
   export let seoType: "WebSite" | "Person" | "Organization" | "NewsArticle" | "WebPage" = "WebPage";
   export let createdAt: string = "";
@@ -37,7 +37,6 @@
   
   <meta name="description" content={description}/>
   <meta name="keywords" content={keywords} />
-  <meta name="og:image" content={image} />
   <meta name="category" content="Digital Content Platform" />
   <meta name="classification" content="Web App" />
   <meta name="apple-mobile-web-app-capable" content="yes" />

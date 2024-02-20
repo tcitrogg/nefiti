@@ -109,7 +109,7 @@ let thisPage = 0;
     <Drawer.Root>
       <Drawer.Trigger>
         <!-- <Button builders={[builder]} variant="outline">Open Drawer</Button> -->
-        <button class="block lg:hidden px-2 py-0.5 bg-zinc-900/40 hover:bg-zinc-900/70 dark:bg-zinc-300/40 dark:hover:bg-zinc-300/70 text-zinc-100 dark:text-zinc-900 backdrop-blur-xs focus:ring-2 focus:ring-main/50 focus:outline-none rounded-full fixed bottom-1 left-[45%] z-10 shadow-mdshadow-zinc-950">
+        <button class="block lg:hidden px-2 py-0.5 bg-zinc-900/40 hover:bg-zinc-900/70 text-zinc-100 backdrop-blur-[2px] focus:ring-2 focus:ring-main/50 focus:outline-none rounded-full fixed bottom-1 left-[45%] z-10 shadow-mdshadow-zinc-950">
           <i transition:slide class="icon icon-ic_fluent_re_order_dots_horizontal_20_regular flex text-2xl"/>
         </button>
       </Drawer.Trigger>
@@ -243,7 +243,7 @@ let thisPage = 0;
             alt={`#${index}`}
           />
           <section class="flex absolute bottom-1 ml-1">
-            <a href={`#${index+1}`} class="py-1 px-3 rounded-lg text-xs bg-zinc-900/40 hover:bg-zinc-900/70 backdrop-blur- font-medium text-zinc-200">
+            <a href={`#${index+1}`} class="py-1 px-2 rounded-md text-xs bg-zinc-900/40 hover:bg-zinc-900/70 backdrop-blur- font-medium text-zinc-200">
               <p class="whitespace-nowrap">Page: {index+1}</p>
             </a>
           </section>

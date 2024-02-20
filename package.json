@@ -27,6 +27,7 @@
   },
   "type": "module",
   "dependencies": {
+    "@ethercorps/sveltekit-og": "^3.0.0",
     "@unpic/svelte": "^0.0.50",
     "@untemps/svelte-readotron": "^2.0.0",
     "axios": "^1.6.7",
