@@ -3,7 +3,8 @@
   import ThemeBtn from "$lib/components/ThemeBtn.svelte";
   import { getRandomColor, shuffle } from "$lib/utils";
   import Avatar from 'svelte-boring-avatars';
-  import sampleData from "$lib/sampleData.json"
+  // import sampleData from "$lib/sampleData.json"
+  import tags from "$lib/tags.json"
   import { isAsideBarMinimised, layoutData } from "../../stores/layoutData";
   import { page } from "$app/stores";
     import { slide } from "svelte/transition";
@@ -17,7 +18,7 @@
     // lengthOfDataIfAsideBarIsMinimised.set($isAsideBarMinimised ? 3 : 5)
   }
 
-  const data = $layoutData
+  const data = shuffle(tags.data).slice(0,4)
   // ?? shuffle(sampleData.data).slice(0, 4)
   // const data = $layoutData.length !== 0 ? $layoutData : shuffle(sampleData.data).slice(0,$isAsideBarMinimised ? 4 : 5)
 </script>
@@ -69,18 +70,18 @@
       </section>
   
       <section class="w-full md:h-2/6 lg:h-auto {$isAsideBarMinimised ? 'md:hidden lg:flex' : ''} md:overflow-y-auto lg:overflow-auto rounded-lg bg-zinc-200 dark:bg-zinc-900 flex flex-col gap-1 p-1">
-        {#each data as eachManga}
-          <a href={`/m/${eachManga.id}`} title={`${Object.values(eachManga.attributes.title)[0]}`} class="w-full h-full focus:ring-0 focus:outline-none flex flex-col gap-2 relative">
+        {#each data as eachTag}
+          <a href={`/m/${eachTag.id}`} title={`${Object.values(eachTag.attributes.name)[0]}`} class="w-full h-full focus:ring-0 focus:outline-none flex flex-col gap-2 relative">
             <section class="w-full rounded-lg hover:bg-zinc-300 dark:hover:bg-zinc-800 p-2 flex items-center {$isAsideBarMinimised ? 'justify-center' : ''} gap-2">
               <Avatar
-                name={eachManga.id}
+                name={eachTag.id}
                 size={35}
                 square={false}
                 colors={Array.from({ length: 3 }, () => getRandomColor())}
                 variant={"sunset"}
               />
               {#if !$isAsideBarMinimised}
-                <p class="w-10/12 line-clamp-1">{`${Object.values(eachManga.attributes.title)[0]}`}</p>
+                <p class="w-10/12 line-clamp-1">{`${Object.values(eachTag.attributes.name)[0]}`}</p>
               {/if}
               <!-- <Image src={} alt={}/> -->
             </section>
