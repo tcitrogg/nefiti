@@ -124,24 +124,8 @@
           </section> -->
         </Carousel.Root>
       </section>
-
-      <!-- lay 2 only on small screen -->
-      <section class="w-full md:px-6 space-y-3 snapstart md:hidden">
-        <h4 class="text-xl font-semibold px-4 md:px-0">
-          Feel that reiatsu huh?
-        </h4>
-        <section class="flex overflow-x-scroll sm-scrollbar rounded-scrollbar sm-hide-scrollbar py-1 px-4 md:px-0">
-          <section class="flex flex-nowrap gap-2 md:gap-3 snap-x snap-mandatory">
-            {#each shuffle(mangaData) as eachItem}
-              <ItemCardThree item={eachItem}/>
-            {:else}
-              <section class="rounded-lg w-32 lg:w-60 h-44 lg:h-60 bg-zinc-300 dark:bg-zinc-700"/>
-            {/each}
-          </section>
-        </section>
-      </section>
       
-      <!-- lay 3 -->
+      <!-- lay 2 -->
       <section class="w-full lg:w-6/12 md:h-[27rem] flex flex-col gap-4 px-4 py-2 md:p-0">
         <section class="w-full h-64 md:h-3/6 flex gap-4">
           <section class="w-6/12 h-full rounded-lg">
@@ -163,7 +147,34 @@
     </section>
     
     <section class="w-full md:mx-auto flex flex-col gap-8 md:gap-12">
+
+      <!-- lay 3 -->
+      <section class="w-full md:px-6 space-y-3 snapstart">
+        <h4 class="text-xl font-semibold px-4 md:px-0">
+          Feel that huh?
+        </h4>
+        <section class="flex overflow-x-scroll sm-scrollbar rounded-scrollbar sm-hide-scrollbar py-1 px-4 md:px-0">
+          <section class="flex flex-nowrap gap-2 md:gap-3 snap-x snap-mandatory">
+            {#each shuffle(mangaData) as eachItem}
+              <ItemCardThree item={eachItem}/>
+            {:else}
+              <section class="rounded-lg w-32 lg:w-60 h-44 lg:h-60 bg-zinc-300 dark:bg-zinc-700"/>
+            {/each}
+          </section>
+        </section>
+      </section>
+      
       <!-- lay 4 -->
+      <section class="w-full rounded-lg px-4 md:p-0 flex flex-col md:flex-row md:items-center md:justify-center gap-3">
+        <section class="w-full md:w-6/12 h-72">
+          <ItemCardTwo item={mangaData[7]}/>
+        </section>
+        <section class="w-full md:w-6/12 h-72 hidden md:block">
+          <ItemCardTwo item={mangaData[0]}/>
+        </section>
+      </section>
+    
+      <!-- lay 5 -->
       <section class="w-full space-y-2 snapstart">
         <h4 class="text-xl font-semibold px-4 md:px-0">
           Check this out
@@ -176,16 +187,6 @@
               <section class="rounded-lg w-32 lg:w-60 h-44 lg:h-60 bg-zinc-300 dark:bg-zinc-700"/>
             {/each}
           </section>
-        </section>
-      </section>
-    
-      <!-- lay 5 -->
-      <section class="w-full rounded-lg px-4 md:p-0 flex flex-col md:flex-row md:items-center md:justify-center gap-3">
-        <section class="w-full md:w-6/12 h-72">
-          <ItemCardTwo item={mangaData[7]}/>
-        </section>
-        <section class="w-full md:w-6/12 h-72 hidden md:block">
-          <ItemCardTwo item={mangaData[0]}/>
         </section>
       </section>
 
