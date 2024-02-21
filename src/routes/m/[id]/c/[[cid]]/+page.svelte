@@ -245,7 +245,7 @@ let thisPage = 0;
               
                 <!-- src={`${data.baseUrl}/data-saver/${data.chapterHash}/${eachData}`} -->
               <Image
-                src={fetchImage(`${data.baseUrl}/data/${data.chapterHash}/${eachData}`)}
+                src={`${data.baseUrl}/data/${data.chapterHash}/${eachData}`}
                 alt={`#${index}`}
               />
               <section class="flex absolute bottom-1 ml-1">
