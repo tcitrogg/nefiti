@@ -9,7 +9,7 @@
   import { Progress } from "$lib/components/ui/progress";
   import Image from '$lib/components/Image.svelte';
   import Metahead from '$lib/components/Metahead.svelte';
-  import { slide } from 'svelte/transition';
+  import { fade, slide } from 'svelte/transition';
   import * as Drawer from "$lib/components/ui/drawer";
 	// import { Drawer } from 'vaul-svelte';
   // import { mangaData } from '../../../../../stores/eachPage';
@@ -21,7 +21,10 @@
   import { Button } from '$lib/components/ui/button';
   // import sampleData from "$lib/sampleData.json";
   import Readotron from '@untemps/svelte-readotron'
-    import { currentChapterData, nextChapterData, previousChapterData } from '../../../../../stores/eachPage';
+  import { currentChapterData, nextChapterData, previousChapterData } from '../../../../../stores/eachPage';
+  import { inview } from 'svelte-inview';
+
+  let isInView: any;
 
   const listOfImages = [
     "/imgs/thumbnails/Demon slayer.jfif",
@@ -226,29 +229,33 @@ let thisPage = 0;
     </Drawer.Root>
     
     <!-- Pages -->
-    <section class="displayBody w-full h-full">
+    <section class="displayBody w-full h-full" use:inview={{ unobserveOnEnter: true, rootMargin: '-20%' }} on:change={({ detail }) => {
+      isInView = detail.inView;
+    }}>
       {#each data.usingData as eachData, index}
-      <IntersectionObserver on:intersect={() => (thisPage = index)} threshold={0.5} rootMargin="0px">
-        <section id={`${index+1}`} class="w-full relative overflow-hidden bg-gradient-to-b from-zinc-200 to-zinc-300 dark:from-zinc-800 dark:to-zinc-700">
-          <!-- section.w-full.h-full -->
-          <!-- <Image
-            src={`${eachData}`}
-            alt={`Page #${index+1}`}
-            classes={""}
-          /> -->
-          
-            <!-- src={`${data.baseUrl}/data-saver/${data.chapterHash}/${eachData}`} -->
-          <Image
-            src={`${data.baseUrl}/data/${data.chapterHash}/${eachData}`}
-            alt={`#${index}`}
-          />
-          <section class="flex absolute bottom-1 ml-1">
-            <a href={`#${index+1}`} class="py-1 px-2 rounded-md text-xs bg-zinc-900/40 hover:bg-zinc-900/70 backdrop-blur- font-medium text-zinc-200">
-              <p class="whitespace-nowrap">Page: {index+1}</p>
-            </a>
-          </section>
-        </section>
-      </IntersectionObserver>
+        {#if isInView}
+          <IntersectionObserver on:intersect={() => (thisPage = index)} threshold={0.5} rootMargin="0px">
+            <section in:fade id={`${index+1}`} class="w-full relative overflow-hidden bg-gradient-to-b from-zinc-200 to-zinc-300 dark:from-zinc-800 dark:to-zinc-700">
+              <!-- section.w-full.h-full -->
+              <!-- <Image
+                src={`${eachData}`}
+                alt={`Page #${index+1}`}
+                classes={""}
+              /> -->
+              
+                <!-- src={`${data.baseUrl}/data-saver/${data.chapterHash}/${eachData}`} -->
+              <Image
+                src={fetchImage(`${data.baseUrl}/data/${data.chapterHash}/${eachData}`)}
+                alt={`#${index}`}
+              />
+              <section class="flex absolute bottom-1 ml-1">
+                <a href={`#${index+1}`} class="py-1 px-2 rounded-md text-xs bg-zinc-900/40 hover:bg-zinc-900/70 backdrop-blur- font-medium text-zinc-200">
+                  <p class="whitespace-nowrap">Page: {index+1}</p>
+                </a>
+              </section>
+            </section>
+          </IntersectionObserver>
+        {/if}
       {/each}
     </section>
   </section>
