@@ -10,7 +10,8 @@
   // export let ogcwd: string = "page";
   let ogcaption = caption.slice(caption.indexOf(":")+1) ?? `${description.slice(0, 50)}...`
   
-  export let image: string = `${metainfo.url}/favicon.svg`;
+  // export let image: string = `/favicon.svg`;
+  export let image: string = `/og`;
   
   export let seoType: "WebSite" | "Person" | "Organization" | "NewsArticle" | "WebPage" = "WebPage";
   export let createdAt: string = "";

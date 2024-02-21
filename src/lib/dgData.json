@@ -1,0 +1,152 @@
+{
+    "tag": {
+      "id": "1987l80i-l492-7i93-2j5l-8h84b7255c2i",
+      "type": "tag",
+      "attributes": {
+        "name": {
+          "en": "Thy Demigod"
+        },
+        "description": {},
+        "group": "format",
+        "version": 1
+      },
+      "relationships": []
+    },
+    "profile": {
+      "id": "thy-demigod",
+      "type": "tag",
+      "attributes": {
+        "name": "Tcitrogg",
+        "handle": "@tcitrogg",
+        "description": {},
+        "contact": [
+            "https://bnierimi.vercel.app",
+            "mailto:tcitrogg@gmail.com",
+            "https://github.com/tcitrogg",
+            "https://twitter.com/bnierimi",
+            "https://instagram.com/bnierimi",
+            "https://threads.net/@bnierimi",
+            "https://www.linkedin.com/in/bnierimi",
+            "https://peerlist.io/bnierimi"
+        ],
+        "group": "format",
+        "version": 1
+      },
+      "relationships": [
+        "nakama",
+        "-chwans"
+      ]
+    },
+    "books": [
+        {
+            "id": "tcne-0000er",
+            "title": "Extended Realm",
+            "description": "",
+            "tags": [
+                "Action", "Fantasy", "Supernatural"
+            ],
+            "group": "format",
+            "version": 1
+        },
+        {
+            "id": "tcne-0001ts",
+            "title": "Tsurgeon Syndrome",
+            "description": "",
+            "tags": [
+                "Comedy", "Action", "Drama"
+            ],
+            "group": "format",
+            "version": 1
+        },
+        {
+            "id": "tcne-0002ne",
+            "title": "Negation",
+            "description": "",
+            "tags": [
+                "Sci-fi", "Fantasy", "Action"
+            ],
+            "group": "format",
+            "version": 1
+        },
+        {
+            "id": "tcne-0003ac",
+            "title": "Arcasuki",
+            "description": "",
+            "tags": [
+                "Action", "Sci-fi", "Drama"
+            ],
+            "group": "format",
+            "version": 1
+        },
+        {
+            "id": "tcne-0004bp",
+            "title": "Blackhole Punk",
+            "description": "",
+            "tags": [
+                "Action", "Fantasy", "Sci-fi"
+            ],
+            "group": "format",
+            "version": 1
+        },
+        {
+            "id": "tcne-0005td",
+            "title": "Thy Disciples",
+            "description": "",
+            "tags": [
+                "Action", "Sci-fi", "School"
+            ],
+            "group": "format",
+            "version": 1
+        },
+        {
+            "id": "tcne-0006sh",
+            "title": "Stay Happy",
+            "description": "",
+            "tags": [
+                "Slice of life", "Tragedy", "Drama", "Comedy"
+            ],
+            "group": "format",
+            "version": 1
+        },
+        {
+            "id": "tcne-0007en",
+            "title": "7 Eight 9",
+            "description": "",
+            "tags": [
+                "Scaling", "Supernatural", "Fantasy"
+            ],
+            "group": "format",
+            "version": 1
+        },
+        {
+            "id": "tcne-0008nr",
+            "title": "Not beyond repair",
+            "description": "",
+            "tags": [
+                "Drama", "Slice of life"
+            ],
+            "group": "format",
+            "version": 1
+        },
+        {
+            "id": "tcne-0009iw",
+            "title": "Intersellar War",
+            "description": "",
+            "tags": [
+                "Action", "Sci-fi", "Supernatural"
+            ],
+            "group": "format",
+            "version": 1
+        },
+        {
+            "id": "tcne-0010cr",
+            "title": "Cyber nurse",
+            "description": "",
+            "tags": [
+                "Sci-fi", "Drama", "Action"
+            ],
+            "group": "format",
+            "version": 1
+        }
+      ]
+}
