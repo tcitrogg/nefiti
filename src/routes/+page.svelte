@@ -22,13 +22,14 @@
   import ItemCardThree from '$lib/components/ItemCardThree.svelte';
   import ItemCardFour from '$lib/components/ItemCardFour.svelte';
   import { metainfo } from '$lib/config';
-    import Nav from '$lib/components/Nav.svelte';
+  import Nav from '$lib/components/Nav.svelte';
+  import { storeAsideBarMinimised, isAsideBarBtnClick } from "../stores/layoutData";
   // import Drawer from '$lib/components/Drawer.svelte';
     
-  export let data: PageData;
+  // export let data: PageData;
   // import { data } from './+page';
-  const mangaData = data.data
-  // <!-- ?? sampleData.data -->
+  // const mangaData = data.data ?? sampleData.data
+  const mangaData = sampleData.data
   // const mangaData = !metainfo.isDev ? data.data : sampleData.data
   // .data.map((value)=>value.attributes.tags)
   // console.log(mangaData)
@@ -110,8 +111,8 @@
           plugins={[plugin]}
           on:mousenter={plugin.stop}
           on:mouseleave={plugin.reset}
-          class="w-full h-80 md:h-[28rem] relative">
-          <Carousel.Content>
+          class="w-full h-80 { $storeAsideBarMinimised ? 'md:h-[27rem]' : 'md:h-[28rem]' } relative">
+          <Carousel.Content class="">
             {#each shuffle(mangaData).slice(0, 7) as eachManga, i}
               <Carousel.Item class="w-full h-80 md:h-[28rem]">
                 <ItemCard item={eachManga}/>
@@ -126,7 +127,7 @@
       </section>
       
       <!-- lay 2 -->
-      <section class="w-full lg:w-6/12 md:h-[27rem] flex flex-col gap-4 px-4 py-2 md:p-0">
+      <section class="w-full lg:w-6/12 flex flex-col gap-4 px-4 py-2 md:p-0 {$storeAsideBarMinimised ? 'md:h-[27rem] md:mt-[0.5rem]' : 'md:h-[28rem]'}">
         <section class="w-full h-64 md:h-3/6 flex gap-4">
           <section class="w-6/12 h-full rounded-lg">
             <ItemCardTwo item={mangaData[0]}/>
@@ -149,7 +150,7 @@
     <section class="w-full md:mx-auto flex flex-col gap-8 md:gap-12">
 
       <!-- lay 3 -->
-      <section class="w-full md:px-6 space-y-3 snapstart">
+      <section class="w-full px-4 md:px-0 space-y-3 snapstart">
         <h4 class="text-xl font-semibold px-4 md:px-0">
           Feel that huh?
         </h4>
@@ -166,11 +167,14 @@
       
       <!-- lay 4 -->
       <section class="w-full rounded-lg px-4 md:p-0 flex flex-col md:flex-row md:items-center md:justify-center gap-3">
-        <section class="w-full md:w-6/12 h-72">
+        <section class="w-full md:w-4/12 h-72">
           <ItemCardTwo item={mangaData[7]}/>
         </section>
-        <section class="w-full md:w-6/12 h-72 hidden md:block">
+        <section class="w-full md:w-4/12 h-72">
           <ItemCardTwo item={mangaData[0]}/>
+        </section>
+        <section class="w-full md:w-4/12 h-72">
+          <ItemCardTwo item={mangaData[3]}/>
         </section>
       </section>
     
@@ -189,8 +193,43 @@
           </section>
         </section>
       </section>
-
+      
       <!-- lay 6 -->
+      <section class="w-full rounded-lg px-4 md:p-0 flex flex-col md:flex-row md:items-center md:justify-center gap-3">
+        <section class="w-full md:w-4/12 h-72">
+          <ItemCardTwo item={mangaData[4]}/>
+        </section>
+        <section class="w-full md:w-4/12 h-72">
+          <ItemCardTwo item={mangaData[2]}/>
+        </section>
+        <section class="w-full md:w-4/12 h-72">
+          <ItemCardTwo item={mangaData[6]}/>
+        </section>
+      </section>
+
+      <!-- lay 7 -->
+      <section class="w-full flex gap-4">
+        <section class="w-full md:h-72 flex flex-col lg:flex-row gap-4 px-4 py-2 md:p-0">
+          <section class="w-full h-64 md:h-full flex gap-4">
+            <section class="w-6/12 h-full rounded-lg">
+              <ItemCardTwo item={mangaData[8]}/>
+            </section>
+            <section class="w-6/12 h-full rounded-lg">
+              <ItemCardTwo item={mangaData[7]}/>
+            </section>
+          </section>
+          <section class="w-full h-64 md:h-full flex gap-4">
+            <section class="w-6/12 h-full rounded-lg">
+              <ItemCardTwo item={mangaData[6]}/>
+            </section>
+            <section class="w-6/12 h-full rounded-lg">
+              <ItemCardTwo item={mangaData[5]}/>
+            </section>
+          </section>
+        </section>
+      </section>
+
+      <!-- lay 8 -->
       <section class="w-full space-y-3 snapstart">
         <h4 class="text-xl font-semibold px-4 md:px-0">
           Bada boom bada bang
@@ -219,15 +258,15 @@
         </section>
       </section>
 
-      <!-- lay 8 -->
+      <!-- lay 9 -->
       <section class="w-full h-[35rem] md:h-[30rem]">
         <ItemCardFour item={shuffle(mangaData)[4]}/>
       </section>
     </section>
 
     <section class="w-full md:mx-auto flex flex-col gap-8 md:gap-12 pt-10">
-      
-      <!-- lay 9 -->
+
+      <!-- lay 10 -->
       <section class="w-full flex gap-4">
         <section class="w-full md:w-6/12 md:h-[27rem] flex flex-col gap-4 px-4 py-2 md:p-0">
           <section class="w-full h-64 md:h-3/6 flex gap-4">
@@ -266,39 +305,13 @@
           </section>
         </section>
       </section>
-
-      <!-- lay 10 -->
-      <section class="w-full rounded-lg px-4 md:p-0 flex flex-col md:flex-row md:items-center md:justify-center gap-3">
-        <section class="w-full md:w-6/12 h-72">
-          <ItemCardTwo item={shuffle(mangaData)[2]}/>
-        </section>
-        <section class="w-full md:w-6/12 h-72 hidden md:block">
-          <ItemCardTwo item={shuffle(mangaData)[3]}/>
-        </section>
-      </section>
-
-      <!-- lay 11 -->
-      <section class="w-full space-y-2 snapstart">
-        <h4 class="text-xl font-semibold px-4 md:px-0">
-          Nanda?
-        </h4>
-        <section class="flex overflow-x-scroll sm-scrollbar rounded-scrollbar sm-hide-scrollbar py-1 px-4 md:px-0">
-          <section class="flex flex-nowrap gap-2 md:gap-3 snap-x snap-mandatory">
-            {#each shuffle(mangaData) as eachItem}
-              <ItemCardThree item={eachItem}/>
-            {:else}
-              <section class="rounded-lg w-32 lg:w-60 h-44 lg:h-60 bg-zinc-300 dark:bg-zinc-700"/>
-            {/each}
-          </section>
-        </section>
-      </section>
     
-      <!-- lay 10 -->
-      <section class="w-full h-72 rounded-lg px-4 md:p-0 md:hidden flex flex-col md:flex-row md:items-center md:justify-center gap-3">
+      <!-- lay 12 -->
+      <section class="w-full h-72 rounded-lg px-4 md:p-0 flex flex-col md:flex-row md:items-center md:justify-center gap-3">
         <ItemCardTwo item={shuffle(mangaData)[0]}/>
       </section>
 
-      <!-- lay 12 -->
+      <!-- lay 13 -->
       <section class="w-full flex gap-4">
         <section class="w-full md:w-6/12 md:h-[27rem] flex flex-col gap-4 px-4 py-2 md:p-0">
           <section class="w-full h-64 md:h-3/6 flex gap-4">
@@ -333,6 +346,44 @@
             </section>
             <section class="w-6/12 h-full rounded-lg">
               <ItemCardTwo item={shuffle(mangaData)[7]}/>
+            </section>
+          </section>
+        </section>
+      </section>
+
+      <!-- lay 14 -->
+      <section class="w-full space-y-2 snapstart">
+        <h4 class="text-xl font-semibold px-4 md:px-0">
+          Nanda?
+        </h4>
+        <section class="flex overflow-x-scroll sm-scrollbar rounded-scrollbar sm-hide-scrollbar py-1 px-4 md:px-0">
+          <section class="flex flex-nowrap gap-2 md:gap-3 snap-x snap-mandatory">
+            {#each shuffle(mangaData) as eachItem}
+              <ItemCardThree item={eachItem}/>
+            {:else}
+              <section class="rounded-lg w-32 lg:w-60 h-44 lg:h-60 bg-zinc-300 dark:bg-zinc-700"/>
+            {/each}
+          </section>
+        </section>
+      </section>
+
+      <!-- lay 11 -->
+      <section class="w-full flex gap-4">
+        <section class="w-full md:h-72 flex flex-col lg:flex-row gap-4 px-4 py-2 md:p-0">
+          <section class="w-full h-64 md:h-full flex gap-4">
+            <section class="w-6/12 h-full rounded-lg">
+              <ItemCardTwo item={mangaData[8]}/>
+            </section>
+            <section class="w-6/12 h-full rounded-lg">
+              <ItemCardTwo item={mangaData[1]}/>
+            </section>
+          </section>
+          <section class="w-full h-64 md:h-full flex gap-4">
+            <section class="w-6/12 h-full rounded-lg">
+              <ItemCardTwo item={mangaData[0]}/>
+            </section>
+            <section class="w-6/12 h-full rounded-lg">
+              <ItemCardTwo item={mangaData[6]}/>
             </section>
           </section>
         </section>

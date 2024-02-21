@@ -2,7 +2,7 @@
   import "../app.pcss";
   import Nav from "$lib/components/Nav.svelte";
   import NavAside from "$lib/components/NavAside.svelte";
-  import { isAsideBarMinimised } from "../stores/layoutData";
+  import { storeAsideBarMinimised } from "../stores/layoutData";
   import { Toaster } from "$lib/components/ui/sonner";
   import { ProgressBar } from "@prgm/sveltekit-progress-bar";
 </script>
@@ -18,7 +18,7 @@
 
     <NavAside/>
   
-    <section class="w-full {$isAsideBarMinimised ? 'md:w-[90%] lg:w-[94%]' : 'md:w-[70%] lg:w-[80%]'} md:ml-auto flex flex-col relative">
+    <section class="w-full {$storeAsideBarMinimised ? 'md:w-[90%] lg:w-[94%]' : 'md:w-[70%] lg:w-[80%]'} md:ml-auto flex flex-col relative">
       <slot />
     </section>
   </section>
