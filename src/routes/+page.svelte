@@ -26,10 +26,10 @@
   import { storeAsideBarMinimised, isAsideBarBtnClick } from "../stores/layoutData";
   // import Drawer from '$lib/components/Drawer.svelte';
     
-  // export let data: PageData;
+  export let data: PageData;
   // import { data } from './+page';
-  // const mangaData = data.data ?? sampleData.data
-  const mangaData = sampleData.data
+  const mangaData = data.data // ?? sampleData.data
+  // const mangaData = sampleData.data
   // const mangaData = !metainfo.isDev ? data.data : sampleData.data
   // .data.map((value)=>value.attributes.tags)
   // console.log(mangaData)

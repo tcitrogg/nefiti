@@ -5,10 +5,11 @@
   import Avatar from 'svelte-boring-avatars';
   // import sampleData from "$lib/sampleData.json"
   import tags from "$lib/tags.json"
-  import { storeAsideBarMinimised, isAsideBarBtnClick, layoutData } from "../../stores/layoutData";
+  import { storeAsideBarMinimised, isAsideBarBtnClick, layoutData, isSearchMinimised } from "../../stores/layoutData";
   import { page } from "$app/stores";
   import { slide } from "svelte/transition";
 	import { browser } from "$app/environment";
+    import SearchBox from "./SearchBox.svelte";
   
 	let isAsideBarMinimised;
 
@@ -32,6 +33,10 @@
     isAsideBarBtnClick.set(true)
     // localStorage.setItem('color-theme', isDarkMode ? "dark" : "light");
     // lengthOfDataIfAsideBarIsMinimised.set(isAsideBarMinimised ? 3 : 5)
+  }
+
+  const handleSearchMinimised = ()=>{
+    isSearchMinimised.set(!$isSearchMinimised)
   }
 
   const data = shuffle(tags.data).slice(0,4)
@@ -77,12 +82,12 @@
             <p class="text-">Library</p>
           {/if}
         </a>
-        <a href='#search' aria-current={$page.url.pathname.endsWith("#search") ? 'page' : undefined} class="navbtn py-1.5 px-3 flex items-center {isAsideBarMinimised ? 'justify-center' : ''} focus:ring-2 focus:ring-main/50 focus:outline-none rounded-lg gap-4">
+        <button on:click={handleSearchMinimised} aria-current={$page.url.pathname.endsWith("#search") ? 'page' : undefined} class="md:hover:bg-zinc-200 md:dark:hover:bg-zinc-900 py-1.5 px-3 flex items-center {isAsideBarMinimised ? 'justify-center' : ''} focus:ring-2 focus:ring-main/50 focus:outline-none rounded-lg gap-4">
           <i class="icon icon-ic_fluent_search_20_{$page.url.pathname.endsWith('#search') ? 'filled' : 'regular'} flex text-3xl"/>
           {#if !isAsideBarMinimised}
             <p class="text-">Search</p>
           {/if}
-        </a>
+        </button>
       </section>
   
       <section class="w-full md:h-2/6 lg:h-auto {isAsideBarMinimised ? 'md:hidden lg:flex' : ''} md:overflow-y-auto lg:overflow-auto rounded-lg bg-zinc-200 dark:bg-zinc-900 flex flex-col gap-1 p-1">

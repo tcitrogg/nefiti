@@ -9,23 +9,21 @@
   });
 </script>
 
+<!-- Loading -->
 {#if isReady}
-  <div transition:slide class="absolute z-50 w-full h-full bg-zinc-900 text-zinc-100 dark:bg-zinc-100 dark:text-zinc-900 backdrop-blur-md flex flex-col items-center justify-center space-y-4">
-    <!-- Loading -->
-    <div class={`flex items-center space-x-2.5 text-3xl font-medium`}>
-      <!-- <span class="mirrorAmpersand opacity- font-fira_code pt-0.5 text-4xl">&</span> -->
-      <!-- <span class="opacity- font-fira_code pt-0.5 text-4xl">&</span> -->
-      <p class="-space-x-0.5">
-        <span class="opacity-40">t</span>
-        <span class="opacity-40">/</span>
-        <span class="">{metainfo.title}</span>
-      </p>
-    </div>
+  <section transition:slide class="absolute z-[70] w-full h-full bg-zinc-900 text-zinc-100 dark:bg-zinc-100 dark:text-zinc-900 backdrop-blur-md flex flex-col items-center justify-center space-y-4">
+    <section class={`flex items-center gap-2 text-3xl md:text-4xl font-medium`}>
+      <img src="/favicon.svg" alt="[ni]" class="w-7 md:w-10 block dark:hidden">
+      <img src="/favicon-light.svg" alt="[ni]" class="w-7 md:w-10 hidden dark:block">
+      <h1 class="font-semibold">
+        {metainfo.title}
+      </h1>
+    </section>
 
-    <div class="loading-container w-32 h-0.5 bg-zinc-800 dark:bg-zinc-300 flex rounded-full overflow-hidden">
-      <div class="loading-line w-full h-full dark:bg-zinc-900 bg-zinc-100"></div>
-    </div>
-  </div>
+    <section class="loading-container w-32 h-0.5 bg-zinc-800 dark:bg-zinc-300 flex rounded-full overflow-hidden">
+      <section class="loading-line w-6/12 h-full bg-main"/>
+    </section>
+  </section>
 {/if}
 
 <style>
@@ -59,7 +57,7 @@
     transform: translateX(-100%);
   }
   100% {
-    transform: translateX(100%);
+    transform: translateX(200%);
   }
 }
 
