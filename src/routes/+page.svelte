@@ -150,7 +150,7 @@
     <section class="w-full md:mx-auto flex flex-col gap-8 md:gap-12">
 
       <!-- lay 3 -->
-      <section class="w-full px-4 md:px-0 space-y-3 snapstart">
+      <section class="w-full md:px-0 space-y-3 snapstart">
         <h4 class="text-xl font-semibold px-4 md:px-0">
           Feel that huh?
         </h4>

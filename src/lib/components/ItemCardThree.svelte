@@ -10,7 +10,7 @@
   // console.log(title)
 </script>
 
-<section class="inline-block w-40 lg:w-60">
+<section class="inline-block w-40 lg:w-52">
   <a href={`/m/${item.id}`} title={`${title}`} class="w-full h-full focus:ring-2 focus:outline-none focus:ring-main/70 flex flex-col gap-2 relative overflow-hidden rounded-lg">
     <section class={`w-full h-44 lg:h-60 overflow-hidden rounded-lg relative flex flex-col bg-zinc-100 dark:bg-zinc-900`}>
       <Image

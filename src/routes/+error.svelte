@@ -1,8 +1,8 @@
 <script lang="ts">
   import { fly, fade, scale, slide } from "svelte/transition";
   import { page } from '$app/stores';
-    import Metahead from "$lib/components/Metahead.svelte";
-    import { metainfo } from "$lib/config";
+  import Metahead from "$lib/components/Metahead.svelte";
+  import { metainfo } from "$lib/config";
 
   const focusStyle = "focus:outline-none focus:ring-1 focus:ring-blue-700/70"
 </script>
