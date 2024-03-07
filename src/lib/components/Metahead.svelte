@@ -84,7 +84,7 @@
     "@context" : "https://schema.org",
     "@type" : "Person",
     "name" : "${metainfo.creator}",
-    "username": "${metainfo.handle}"
+    "username": "${metainfo.handle}",
     "url" : "${metainfo.contact[0].link}",
     "sameAs" : "${metainfo.contact[0].title}/${metainfo.handle}"
   }
