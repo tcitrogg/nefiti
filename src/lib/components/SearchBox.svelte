@@ -9,12 +9,12 @@
 
 {#if $isSearchMinimised}
   <section transition:slide={{duration:80}} class="w-full md:pl-3 {$storeAsideBarMinimised ? 'md:w-[90%] lg:w-[94%]' : 'md:w-[70%] lg:w-[80%]'} h-smscreen md:h-screen fixed z-[70] right-0 top-0">
-    <section class="w-full h-full bg-zinc-100/80 dark:bg-zinc-900/90 backdrop-blur flex flex-col p-4">
-      <section class="w-full md:w-10/12 md:mx-auto">
+    <section class="w-full h-full bg-zinc-100/90 dark:bg-zinc-950/95 backdrop-blur flex flex-col p-4 border-l border-l-zinc-300 dark:border-l-zinc-800">
+      <section class="w-full md:w-10/12 md:mx-auto md:pt-2">
         <!-- Top search bar -->
         <section class="w-full pt-0 py-6 flex gap-3 items-center">
           <button on:click={handleSearchMinimised} class="md:hidden hover:bg-zinc-300/40 hover:dark:bg-zinc-700/30 py-1.5 px-1.5 flex items-centerfocus:ring-2 focus:ring-main/50 focus:outline-none rounded-full gap-4">
-            <i class="icon icon-ic_fluent_dismiss_20_regular flex text-3xl"/>
+            <i class="icon icon-ic_fluent_dismiss_20_regular flex text-2xl"/>
           </button>
           <section class="w-full md:w-10/12 md:mx-auto rounded-lg bg-zinc-200 dark:bg-zinc-700 flex overflow-hidden focus-within:ring-2 focus-within:ring-main/50 focus-within:outline-none shadow-lg shadow-zinc-900/10 dark:shadow-zinc-900/50">
             <input type="text" placeholder="Search..." class="w-full px-3 py-2 bg-transparent focus:ring-0 focus:outline-none">

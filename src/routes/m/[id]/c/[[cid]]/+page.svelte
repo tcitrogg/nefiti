@@ -17,12 +17,13 @@
   import CopyBtn from '$lib/components/CopyBtn.svelte';
   import Pill from '$lib/components/Pill.svelte';
   // import IntersectionObserver from '$lib/components/IntersectionObserver.svelte';
-  import IntersectionObserver from 'svelte-intersection-observer';
+
   import { Button } from '$lib/components/ui/button';
   // import sampleData from "$lib/sampleData.json";
   import Readotron from '@untemps/svelte-readotron'
   import { currentChapterData, nextChapterData, previousChapterData } from '../../../../../stores/eachPage';
   import { inview } from 'svelte-inview';
+    import EachPage from '$lib/components/EachPage.svelte';
 
   let isInView: any;
 
@@ -234,27 +235,7 @@ let thisPage = 0;
     }}>
       {#each data.usingData as eachData, index}
         {#if isInView}
-          <IntersectionObserver on:intersect={() => (thisPage = index)} threshold={0.5} rootMargin="0px">
-            <section in:fade id={`${index+1}`} class="w-full relative overflow-hidden bg-gradient-to-b from-zinc-200 to-zinc-300 dark:from-zinc-800 dark:to-zinc-700">
-              <!-- section.w-full.h-full -->
-              <!-- <Image
-                src={`${eachData}`}
-                alt={`Page #${index+1}`}
-                classes={""}
-              /> -->
-              
-                <!-- src={`${data.baseUrl}/data-saver/${data.chapterHash}/${eachData}`} -->
-              <Image
-                src={`${data.baseUrl}/data/${data.chapterHash}/${eachData}`}
-                alt={`#${index}`}
-              />
-              <section class="flex absolute bottom-1 ml-1">
-                <a href={`#${index+1}`} class="py-1 px-2 rounded-md text-xs bg-zinc-900/40 hover:bg-zinc-900/70 backdrop-blur- font-medium text-zinc-200">
-                  <p class="whitespace-nowrap">Page: {index+1}</p>
-                </a>
-              </section>
-            </section>
-          </IntersectionObserver>
+          <EachPage imgSrc={fetchImage(`${data.baseUrl}/data/${data.chapterHash}/${eachData}`)} thisPage={index}/>
         {/if}
       {/each}
     </section>

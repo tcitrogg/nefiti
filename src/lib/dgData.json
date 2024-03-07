@@ -1,6 +1,7 @@
 {
     "tag": {
-      "id": "1987l80i-l492-7i93-2j5l-8h84b7255c2i",
+      "id": "thy-demigod",
+      "long_id": "1987l80i-l492-7i93-2j5l-8h84b7255c2i",
       "type": "tag",
       "attributes": {
         "name": {
@@ -23,11 +24,11 @@
             "https://bnierimi.vercel.app",
             "mailto:tcitrogg@gmail.com",
             "https://github.com/tcitrogg",
-            "https://twitter.com/bnierimi",
-            "https://instagram.com/bnierimi",
-            "https://threads.net/@bnierimi",
-            "https://www.linkedin.com/in/bnierimi",
-            "https://peerlist.io/bnierimi"
+            "https://twitter.com/tcitrogg",
+            "https://instagram.com/tcitrogg",
+            "https://threads.net/@tcitrogg",
+            "https://www.linkedin.com/in/tcitrogg",
+            "https://peerlist.io/tcitrogg"
         ],
         "group": "format",
         "version": 1
@@ -46,7 +47,8 @@
                 "Action", "Fantasy", "Supernatural"
             ],
             "group": "format",
-            "version": 1
+            "version": 1,
+            "thumbnail": "/imgs/thumbnails/extended-realm.jfif"
         },
         {
             "id": "tcne-0001ts",
@@ -56,7 +58,8 @@
                 "Comedy", "Action", "Drama"
             ],
             "group": "format",
-            "version": 1
+            "version": 1,
+            "thumbnail": "/imgs/thumbnails/eff205d1-fe91-4456-918d-44df256587a4.jpg"
         },
         {
             "id": "tcne-0002ne",
@@ -66,7 +69,8 @@
                 "Sci-fi", "Fantasy", "Action"
             ],
             "group": "format",
-            "version": 1
+            "version": 1,
+            "thumbnail": "/imgs/thumbnails/karnage.jfif"
         },
         {
             "id": "tcne-0003ac",
@@ -76,17 +80,19 @@
                 "Action", "Sci-fi", "Drama"
             ],
             "group": "format",
-            "version": 1
+            "version": 1,
+            "thumbnail": "/imgs/thumbnails/arcasuki.jpg"
         },
         {
             "id": "tcne-0004bp",
-            "title": "Blackhole Punk",
+            "title": "Blckhole Punk",
             "description": "",
             "tags": [
                 "Action", "Fantasy", "Sci-fi"
             ],
             "group": "format",
-            "version": 1
+            "version": 1,
+            "thumbnail": "/imgs/thumbnails/blckhle-punk.jpg"
         },
         {
             "id": "tcne-0005td",
@@ -96,7 +102,8 @@
                 "Action", "Sci-fi", "School"
             ],
             "group": "format",
-            "version": 1
+            "version": 1,
+            "thumbnail": "/imgs/thumbnails/thy-disciples.jpg"
         },
         {
             "id": "tcne-0006sh",
@@ -106,7 +113,8 @@
                 "Slice of life", "Tragedy", "Drama", "Comedy"
             ],
             "group": "format",
-            "version": 1
+            "version": 1,
+            "thumbnail": "/imgs/thumbnails/7b296704-e2f5-47ea-8ec8-2598830cd432.jfif"
         },
         {
             "id": "tcne-0007en",
@@ -116,7 +124,8 @@
                 "Scaling", "Supernatural", "Fantasy"
             ],
             "group": "format",
-            "version": 1
+            "version": 1,
+            "thumbnail": "/imgs/thumbnails/61f97685-c7d4-4c74-be49-4dc4db29ec69.jpeg"
         },
         {
             "id": "tcne-0008nr",
@@ -126,7 +135,8 @@
                 "Drama", "Slice of life"
             ],
             "group": "format",
-            "version": 1
+            "version": 1,
+            "thumbnail": "/imgs/thumbnails/sayonara.jpg"
         },
         {
             "id": "tcne-0009iw",
@@ -136,7 +146,8 @@
                 "Action", "Sci-fi", "Supernatural"
             ],
             "group": "format",
-            "version": 1
+            "version": 1,
+            "thumbnail": "/imgs/thumbnails/f707245d-2589-47db-8fd9-f9dd30f4d8aa.jpeg"
         },
         {
             "id": "tcne-0010cr",
@@ -146,7 +157,8 @@
                 "Sci-fi", "Drama", "Action"
             ],
             "group": "format",
-            "version": 1
+            "version": 1,
+            "thumbnail": "/imgs/thumbnails/12-hundred-hours.jfif"
         }
       ]
 }

@@ -3,7 +3,8 @@
   export let src = ""
   export let alt = ""
   export let placeholder = ""
-  export let classes = "w-full h-full object-cover object-top"
+  export let style = ""
+  export let classes = `w-full h-full object-cover object-top ${style}`
 </script>
 
 <Image

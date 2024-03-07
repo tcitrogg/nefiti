@@ -5,7 +5,8 @@ const title = "Nefiti"
 
 export const metainfo = {
   title,
-  short_name: "Ne",
+  short_name: "Ni",
+  version: "01.23.456",
   handle: "@tcitrogg",
   keywords: "Manga reader, Manga sharing, Novel publishing, Story telling, Stories, Novels, Genres, Romance, Web novels, Read manga, Webnovels, Romance stories, Read novels online, Fantasy story, Read novels, Novels online, Read webcomics, Read webnovels, Action fantasy, Recommendations, News, Reviews, Spoilers, Websites, Genre, Series, Characters, ",
   description: `From manga to webnovels, ${title} ignites your passion for stories. Read anything, anywhere, discover hidden gems through personalized recommendations, and join a vibrant community of readers and writers. Share your own novels, discuss trending news, and dive into spoiler-filled forums. With Scroll, every turn of the page unlocks a new world. A Manga reader for, reading and sharing your favourite manga collection with family and friends.`,
@@ -14,21 +15,29 @@ export const metainfo = {
   ogimg: "/favicon.svg",
   // ogimg: "/api/og",
   organisation: "Tcitrogg",
-  creator: "tcitrogg.vx",
+  creator: "tcitrogg",
+  creator_shortname: "rogge",
   contact: [
-    "https://bnierimi.vercel.app",
-    "mailto:tcitrogg@gmail.com",
-    "https://github.com/tcitrogg",
-    "https://twitter.com/tcitrogg",
-    "https://instagram.com/tcitrogg",
-    "https://threads.net/@tcitrogg",
-    "https://www.linkedin.com/in/tcitrogg",
-    "https://peerlist.io/tcitrogg",
+    { title: "Website", link: "https://bnierimi.vercel.app"},
+    { title: "Email", link: "mailto:tcitrogg@gmail.com"},
+    { title: "GitHub", link: "https://github.com/tcitrogg"},
+    { title: "X", link: "https://x.com/tcitrogg"},
+    { title: "Instagram", link: "https://instagram.com/tcitrogg"},
+    { title: "Threads", link: "https://threads.net/@tcitrogg"},
+    { title: "LinkedIn", link: "https://www.linkedin.com/in/tcitrogg"},
+    { title: "Peerlist", link: "https://peerlist.io/tcitrogg"},
+    // { title: "Showwcase", link: "https://peerlist.io/tcitrogg"},
   ],
+  support: {
+    eth_addr: "0x3",
+  },
   url,
   isDev: dev ? true : false,
   background_color: "#f5f5f5",
   theme_color: "#f5f5f5",
+  color_band: ["#1DB954", "#121212"],
+  avatar_prefix: "y/",
+  levelling_prefix: "Lv."
 }
 
 export const appinfo = {

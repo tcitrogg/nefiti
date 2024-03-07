@@ -5,11 +5,13 @@
   import Avatar from 'svelte-boring-avatars';
   // import sampleData from "$lib/sampleData.json"
   import tags from "$lib/tags.json"
+  import dgData from "$lib/dgData.json";
   import { storeAsideBarMinimised, isAsideBarBtnClick, layoutData, isSearchMinimised } from "../../stores/layoutData";
   import { page } from "$app/stores";
   import { slide } from "svelte/transition";
 	import { browser } from "$app/environment";
     import SearchBox from "./SearchBox.svelte";
+    import Logo from "./Logo.svelte";
   
 	let isAsideBarMinimised;
 
@@ -57,9 +59,7 @@
         </button>
   
         <section class="flex items-center {isAsideBarMinimised ? 'order-1 justify-center py-2' : 'order-2 gap-2'}">
-          <img src="/favicon.svg" alt="[ni]" class="w-6 block dark:hidden">
-          <img src="/favicon-light.svg" alt="[ni]" class="w-6 hidden dark:block">
-  
+          <Logo width="w-6"/>
           <!-- <span class="opacity-40">t/</span> -->
           <h1 class="text-xl font-semibold">
             {#if !isAsideBarMinimised}
@@ -82,7 +82,7 @@
             <p class="text-">Library</p>
           {/if}
         </a>
-        <button on:click={handleSearchMinimised} aria-current={$page.url.pathname.endsWith("#search") ? 'page' : undefined} class="md:hover:bg-zinc-200 md:dark:hover:bg-zinc-900 py-1.5 px-3 flex items-center {isAsideBarMinimised ? 'justify-center' : ''} focus:ring-2 focus:ring-main/50 focus:outline-none rounded-lg gap-4">
+        <button on:click={handleSearchMinimised} aria-current={$page.url.pathname.endsWith("#search") ? 'page' : undefined} class="{$isSearchMinimised ? 'text-main md:bg-main/10' : ''} md:hover:bg-zinc-200 md:dark:hover:bg-zinc-900 py-1.5 px-3 flex items-center {isAsideBarMinimised ? 'justify-center' : ''} focus:ring-2 focus:ring-main/50 focus:outline-none rounded-lg gap-4">
           <i class="icon icon-ic_fluent_search_20_{$page.url.pathname.endsWith('#search') ? 'filled' : 'regular'} flex text-3xl"/>
           {#if !isAsideBarMinimised}
             <p class="text-">Search</p>
@@ -90,10 +90,25 @@
         </button>
       </section>
   
-      <section class="w-full md:h-2/6 lg:h-auto {isAsideBarMinimised ? 'md:hidden lg:flex' : ''} md:overflow-y-auto lg:overflow-auto rounded-lg bg-zinc-200 dark:bg-zinc-900 flex flex-col gap-1 p-1">
+      <section class="w-full md:h-2/6 lg:h-auto {isAsideBarMinimised ? 'md:hidden lg:flex' : ''} md:overflow-y-auto lg:overflow-auto rounded-lg bg-zinc-200/40 dark:bg-zinc-900/60 flex flex-col gap-1 p-1">
+        <a href={`/m/tag/${dgData.tag.id}`} title={Object.values(dgData.tag.attributes.name)[0]} class="w-full h-full focus:ring-2 focus:ring-main/50 focus:outline-none flex flex-col gap-2 relative">
+          <section class="w-full rounded-lg hover:bg-zinc-200 dark:hover:bg-zinc-900 p-2 flex items-center {isAsideBarMinimised ? 'justify-center' : ''} gap-2">
+            <Avatar
+              name={dgData.tag.id}
+              size={35}
+              square={false}
+              colors={metainfo.color_band}
+              variant={"sunset"}
+            />
+            {#if !isAsideBarMinimised}
+              <p class="w-10/12 line-clamp-1">{`${Object.values(dgData.tag.attributes.name)[0]}`}</p>
+            {/if}
+            <!-- <Image src={} alt={}/> -->
+          </section>
+        </a>
         {#each data as eachTag}
           <a href={`/m/tag/${eachTag.id}`} title={`${Object.values(eachTag.attributes.name)[0]}`} class="w-full h-full focus:ring-2 focus:ring-main/50 focus:outline-none flex flex-col gap-2 relative">
-            <section class="w-full rounded-lg hover:bg-zinc-300 dark:hover:bg-zinc-800 p-2 flex items-center {isAsideBarMinimised ? 'justify-center' : ''} gap-2">
+            <section class="w-full rounded-lg hover:bg-zinc-200 dark:hover:bg-zinc-900 p-2 flex items-center {isAsideBarMinimised ? 'justify-center' : ''} gap-2">
               <Avatar
                 name={eachTag.id}
                 size={35}
@@ -115,7 +130,7 @@
       <!-- <a href='#' class="py-1.5 px-3 flex items-center justify- ring-2 ring-transparent focus:ring-main focus:outline-none text-main rounded-lg gap-4 bg-main/10">
         <p class="text-">Mode</p>
       </a> -->
-      <ThemeBtn style="py-1.5 px-3 flex items-center {isAsideBarMinimised ? 'justify-center' : ''} ring-2 ring-transparent focus:ring-main/50 focus:outline-none rounded-lg gap-3 bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-900 dark:hover:bg-zinc-900" bg={""} iconSize={"3xl"}>
+      <ThemeBtn style="py-1.5 px-3 flex items-center {isAsideBarMinimised ? 'justify-center' : ''} ring-2 ring-transparent focus:ring-main/50 focus:outline-none rounded-lg gap-3 bg-zinc-200/40 hover:bg-zinc-200 dark:bg-zinc-900/60 dark:hover:bg-zinc-900" bg={""} iconSize={"3xl"}>
         {#if !isAsideBarMinimised}
           <p class="text-">Theme</p>
         {/if}

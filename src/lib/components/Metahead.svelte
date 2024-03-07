@@ -75,7 +75,7 @@
     "@context": "http://schema.org",
     "@type": "WebSite",
       "name": "${ogtitle}",
-      "url": "${metainfo.url}${cwd.slice(1)}",
+      "url": "${metainfo.url}${cwd.slice(1)}"
   }
   </script>`}
 {:else if seoType === "Person"}
@@ -85,8 +85,8 @@
     "@type" : "Person",
     "name" : "${metainfo.creator}",
     "username": "${metainfo.handle}"
-    "url" : "${metainfo.contact[0]}",
-    "sameAs" : ${metainfo.contact}
+    "url" : "${metainfo.contact[0].link}",
+    "sameAs" : "${metainfo.contact[0].title}/${metainfo.handle}"
   }
   </script>`}
 {:else if seoType === "Organization"}
@@ -95,8 +95,8 @@
     "@context" : "https://schema.org",
     "@type" : "Organization",
     "name" : "${metainfo.title}",
-    "url" : "${metainfo.url}",
-    "sameAs" : ${metainfo.contact}
+    "url" : "${metainfo.contact[0].link}",
+    "sameAs" : "${metainfo.contact[0].title}/${metainfo.handle}"
   }
   </script>`}
 {:else if seoType === "NewsArticle"}
@@ -145,7 +145,7 @@
         "@type": "ProfilePage",
         "name": ${metainfo.organisation},
         "username": "${metainfo.handle}",
-        "website": "${metainfo.contact[0]}"
+        "website": "${metainfo.contact[0].link}"
       }
     }
     </script>`}
