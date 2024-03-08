@@ -43,7 +43,7 @@
   }
 
   const handleLogout = ()=>{
-    alert(`(*) Switching Accounts...`)
+    alert(`(*) Switching Accounts`)
     toast("Switching Accounts...")
     user.name = `Yuza ${cookUsername()}`
     user.username = userId()
@@ -67,7 +67,9 @@
 <Metahead
   title={`${user.name.split(" ")[0]}'s Library`}
 />
+
 <Nav/>
+
 <section transition:slide={{duration:300}} class="w-full h-smscreen md:h-screen lg:px-10 md:px-4 md:py-2 flex relative gap-8">
   <section class="w-full lg:w-8/12 h-full overflow-y-auto flex flex-col gap-4 md:gap-5 snap snap-y snap-mandatory px-3 md:p-1 md:pt-3">
 
@@ -107,7 +109,7 @@
       </section> -->
     </section>
 
-    <!-- Readlist -->
+    <!-- Sm-screen Readlist -->
     <section class="w-full rounded-lg bg-zinc-100dark:bg-zinc-900/60 flex lg:hidden flex-col gap-3">
       <section class="w-full flex items-center justify-between">
         <h3 class="gap-1 flex items-center">
@@ -115,7 +117,7 @@
           <span class="font-medium md:text-lg">Readlist</span>
         </h3>
         
-        <a href={`#`} title="Show all history" class="focus:ring-2 focus:outline-none focus:ring-main/70 relative rounded-lg opacity-70 hover:opacity-95 text-sm">
+        <a href={`#`} on:click={()=>toast("Coming Soon!")} title="Show all history" class="focus:ring-2 focus:outline-none focus:ring-main/70 relative rounded-lg opacity-70 hover:opacity-95 text-sm">
         + Show all</a>
       </section>
 
@@ -140,31 +142,31 @@
       </section>
     </section>
 
-    <!-- Downloads, Favourites & Liked Books -->
+    <!-- Downloads, Favourites, Liked Books & Data saver mode -->
     <section class="w-full md:bg-zinc-100 md:dark:bg-zinc-900/60 rounded-lg md:p-4 flex flex-col gap-2 justify-between">
       <!-- <a href='#' class="py-2 px-3 flex items-center hover:bg-zinc-200 dark:hover:bg-zinc-900 md:hover:bg-zinc-300 md:dark:hover:bg-zinc-800 focus:ring-2 focus:ring-main/50 focus:outline-none rounded-lg gap-4">
         <i class="icon icon-ic_fluent_collections_20_regular flex text-2xl md:text-3xl"/>
         <p class="text-">Readlist</p>
       </a> -->
-      <a href='#' class="py-2 px-3 flex items-center hover:bg-zinc-200 dark:hover:bg-zinc-900 md:hover:bg-zinc-300 md:dark:hover:bg-zinc-800 focus:ring-2 focus:ring-main/50 focus:outline-none rounded-lg gap-4">
+      <a href='#' on:click={()=>toast("Coming Soon!")} class="py-2 px-3 flex items-center hover:bg-zinc-200 dark:hover:bg-zinc-900 md:hover:bg-zinc-300 md:dark:hover:bg-zinc-800 focus:ring-2 focus:ring-main/50 focus:outline-none rounded-lg gap-4">
         <i class="icon icon-ic_fluent_arrow_download_20_regular flex text-2xl md:text-3xl"/>
         <p class="text-">Downloads</p>
       </a>
-      <a href='#' class="py-2 px-3 flex items-center hover:bg-zinc-200 dark:hover:bg-zinc-900 md:hover:bg-zinc-300 md:dark:hover:bg-zinc-800 focus:ring-2 focus:ring-main/50 focus:outline-none rounded-lg gap-4">
+      <a href='#' on:click={()=>toast("Coming Soon!")} class="py-2 px-3 flex items-center hover:bg-zinc-200 dark:hover:bg-zinc-900 md:hover:bg-zinc-300 md:dark:hover:bg-zinc-800 focus:ring-2 focus:ring-main/50 focus:outline-none rounded-lg gap-4">
         <i class="icon icon-ic_fluent_star_20_regular flex text-2xl md:text-3xl"/>
         <p class="text-">Favourites</p>
       </a>
-      <a href='#' class="py-2 px-3 flex items-center hover:bg-zinc-200 dark:hover:bg-zinc-900 md:hover:bg-zinc-300 md:dark:hover:bg-zinc-800 focus:ring-2 focus:ring-main/50 focus:outline-none rounded-lg gap-4">
+      <a href='#' on:click={()=>toast("Coming Soon!")} class="py-2 px-3 flex items-center hover:bg-zinc-200 dark:hover:bg-zinc-900 md:hover:bg-zinc-300 md:dark:hover:bg-zinc-800 focus:ring-2 focus:ring-main/50 focus:outline-none rounded-lg gap-4">
         <i class="icon icon-ic_fluent_heart_circle_20_regular flex text-2xl md:text-3xl"/>
         <p class="text-">Liked Books</p>
       </a>
-      <a href='#' class="py-2 px-3 flex items-center hover:bg-zinc-200 dark:hover:bg-zinc-900 md:hover:bg-zinc-300 md:dark:hover:bg-zinc-800 focus:ring-2 focus:ring-main/50 focus:outline-none rounded-lg gap-4">
-        <i class="icon icon-ic_fluent_heart_20_regular flex text-2xl md:text-3xl"/>
+      <a href='#' on:click={()=>toast("Coming Soon!")} class="py-2 px-3 flex items-center hover:bg-zinc-200 dark:hover:bg-zinc-900 md:hover:bg-zinc-300 md:dark:hover:bg-zinc-800 focus:ring-2 focus:ring-main/50 focus:outline-none rounded-lg gap-4">
+        <i class="icon icon-ic_fluent_lightbulb_20_regular flex text-2xl md:text-3xl"/>
         <p class="text-">Data saver Mode</p>
       </a>
     </section>
 
-    <!-- History -->
+    <!-- Sm-screen History -->
     <section class="w-full rounded-lg bg-zinc-100dark:bg-zinc-900/60 flex lg:hidden flex-col gap-3 my-5">
       <section class="w-full flex items-center justify-between">
         <h3 class="gap-1 flex items-center">
@@ -172,7 +174,7 @@
           <span class="font-medium md:text-lg">History</span>
         </h3>
         
-        <a href={`#`} title="Show all history" class="focus:ring-2 focus:outline-none focus:ring-main/70 relative rounded-lg opacity-70 hover:opacity-95 text-sm">
+        <a href={`#`} on:click={()=>toast("Coming Soon!")} title="Show all history" class="focus:ring-2 focus:outline-none focus:ring-main/70 relative rounded-lg opacity-70 hover:opacity-95 text-sm">
         + Show all</a>
       </section>
 
@@ -198,7 +200,7 @@
     </section>
 
     <!-- Go premium! -->
-    <a href='#' class="py-2 px-3 md:px-6 flex items-center hover:bg-zinc-300dark:hover:bg-zinc-800 bg-main/90 text-zinc-50 hover:bg-main  focus:ring-2 focus:ring-main/50 focus:outline-none rounded-lg gap-4">
+    <a href='#' on:click={()=>toast("Coming Soon!")} class="py-2 px-3 md:px-6 flex items-center hover:bg-zinc-300dark:hover:bg-zinc-800 bg-main/90 text-zinc-50 hover:bg-main  focus:ring-2 focus:ring-main/50 focus:outline-none rounded-lg gap-4">
       <i class="icon icon-ic_fluent_premium_20_filled flex text-2xl md:text-3xl"/>
       <p class="font-semibold">Go Premium!</p>
     </a>
@@ -251,10 +253,11 @@
     
     <!-- Help & Feedback, Theme, About -->
     <section class="w-full rounded-lg bg-zinc-100 dark:bg-zinc-900/60 flex flex-col gap-2 p-1 md:p-4">
-      <a href='#' class="py-2 px-2 flex items-center hover:bg-zinc-300 dark:hover:bg-zinc-800 focus:ring-2 focus:ring-main/50 focus:outline-none rounded-lg gap-4">
+      <a href='#' on:click={()=>toast("Coming Soon!")} class="py-2 px-2 flex items-center hover:bg-zinc-300 dark:hover:bg-zinc-800 focus:ring-2 focus:ring-main/50 focus:outline-none rounded-lg gap-4">
         <i class="icon icon-ic_fluent_comment_20_regular flex text-2xl md:text-3xl"/>
         <p class="text-">Help & Feedback</p>
       </a>
+
       <ThemeBtn style="md:hidden py-2 px-1 flex items-center ring-2 ring-transparent focus:ring-main/50 focus:outline-none rounded-lg gap-4 hover:bg-zinc-300 dark:hover:bg-zinc-800" bg={""} iconSize={"2xl md:text-3xl"}>
         <p class="text-">Theme</p>
       </ThemeBtn>
@@ -272,7 +275,7 @@
         </Drawer.Trigger>
           <Drawer.Overlay class="fixed inset-0 bg-zinc-950/40 z-[70]" />
           <Drawer.Portal>
-            <Drawer.Content class="w-full max-h-96 fixed flex flex-col bottom-0 left-0 p-1 z-[70]">
+            <Drawer.Content class="w-full h-96 fixed flex flex-col bottom-0 left-0 p-1 z-[70]">
               <section class="w-full h-full bg-zinc-100 dark:bg-zinc-900 shadow-md rounded-t-lg p-3 pb-5 flex flex-col gap-4 justify-between overflow-y-auto">
                 <section class="flex items-center gap-2">
                   <Logo width="w-10"/>
@@ -334,7 +337,6 @@
             </Drawer.Content>
         </Drawer.Portal>
       </Drawer.Root>
-      <!-- <h3 class="font-medium text-xl">Top artists</h3> -->
     </section>
 
     <!-- yours Tcitrogg -->
@@ -353,7 +355,7 @@
           <span class="font-medium md:text-lg">Readlist</span>
         </h3>
         
-        <a href={`#`} title="Show all history" class="focus:ring-2 focus:outline-none focus:ring-main/70 relative rounded-lg opacity-70 hover:opacity-95 text-sm">
+        <a href={`#`} on:click={()=>toast("Coming Soon!")} title="Show all history" class="focus:ring-2 focus:outline-none focus:ring-main/70 relative rounded-lg opacity-70 hover:opacity-95 text-sm">
         + Show all</a>
       </section>
 
@@ -379,7 +381,7 @@
           <span class="font-medium md:text-lg">History</span>
         </h3>
         
-        <a href={`#`} title="Show all history" class="focus:ring-2 focus:outline-none focus:ring-main/70 relative rounded-lg opacity-70 hover:opacity-95 text-sm">
+        <a href={`#`} on:click={()=>toast("Coming Soon!")} title="Show all history" class="focus:ring-2 focus:outline-none focus:ring-main/70 relative rounded-lg opacity-70 hover:opacity-95 text-sm">
         + Show all</a>
       </section>
 
@@ -400,7 +402,7 @@
 
   <!-- Lg-screen dialog -->
   {#if isAboutDialogMinimised}
-    <section class="w-full h-full fixed top-0 right-0">
+    <section class="w-full h-full fixed top-0 right-0 hidden lg:block">
       <!-- dialog overlay -->
       <section on:click={handleAboutDialog} aria-placeholder="overlay" class="fixed inset-0 bg-zinc-950/40 z-[70]"/>
       <section transition:flyAndScale={{x: 3}} class="w-4/12 ml-auto h-full bg-zinc-100 dark:bg-zinc-900 shadow-md rounded-t-lg p-3 pb-5 flex flex-col gap-4 justify-between overflow-y-auto relative z-[70]">
