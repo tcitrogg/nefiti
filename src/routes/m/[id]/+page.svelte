@@ -122,7 +122,7 @@
   
             <section class="w-full space-y-2 pt-2 md:pt-4">
               {#each item.chapters as eachChapter, index}
-                <a href={`/m/${$page.params.id}/c/${eachChapter.id}`} id="{eachChapter.id}" class="">
+                <a href={`/m/${$page.params.id}/c/${eachChapter.id}?pg=${index}`} id="{eachChapter.id}" class="">
                   <section class="w-full hover:bg-main/10 border-bborder-b-main-green/5 flex p-2 px-4 md:py-4 md:rounded-md divide-x divide-zinc-200 dark:divide-zinc-800 gap-3 items-center justify-between">
                       <!-- <article class="opacity-60" title="Volume">Vol. {eachChapter.attributes.volume}</article> -->
                     <article class="flex gap-2 items-center" title="Chapter">

@@ -20,7 +20,6 @@
   <section class={`w-full lg:w-5/12 h-full object-fill object-top sticky lg:relative lg:rounded-lg overflow-hidden bg-zinc-100 dark:bg-zinc-900`}>
     <Image
       src="{getThumbnail(item)}"
-      alt="{title}"
     />
       <!-- layout="constrained" -->
   </section>

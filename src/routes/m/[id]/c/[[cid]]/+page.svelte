@@ -63,13 +63,15 @@
     })
   });
 
+  // console.log(data.pageNumber)
+
   // $: ({nextChapter} = nextChapter);
   // $: ({currentChapter} = currentChapter);
   // $: ({previousChapter} = previousChapter);
 
-  console.log("$: nextChapter", nextChapter)
-  console.log("$: currentChapter", currentChapter)
-  console.log("$: previousChapter", previousChapter)
+  // console.log("$: nextChapter", nextChapter)
+  // console.log("$: currentChapter", currentChapter)
+  // console.log("$: previousChapter", previousChapter)
 
   const mangaTitle = `${Object.values(mangaData?.attributes.title)[0]}`
   const mangaDescription = Object.values(mangaData.attributes.description)[0] ?? ""
@@ -230,14 +232,14 @@ let thisPage = 0;
     </Drawer.Root>
     
     <!-- Pages -->
-    <section class="displayBody w-full h-full" use:inview={{ unobserveOnEnter: true, rootMargin: '-20%' }} on:change={({ detail }) => {
-      isInView = detail.inView;
-    }}>
-      {#each data.usingData as eachData, index}
-        {#if isInView}
-          <EachPage imgSrc={fetchImage(`${data.baseUrl}/data/${data.chapterHash}/${eachData}`)} thisPage={index}/>
-        {/if}
-      {/each}
+    <section class="displayBody w-full h-full">
+      <!-- {#each data.usingData as eachData, index} -->
+      <!-- {#if isInView} -->
+        <!-- <EachPage imgSrc={fetchImage(`${data.baseUrl}/data-saver/${data.chapterHash}/${data.usingDataSaver[data.pageNumber]}`)} thisPage={data.pageNumber}/> -->
+        <EachPage imgSrc={fetchImage(`${data.baseUrl}/data/${data.chapterHash}/${data.usingData[data.pageNumber]}`)} thisPage={data.pageNumber}/>
+      <!-- {/if} -->
+      <!-- {#each data.usingDataSaver as eachData, index}
+      {/each} -->
     </section>
   </section>
   

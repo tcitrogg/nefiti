@@ -30,7 +30,6 @@
     <section class={`w-full h-full`}>
       <Image
         src="{getThumbnail(item)}"
-        alt="{title}"
       />
     </section>
   </section>

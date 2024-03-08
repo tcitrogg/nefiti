@@ -96,6 +96,8 @@ export const shuffle = (array: any[]) => {
   return array;
 }
 
+export const removeNumbers = (text: string) => text.split("").filter((x)=>isNaN(Number(x)) ? x : '').join("")
+
 export const getRandomColor = () => `#${(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0')}`;
 
 export const getTimestamp = () => new Date().getTime()
@@ -127,4 +129,17 @@ export const sortWithVolume = (data:any) => {
     volume,
     chapters: chapters.sort((a:any, b:any) => Number(a.chapter) - Number(b.chapter)),
   }));
+}
+
+export const searchManga = async (title: string)=>{
+
+  const resp = await axios({
+      method: 'GET',
+      url: `${appinfo.baseUrl}/manga`,
+      params: {
+          title: title
+      }
+  });
+
+  console.log(resp.data.data.map(manga => manga.id));
 }

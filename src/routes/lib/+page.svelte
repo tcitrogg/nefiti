@@ -1,26 +1,39 @@
 <script lang="ts">
   // import type { PageData } from './$types';
   // export let data: PageData;
-  import { getRandomColor, shuffle, titleCase } from "$lib/utils";
+  import { flyAndScale, getRandomColor, removeNumbers, shuffle, titleCase } from "$lib/utils";
   import dgData from "$lib/dgData.json";
   import Avatar from 'svelte-boring-avatars';
 
   import { Drawer } from 'vaul-svelte';
   import Metahead from "$lib/components/Metahead.svelte";
-  import { slide } from "svelte/transition";
+  import { fade, fly, slide } from "svelte/transition";
   import ThemeBtn from "$lib/components/ThemeBtn.svelte";
   import * as Card from "$lib/components/ui/card";
-    import { metainfo } from "$lib/config";
-    import ItemCardThree from "$lib/components/ItemCardThree.svelte";
-    import Image from "$lib/components/Image.svelte";
-    import CopyBtn from "$lib/components/CopyBtn.svelte";
-    import Logo from "$lib/components/Logo.svelte";
-    import Nav from "$lib/components/Nav.svelte";
+  import { metainfo } from "$lib/config";
+  import ItemCardThree from "$lib/components/ItemCardThree.svelte";
+  import Image from "$lib/components/Image.svelte";
+  import CopyBtn from "$lib/components/CopyBtn.svelte";
+  import Logo from "$lib/components/Logo.svelte";
+  import Nav from "$lib/components/Nav.svelte";
+  import YoursTcitrogg from "$lib/components/YoursTcitrogg.svelte";
+  import { toast } from "svelte-sonner";
 
+  const cookRandomNumber = (pos: number) => Number(Math.random().toString()[pos])
 
-    const cookRandomNumber = (pos: number) => Number(Math.random().toString()[pos])
+  const userId = ()=> Math.random().toString(32).slice(2)
+
+  const cookUsername = ()=> shuffle([...shuffle("aeiou".split("")).slice(0,2), ...removeNumbers(userId()).slice(0,5)]).join("")
 
   let user = {
+      name: `Yuza ${cookUsername()}`,
+      username: userId(),
+      fav_suffix: userId().slice(0,3),
+      icon: "ic_fluent_person_20_regular",
+      invites: cookRandomNumber(5),
+      level: cookRandomNumber(6)
+  }
+  const joyboy = {
     name: "Akagami Acaski",
     username: "rogge",
     fav_suffix: "tsurgeon",
@@ -29,24 +42,25 @@
     level: cookRandomNumber(4)
   }
 
-  const userId = ()=> Math.random().toString(32).slice(2)
-
   const handleLogout = ()=>{
     alert(`(*) Switching Accounts...`)
-    user = {
-      name: "Yuza",
-      username: userId(),
-      fav_suffix: userId().slice(0,3),
-      icon: "ic_fluent_person_20_regular",
-      invites: cookRandomNumber(5),
-      level: cookRandomNumber(6)
-    }
+    toast("Switching Accounts...")
+    user.name = `Yuza ${cookUsername()}`
+    user.username = userId()
+    user.fav_suffix = userId().slice(0,3)
+    user.invites = cookRandomNumber(5)
+    user.level = cookRandomNumber(6)
   }
 
   let userInviteMessage = `[${metainfo.short_name}] ${metainfo.avatar_prefix}${user.username}.${user.fav_suffix}: I levelled up to *${metainfo.levelling_prefix}${user.level}* Read with me on ${metainfo.title}, ${metainfo.caption}
   @ ${metainfo.url}`
   
   $: avatar_colors = user.username == metainfo.creator_shortname ? metainfo.color_band : Array.from({ length: 3 }, () => getRandomColor())
+
+  $: isAboutDialogMinimised = false
+  const handleAboutDialog = ()=>{
+    isAboutDialogMinimised = !isAboutDialogMinimised
+  }
 
 </script>
 
@@ -144,6 +158,10 @@
         <i class="icon icon-ic_fluent_heart_circle_20_regular flex text-2xl md:text-3xl"/>
         <p class="text-">Liked Books</p>
       </a>
+      <a href='#' class="py-2 px-3 flex items-center hover:bg-zinc-200 dark:hover:bg-zinc-900 md:hover:bg-zinc-300 md:dark:hover:bg-zinc-800 focus:ring-2 focus:ring-main/50 focus:outline-none rounded-lg gap-4">
+        <i class="icon icon-ic_fluent_heart_20_regular flex text-2xl md:text-3xl"/>
+        <p class="text-">Data saver Mode</p>
+      </a>
     </section>
 
     <!-- History -->
@@ -232,7 +250,7 @@
     </button>
     
     <!-- Help & Feedback, Theme, About -->
-    <section class="w-full h-2/4 rounded-lg bg-zinc-100 dark:bg-zinc-900/60 flex flex-col gap-2 p-1 md:p-4">
+    <section class="w-full rounded-lg bg-zinc-100 dark:bg-zinc-900/60 flex flex-col gap-2 p-1 md:p-4">
       <a href='#' class="py-2 px-2 flex items-center hover:bg-zinc-300 dark:hover:bg-zinc-800 focus:ring-2 focus:ring-main/50 focus:outline-none rounded-lg gap-4">
         <i class="icon icon-ic_fluent_comment_20_regular flex text-2xl md:text-3xl"/>
         <p class="text-">Help & Feedback</p>
@@ -241,9 +259,13 @@
         <p class="text-">Theme</p>
       </ThemeBtn>
 
+      <button on:click={handleAboutDialog} class="w-full py-2 px-2 lg:flex hidden items-center hover:bg-zinc-300 dark:hover:bg-zinc-800 focus:ring-2 focus:ring-main/50 focus:outline-none rounded-lg gap-4">
+        <i class="icon icon-ic_fluent_info_20_regular flex text-2xl md:text-3xl"/>
+        <p class="text-">About the app</p>
+      </button>
       <Drawer.Root>
         <Drawer.Trigger>
-          <button class="w-full py-2 px-2 flex items-center hover:bg-zinc-300 dark:hover:bg-zinc-800 focus:ring-2 focus:ring-main/50 focus:outline-none rounded-lg gap-4">
+          <button class="w-full py-2 px-2 flex lg:hidden items-center hover:bg-zinc-300 dark:hover:bg-zinc-800 focus:ring-2 focus:ring-main/50 focus:outline-none rounded-lg gap-4">
             <i class="icon icon-ic_fluent_info_20_regular flex text-2xl md:text-3xl"/>
             <p class="text-">About the app</p>
           </button>
@@ -298,29 +320,12 @@
                           <CopyBtn classes="flex item-center gap-1" style="" icon="ic_fluent_copy_20_regular" content={metainfo.support.eth_addr}><span>ETH Address</span></CopyBtn>
                         </td>
                       </tr>
-                      <tr class="">
-                        <td class="opacity-50 pr-2.5">Contribute:</td>
-                        <td class=""></td>
-                      </tr>
                     </tbody>
                   </table>
                 </section>
 
                 <!-- yours Tcitrogg -->
-                <a href='https://x.com/tcitrogg' class="w-full py-2 px-3 md:px-6 flex items-center hover:bg-zinc-300dark:hover:bg-zinc-800 focus:ring-2 focus:ring-main/50 focus:outline-none rounded-lg gap-4">
-                  <section class="w-full flex items-center justify-center gap-2 ">
-                    <em class="">yours</em>
-                    <Avatar
-                      name={`${metainfo.avatar_prefix}${metainfo.organisation}`}
-                      size={33}
-                      square={false}
-                      colors={avatar_colors}
-                      variant={"beam"}
-                    />
-                
-                    <h2 class="font-semibold text-base">{metainfo.organisation}</h2>
-                  </section>
-                </a>
+                <YoursTcitrogg/>
               
                 <!-- <section class="w-full px-5">
                   <hr class="border-zinc-200 dark:border-zinc-800 rounded-full">
@@ -334,20 +339,7 @@
 
     <!-- yours Tcitrogg -->
     <section class="w-full py-10">
-      <a href='https://x.com/tcitrogg' class="w-full py-2 px-3 md:px-6 flex items-center hover:bg-zinc-300dark:hover:bg-zinc-800 focus:ring-2 focus:ring-main/50 focus:outline-none rounded-lg gap-4">
-        <section class="w-full flex items-center justify-center gap-2 ">
-          <em class="">yours</em>
-          <Avatar
-            name={`${metainfo.avatar_prefix}${metainfo.organisation}`}
-            size={33}
-            square={false}
-            colors={avatar_colors}
-            variant={"beam"}
-          />
-      
-          <h2 class="font-semibold text-base">{metainfo.organisation}</h2>
-        </section>
-      </a>
+      <YoursTcitrogg/>
     </section>
   </section>
 
@@ -405,4 +397,70 @@
       </section>
     </section>
   </section>
+
+  <!-- Lg-screen dialog -->
+  {#if isAboutDialogMinimised}
+    <section class="w-full h-full fixed top-0 right-0">
+      <!-- dialog overlay -->
+      <section on:click={handleAboutDialog} aria-placeholder="overlay" class="fixed inset-0 bg-zinc-950/40 z-[70]"/>
+      <section transition:flyAndScale={{x: 3}} class="w-4/12 ml-auto h-full bg-zinc-100 dark:bg-zinc-900 shadow-md rounded-t-lg p-3 pb-5 flex flex-col gap-4 justify-between overflow-y-auto relative z-[70]">
+        <section class="flex items-center gap-2">
+          <Logo width="w-10"/>
+          <h1 class="text-xl font-semibold">
+            {metainfo.title}
+          </h1>
+        </section>
+  
+        <section class="flex flex-col">
+          <table class="table-auto border-separate border-spacing-y-3">
+            <!-- <thead>
+              <th>Details</th>
+              <th>Info</th>
+            </thead> -->
+            <tbody class="">
+              <tr class="">
+                <td class="opacity-50 pr-2.5">Version:</td>
+                <td class="">{metainfo.version}</td>
+              </tr>
+              <tr class="flex-1 align-top ">
+                <td class="opacity-50 pr-2.5">Caption:</td>
+                <td class="">{metainfo.caption}</td>
+              </tr>
+              <tr class="">
+                <td class="opacity-50 pr-2.5">By:</td>
+                <td class="">{metainfo.organisation}</td>
+              </tr>
+              <tr class="">
+                <td class="opacity-50 pr-2.5">Handle:</td>
+                <td class="">{metainfo.handle}</td>
+              </tr>
+              <tr class="flex-1 align-top">
+                <td class="opacity-50 pr-2.5">Accounts:</td>
+                <td class="flex flex-col gap-1">
+                  {#each metainfo.contact as item}
+                    <!-- <ul> -->
+                      <li><a href={item.link} class="py-0.5">{item.title}/{metainfo.handle}</a></li>
+                    <!-- </ul> -->
+                  {/each}
+                </td>
+              </tr>
+              <tr class="flex-1 align-top">
+                <td class="opacity-50 pr-2.5">Support {metainfo.title}:</td>
+                <td class="flex flex-col gap-1">
+                  <CopyBtn classes="flex item-center gap-1" style="" icon="ic_fluent_copy_20_regular" content={metainfo.support.eth_addr}><span>ETH Address</span></CopyBtn>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+  
+        <!-- yours Tcitrogg -->
+        <YoursTcitrogg/>
+      
+        <!-- <section class="w-full px-5">
+          <hr class="border-zinc-200 dark:border-zinc-800 rounded-full">
+        </section> -->
+      </section>
+    </section>
+  {/if}
 </section>

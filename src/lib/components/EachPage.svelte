@@ -1,24 +1,21 @@
 <script lang="ts">
   import IntersectionObserver from 'svelte-intersection-observer';
-  import { fade } from 'svelte/transition';
+  import { fade, slide } from 'svelte/transition';
   import Image from './Image.svelte';
+    import { page } from '$app/stores';
 
   export let thisPage = 0;
   export let imgSrc = "";
+  export let chapterLength = 1;
+  const chapterLink = $page.url.href.split("?pg=")[0]
   // export let imgAlt = "";
+
+  console.log($page.url)
 </script>
 
 
-<IntersectionObserver on:intersect={() => (thisPage)} threshold={0.5} rootMargin="0px">
+<!-- <IntersectionObserver on:intersect={() => (thisPage)} threshold={0.5} rootMargin="0px">
   <section in:fade id={`${thisPage+1}`} class="w-full relative overflow-hidden bg-gradient-to-b from-zinc-200 to-zinc-300 dark:from-zinc-800 dark:to-zinc-700">
-    <!-- section.w-full.h-full -->
-    <!-- <Image
-      src={`${eachData}`}
-      alt={`Page #${index+1}`}
-      classes={""}
-    /> -->
-    
-      <!-- src={`${data.baseUrl}/data-saver/${data.chapterHash}/${eachData}`} -->
     <Image
       src={imgSrc}
       alt={`#${thisPage}`}
@@ -29,4 +26,33 @@
       </a>
     </section>
   </section>
-</IntersectionObserver>
+</IntersectionObserver> -->
+
+<section in:fade id={``} class="w-full relative overflow-hidden bg-gradient-to-b from-zinc-200 to-zinc-300 dark:from-zinc-800 dark:to-zinc-700 flex">
+  <Image
+    src={imgSrc}
+    style={"relative"}
+    classes="w-full object-cover object-top"
+  />
+
+  {#if thisPage !== 0}
+  <a href={`?pg=${thisPage - 1}`} class="w-3/12 h-full focus:outline-none focus:ring-0 focus:border-none absolute left-0 top-0">
+    <section class="w-full h-full bg-amber-50050">
+      <!-- prev: prevPage -->
+    </section>
+  </a>
+  {/if}
+
+<!-- {#if isMenuVisible} -->
+  <section transition:slide class="w-6/12 h-full bg-green-50050 absolute left-[25%] top-0">
+  </section>
+<!-- {/if} -->
+
+  {#if !(thisPage >= chapterLength)}
+  <a href={`?pg=${thisPage + 1}`} class="w-3/12 h-full focus:outline-none focus:ring-0 focus:border-none absolute right-0 top-0">
+    <section class="w-full h-full bg-amber-50050">
+      <!-- next: nextPage -->
+    </section>
+  </a>
+  {/if}
+</section>

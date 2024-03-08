@@ -2,9 +2,13 @@
   import Image from '$lib/components/Image.svelte';
   import { fade, slide } from 'svelte/transition';
   import { storeAsideBarMinimised } from '../../stores/layoutData';
-    import { metainfo } from '$lib/config';
+  import { metainfo } from '$lib/config';
+  import { page } from '$app/stores';
 
   const imagePage = "/imgs/thumbnails/extended-realm.jfif"
+
+  // const chapterLink = $page.url.href.split("?pg=")[0]
+  // console.log(chapterLink)
 
   // console.log(`
   
@@ -75,7 +79,7 @@
         style={"relative"}
       />
       <!-- {#if prevPage !== 0} -->
-      <a href={`#prevPage`} class="w-3/12 h-full focus:outline-none focus:ring-0 focus:border-none absolute left-0 top-0">
+      <a href={`?pg=0`} class="w-3/12 h-full focus:outline-none focus:ring-0 focus:border-none absolute left-0 top-0">
         <section class="w-full h-full bg-amber-50050">
           <!-- prev: prevPage -->
         </section>
@@ -88,7 +92,7 @@
     <!-- {/if} -->
 
     <!-- {#if nextPage <= listOfImages.length} -->
-      <a href={`#nextPage`} class="w-3/12 h-full focus:outline-none focus:ring-0 focus:border-none absolute right-0 top-0">
+      <a href={`?pg=1`} class="w-3/12 h-full focus:outline-none focus:ring-0 focus:border-none absolute right-0 top-0">
         <section class="w-full h-full bg-amber-50050">
           <!-- next: nextPage -->
         </section>

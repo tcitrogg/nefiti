@@ -7,7 +7,7 @@ import axios from 'axios';
 
 // const chapterID = '27cd0902-ad4c-490a-b752-ae032f0503c9';
 
-export const load: PageLoad = async ({ params, }:any) => {
+export const load: PageLoad = async ({ params, url }:any) => {
 
   // console.log(params)
 
@@ -54,6 +54,7 @@ export const load: PageLoad = async ({ params, }:any) => {
   
   const result = {
     id: params.cid,
+    pageNumber: url.searchParams.get("pg"),
     baseUrl, chapterHash, usingData, usingDataSaver,
     result: resp.data.result,
     mangaInfo: {

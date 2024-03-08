@@ -15,7 +15,6 @@
     <section class={`w-full h-44 lg:h-60 overflow-hidden rounded-lg relative flex flex-col bg-zinc-100 dark:bg-zinc-900`}>
       <Image
         src="{getThumbnail(item)}"
-        alt="{title}"
       />
         <!-- layout="constrained" -->
     </section>
