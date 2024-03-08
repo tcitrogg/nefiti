@@ -1,4 +1,6 @@
-# Todo
+# t/Nefiti
+
+## Todo
 - PWA
 - Order instead of Hiding section
 - OGimage
@@ -6,11 +8,13 @@
     - listing
     - displaying
 
+
 Online
   ? Each page for itself 
   : One page for all
 
-# List of Libraries
+
+### List of Libraries
 - https://github.com/matyunya/svelte-image
 - https://nedredmond.github.io/a-maze?ref=madewithsvelte.com
 - https://github.com/etherCorps/sveltekit-og?ref=madewithsvelte.com
@@ -24,7 +28,7 @@ Online
 
 - Jigokuraku: http://nefiti.vercel.app/m/cb77e4a6-3921-43b9-9d64-7d78cd3205ce
 
-# APIs
+### APIs
 - https://publicapis.dev/search?q=og%20image
 - <img class="ts-main-image curdown" data-index="43" src="https://cdn.kumacdn.club/wp-content/uploads/images/i/isekai-furin-maou-toubatsu-kara-juunen-tsuma-to-wa-resu-no-moto-yuusha-to-otto-wo-nakushita-onna-senshin/chapter-1/44-656c5ec39e985.jpg" data-server="Server1">
 
