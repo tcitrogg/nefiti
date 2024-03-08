@@ -3,19 +3,6 @@
   "response": "collection",
   "data": [
     {
-      "id": "1987l80i-l492-7i93-2j5l-8h84b7255c2i",
-      "type": "tag",
-      "attributes": {
-        "name": {
-          "en": "Thy Demigod"
-        },
-        "description": {},
-        "group": "format",
-        "version": 1
-      },
-      "relationships": []
-    },
-    {
       "id": "0234a31e-a729-4e28-9d6a-3f87c4966b9e",
       "type": "tag",
       "attributes": {
