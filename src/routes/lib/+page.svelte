@@ -405,7 +405,7 @@
     <section class="w-full h-full fixed top-0 right-0 hidden lg:block">
       <!-- dialog overlay -->
       <section on:click={handleAboutDialog} aria-placeholder="overlay" class="fixed inset-0 bg-zinc-950/40 z-[70]"/>
-      <section transition:flyAndScale={{x: 3}} class="w-4/12 ml-auto h-full bg-zinc-100 dark:bg-zinc-900 shadow-md rounded-t-lg p-3 pb-5 flex flex-col gap-4 justify-between overflow-y-auto relative z-[70]">
+      <section transition:flyAndScale={{x: 3}} class="w-4/12 ml-auto h-full bg-zinc-100 dark:bg-zinc-900 shadow-md rounded-l-xl p-3 pb-5 flex flex-col gap-4 justify-between overflow-y-auto relative z-[70]">
         <section class="flex items-center gap-2">
           <Logo width="w-10"/>
           <h1 class="text-xl font-semibold">
