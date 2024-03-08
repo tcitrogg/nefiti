@@ -46,6 +46,7 @@
   // const data = $layoutData.length !== 0 ? $layoutData : shuffle(sampleData.data).slice(0,isAsideBarMinimised ? 4 : 5)
 </script>
 
+<!-- Use `svelte-legos` to set the `isAsideBarMinimised = true` on Medium screen -->
 <section class="{isAsideBarMinimised ? "md:w-[10%] lg:w-[7%]" : "md:w-[30%] lg:w-[20%]"} h-full md:block hidden items-center justify-center fixed z-50 top-0 left-0">
   <aside class="w-full h-full px-4 {isAsideBarMinimised ? 'md:py-5' : 'md:p-4 lg:pr-1'} lg:py-5 flex flex-col gap-5 items-center justify-between">
     <section class="w-full flex flex-col gap-5">
