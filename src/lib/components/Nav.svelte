@@ -24,7 +24,7 @@
   }
 </script>
 
-<nav class="w-full p-2 md:hidden bg-gradient-to-b from-transparent to-zinc-100 dark:to-zinc-950 text-zinc-100 :backdrop-blur-md fixed z-50 bottom-0 left-0">
+<nav class="w-full p-2 md:hidden bg-gradient-to-b from-transparent to-zinc-100 text-zinc-950 dark:to-zinc-950 dark:text-zinc-100 :backdrop-blur-md fixed z-50 bottom-0 left-0">
   <section class="w-full h-full absolute top-0 left-0 bg-gradient-to-b from-transparent to-zinc-100dark: to-zinc-950/80"/>
   <section class="flex items-center justify-around relative z-10">
     <button on:click={handleSearchMinimised} class="{isSearchMinimised ? '' : 'text-main md:bg-main/10'} p-1 flex items-center justify-center focus:ring-2 focus:ring-main/70 focus:outline-none rounded-full">
