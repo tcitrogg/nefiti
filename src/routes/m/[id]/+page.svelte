@@ -7,6 +7,7 @@
   import Image from '$lib/components/Image.svelte';
   import { getThumbnail, sortWithVolume, titleCase } from '$lib/utils';
   import { fly, scale, slide } from 'svelte/transition';
+    import Nav from '$lib/components/Nav.svelte';
 
   export let data: PageData;
   const mangaData = data
@@ -33,6 +34,7 @@
   image={mangaThumbnail}
 />
 
+<Nav/>
 <!-- <section class="w-full h-full hidden md:block bg-gradient-to-b from-neutral-100/50 to-neutral-100 dark:from-neutral-950/50 dark:to-neutral-950 -z-10 absolute top-0"/> -->
 
 <section transition:slide={{duration:300}} class="w-full h-full">
@@ -46,9 +48,9 @@
       <section class="w-full flex md:flex-row flex-col md:gap-4 md:pt-8 lg:pt-14">
         <section class="w-full md:w-4/12">
           <section class="w-full h-96">
-            <a href="/" class="py-1 px-1 rounded-full bg-zinc-950 text-zinc-100 dark:bg-zinc-100 dark:text-zinc-950 text-sm font-semibold ring-2 ring-transparent focus:ring-main/50 focus:outline-none flex md:hidden items-center gap-3 absolute top-2 left-2 z-10">
+            <!-- <a href="/" class="py-1 px-1 rounded-full bg-zinc-950 text-zinc-100 dark:bg-zinc-100 dark:text-zinc-950 text-sm font-semibold ring-2 ring-transparent focus:ring-main/50 focus:outline-none flex md:hidden items-center gap-3 absolute top-2 left-2 z-10">
               <i class="icon icon-ic_fluent_home_20_regular flex text-2xl"/>
-            </a>
+            </a> -->
             <section transition:slide={{axis: 'y'}} class="skew-b w-full h-full md:rounded-2xl sticky top-0 left-0 bg-zinc-300 dark:bg-zinc-800 overflow-hidden shadow-md">
               <Image
                 src="{mangaThumbnail}"
