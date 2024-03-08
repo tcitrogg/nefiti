@@ -6,6 +6,10 @@
     - listing
     - displaying
 
+Online
+  ? Each page for itself 
+  : One page for all
+
 # List of Libraries
 - https://github.com/matyunya/svelte-image
 - https://nedredmond.github.io/a-maze?ref=madewithsvelte.com
