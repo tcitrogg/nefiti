@@ -15,6 +15,7 @@
     import Image from "$lib/components/Image.svelte";
     import CopyBtn from "$lib/components/CopyBtn.svelte";
     import Logo from "$lib/components/Logo.svelte";
+    import Nav from "$lib/components/Nav.svelte";
 
 
     const cookRandomNumber = (pos: number) => Number(Math.random().toString()[pos])
@@ -52,6 +53,7 @@
 <Metahead
   title={`${user.name.split(" ")[0]}'s Library`}
 />
+<Nav/>
 <section transition:slide={{duration:300}} class="w-full h-smscreen md:h-screen lg:px-10 md:px-4 md:py-2 flex relative gap-8">
   <section class="w-full lg:w-8/12 h-full overflow-y-auto flex flex-col gap-4 md:gap-5 snap snap-y snap-mandatory px-3 md:p-1 md:pt-3">
 
@@ -218,7 +220,7 @@
         </section>
       </section>
 
-      <CopyBtn content={userInviteMessage} style="w-full py-2 px-3 rounded-lg ring-2 ring-transparent focus:ring-main/50 focus:outline-none flex items-center gap-4 hover:bg-zinc-300 dark:hover:bg-zinc-800" classes="" iconSize="xl text-2xl">
+      <CopyBtn content={userInviteMessage} icon="ic_fluent_link_20_regular" style="w-full py-2 px-3 rounded-lg ring-2 ring-transparent focus:ring-main/50 focus:outline-none flex items-center gap-4 hover:bg-zinc-300 dark:hover:bg-zinc-800" classes="" iconSize="xl text-2xl">
         <p class="text-sm">Click to copy link and share with friends</p>
       </CopyBtn>
     </section>
