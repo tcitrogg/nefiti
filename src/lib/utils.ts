@@ -98,6 +98,10 @@ export const shuffle = (array: any[]) => {
 
 export const removeNumbers = (text: string) => text.split("").filter((x)=>isNaN(Number(x)) ? x : '').join("")
 
+export const userId = ()=> Math.random().toString(32).slice(2)
+
+export const cookUsername = ()=> shuffle([...shuffle("aeiou".split("")).slice(0,2), ...removeNumbers(userId()).slice(0,5)]).join("")
+
 export const getRandomColor = () => `#${(Math.random() * 0xFFFFFF << 0).toString(16).padStart(6, '0')}`;
 
 export const getTimestamp = () => new Date().getTime()

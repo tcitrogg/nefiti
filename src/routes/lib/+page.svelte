@@ -1,7 +1,7 @@
 <script lang="ts">
   // import type { PageData } from './$types';
   // export let data: PageData;
-  import { flyAndScale, getRandomColor, removeNumbers, shuffle, titleCase } from "$lib/utils";
+  import { flyAndScale, getRandomColor, removeNumbers, shuffle, titleCase, userId, cookUsername } from "$lib/utils";
   import dgData from "$lib/dgData.json";
   import Avatar from 'svelte-boring-avatars';
 
@@ -18,21 +18,12 @@
   import Nav from "$lib/components/Nav.svelte";
   import YoursTcitrogg from "$lib/components/YoursTcitrogg.svelte";
   import { toast } from "svelte-sonner";
+    import { page } from "$app/stores";
 
   const cookRandomNumber = (pos: number) => Number(Math.random().toString()[pos])
 
-  const userId = ()=> Math.random().toString(32).slice(2)
+  const whoiam = $page.url.searchParams.get("who")
 
-  const cookUsername = ()=> shuffle([...shuffle("aeiou".split("")).slice(0,2), ...removeNumbers(userId()).slice(0,5)]).join("")
-
-  let user = {
-      name: `Yuza ${cookUsername()}`,
-      username: userId(),
-      fav_suffix: userId().slice(0,3),
-      icon: "ic_fluent_person_20_regular",
-      invites: cookRandomNumber(5),
-      level: cookRandomNumber(6)
-  }
   const joyboy = {
     name: "Akagami Acaski",
     username: "rogge",
@@ -42,10 +33,32 @@
     level: cookRandomNumber(4)
   }
 
+  const cookUserProfile = ()=> {
+      return {
+        name: `${cookUsername()}`,
+        username: userId(),
+        fav_suffix: userId().slice(0,3),
+        icon: "ic_fluent_person_20_regular",
+        invites: cookRandomNumber(5),
+        level: cookRandomNumber(6)
+      }
+  }
+  
+  
+  let user = { name: "yuza" }
+
+  // $: metaTitle = `Your Library`
+  
+  user = whoiam === "joyboy"
+    ? joyboy
+    : cookUserProfile()
+  // metaTitle = `${user.name.split(" ")[0]}'s Library`
+
+  
   const handleLogout = ()=>{
-    alert(`(*) Switching Accounts`)
+    // alert(`(*) Switching Accounts`)
     toast("Switching Accounts...")
-    user.name = `Yuza ${cookUsername()}`
+    user.name = `${cookUsername()}`
     user.username = userId()
     user.fav_suffix = userId().slice(0,3)
     user.invites = cookRandomNumber(5)
@@ -64,8 +77,10 @@
 
 </script>
 
+<!-- This should be reactive and change the title
+  for the page when the changes are made -->
 <Metahead
-  title={`${user.name.split(" ")[0]}'s Library`}
+  title={`Your Library`}
 />
 
 <Nav/>
@@ -76,13 +91,16 @@
     <!-- Account -->
     <section class="w-full md:bg-zinc-100 md:dark:bg-zinc-900/60 rounded-lg py-5 md:p-4 flex justify-between items-center">
       <section class="flex items-center gap-3 md:py-3 px4">
-        <Avatar
-          name={`${metainfo.avatar_prefix}${user.username}`}
-          size={55}
-          square={false}
-          colors={avatar_colors}
-          variant={"beam"}
-        />
+        <section class="rounded-full relative bg-green-400">
+          <Avatar
+            name={`${metainfo.avatar_prefix}${user.username}`}
+            size={55}
+            square={false}
+            colors={avatar_colors}
+            variant={"beam"}
+          />
+          <!-- <i class="icon icon-ic_fluent_diamond_20_filled flex text-xl absolute -bottom-2 -right-1 rounded-full bg-zinc-50/70 dark:bg-zinc-950/70 md:bg-zinc-100/70 md:dark:bg-zinc-900/70 backdrop-blur-sm p-1 text-main"/> -->
+        </section>
     
         <section class="flex flex-col -space-y-0.5">
           <h3 class="font-medium text-xl">{user.name}</h3>
