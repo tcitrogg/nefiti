@@ -23,7 +23,7 @@
   import Readotron from '@untemps/svelte-readotron'
   import { currentChapterData, nextChapterData, previousChapterData } from '../../../../../stores/eachPage';
   import { inview } from 'svelte-inview';
-    import EachPage from '$lib/components/EachPage.svelte';
+  import EachPage from '$lib/components/EachPage.svelte';
 
   let isInView: any;
 
