@@ -24,6 +24,7 @@
   import { metainfo } from '$lib/config';
   import Nav from '$lib/components/Nav.svelte';
   import { storeAsideBarMinimised, isAsideBarBtnClick } from "../stores/layoutData";
+    import Logo from '$lib/components/Logo.svelte';
   // import Drawer from '$lib/components/Drawer.svelte';
     
   export let data: PageData;
@@ -69,8 +70,7 @@
 
   <section class="w-full flex gap-5 py-0.5">
     <section class="flex md:hidden items-center gap-2 px-4">
-      <img src="/favicon.svg" alt="[ni]" class="w-6 block dark:hidden">
-      <img src="/favicon-light.svg" alt="[ni]" class="w-6 hidden dark:block">
+      <Logo width="w-6"/>
 
       <!-- <span class="opacity-40">t/</span> -->
       <h1 class="text-xl font-semibold">
@@ -83,8 +83,9 @@
       <section class="flex flex-nowrap gap-2.5 snap-x snap-mandatory">
         {#each listOfTags as eachTag}
           <section class="flex"><Pill
-            link={`/m/tag/${eachTag.id}`}
+            link={`/m/tag?id=${eachTag.id}`}
             title={`${Object.values(eachTag.attributes.name)[0]}`}
+            style="text-sm"
           /></section>
         {:else}
           <!-- empty list -->

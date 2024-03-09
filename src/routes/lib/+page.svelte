@@ -1,7 +1,7 @@
 <script lang="ts">
   // import type { PageData } from './$types';
   // export let data: PageData;
-  import { flyAndScale, getRandomColor, removeNumbers, shuffle, titleCase, userId, cookUsername } from "$lib/utils";
+  import { flyAndScale, getRandomColor, removeNumbers, shuffle, titleCase, userId, cookUsername, removeWhitespace } from "$lib/utils";
   import dgData from "$lib/dgData.json";
   import Avatar from 'svelte-boring-avatars';
 
@@ -18,14 +18,15 @@
   import Nav from "$lib/components/Nav.svelte";
   import YoursTcitrogg from "$lib/components/YoursTcitrogg.svelte";
   import { toast } from "svelte-sonner";
-    import { page } from "$app/stores";
+  import { page } from "$app/stores";
 
   const cookRandomNumber = (pos: number) => Number(Math.random().toString()[pos])
 
-  const whoiam = $page.url.searchParams.get("who")
+  let whoiam = $page.url.searchParams.get("who")
 
   const joyboy = {
-    name: "Akagami Acaski",
+    name: "tcitrogg thy tsurgeon",
+    // name: "Akagami Acaski",
     username: "rogge",
     fav_suffix: "tsurgeon",
     icon: "ic_fluent_lasso_20_filled",
@@ -33,36 +34,36 @@
     level: cookRandomNumber(4)
   }
 
+  let metaTitle = `Your Library`
+
   const cookUserProfile = ()=> {
-      return {
-        name: `${cookUsername()}`,
-        username: userId(),
-        fav_suffix: userId().slice(0,3),
-        icon: "ic_fluent_person_20_regular",
-        invites: cookRandomNumber(5),
-        level: cookRandomNumber(6)
-      }
+    let userInfo = {
+      name: `${cookUsername()}`,
+      username: userId(),
+      fav_suffix: userId().slice(0,3),
+      icon: "ic_fluent_person_20_regular",
+      invites: cookRandomNumber(5),
+      level: cookRandomNumber(6),
+      isPremium: false
+    }
+    if (!(whoiam === undefined || whoiam === null || whoiam === "joyboy")) {
+      userInfo.name = whoiam
+      userInfo.username = removeWhitespace(whoiam)
+      userInfo.fav_suffix = shuffle(["hashira", "otaku", "kaizoku", "yonko", "senpai", "san", "dono", "sama", "kun", "chan", "uchiha", "bankai", "mana", "haki", "ki"])[0]
+      // metaTitle = `${titleCase(userInfo.name.split(" ")[0])}'s Library`
+    }
+    return userInfo
   }
   
-  
-  let user = { name: "yuza" }
-
-  // $: metaTitle = `Your Library`
-  
-  user = whoiam === "joyboy"
+  let user = whoiam === "joyboy"
     ? joyboy
     : cookUserProfile()
-  // metaTitle = `${user.name.split(" ")[0]}'s Library`
-
   
   const handleLogout = ()=>{
     // alert(`(*) Switching Accounts`)
+    whoiam = null
     toast("Switching Accounts...")
-    user.name = `${cookUsername()}`
-    user.username = userId()
-    user.fav_suffix = userId().slice(0,3)
-    user.invites = cookRandomNumber(5)
-    user.level = cookRandomNumber(6)
+    user = cookUserProfile()
   }
 
   let userInviteMessage = `[${metainfo.short_name}] ${metainfo.avatar_prefix}${user.username}.${user.fav_suffix}: I levelled up to *${metainfo.levelling_prefix}${user.level}* Read with me on ${metainfo.title}, ${metainfo.caption}
@@ -80,7 +81,8 @@
 <!-- This should be reactive and change the title
   for the page when the changes are made -->
 <Metahead
-  title={`Your Library`}
+  title={metaTitle}
+  description={`${titleCase(user.name)}'s Library'`}
 />
 
 <Nav/>
@@ -92,22 +94,29 @@
     <section class="w-full md:bg-zinc-100 md:dark:bg-zinc-900/60 rounded-lg py-5 md:p-4 flex justify-between items-center">
       <section class="flex items-center gap-3 md:py-3 px4">
         <section class="rounded-full relative bg-green-400">
+          <!-- name={`${metainfo.avatar_prefix}${user.username}`} -->
           <Avatar
-            name={`${metainfo.avatar_prefix}${user.username}`}
+            name={`${metainfo.avatar_prefix}${user.name}`}
             size={55}
             square={false}
             colors={avatar_colors}
             variant={"beam"}
           />
-          <!-- <i class="icon icon-ic_fluent_diamond_20_filled flex text-xl absolute -bottom-2 -right-1 rounded-full bg-zinc-50/70 dark:bg-zinc-950/70 md:bg-zinc-100/70 md:dark:bg-zinc-900/70 backdrop-blur-sm p-1 text-main"/> -->
+          {#if whoiam === "joyboy"}
+            <i class="icon icon-ic_fluent_circle_off_20_filled flex text-xl absolute -bottom-2 -right-1 rounded-full bg-zinc-50/70 dark:bg-zinc-950/70 md:bg-zinc-100/70 md:dark:bg-zinc-900/70 backdrop-blur-sm p-1 text-main"/>
+          {:else if user.isPremium}
+            <i class="icon icon-ic_fluent_checkmark_starburst_20_filled flex text-xl absolute -bottom-2 -right-1 rounded-full bg-zinc-50/70 dark:bg-zinc-950/70 md:bg-zinc-100/70 md:dark:bg-zinc-900/70 backdrop-blur-sm p-1 text-main"/>
+          {/if}
         </section>
     
         <section class="flex flex-col -space-y-0.5">
-          <h3 class="font-medium text-xl">{user.name}</h3>
+          <h3 class="font-medium text-xl flex">
+            <span>{user.name}</span>
+            <span class="opacity-40">.{user.fav_suffix}</span>
+          </h3>
           <h2 class="text-base text-main flex space-x-0">
             <span class="opacity-20">{metainfo.avatar_prefix}</span>
             <span class="font-semibold">{user.username}</span>
-            <span class="opacity-40">.{user.fav_suffix}</span>
           </h2>
         </section>
       </section>

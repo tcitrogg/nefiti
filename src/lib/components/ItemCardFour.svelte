@@ -37,7 +37,7 @@
       <section class="flex flex-wrap gap-2 snap-x snap-mandatory">
         {#each item.attributes.tags as eachTag}
           <section class="flex"><Pill
-            link={`/m/tag/${eachTag.id}`}
+            link={`/m/tag?id=${eachTag.id}`}
             title={`${Object.values(eachTag.attributes.name)[0]}`}
             style={"text-sm"}
           /></section>

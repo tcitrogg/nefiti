@@ -96,6 +96,8 @@ export const shuffle = (array: any[]) => {
   return array;
 }
 
+export const removeWhitespace = (text: string) => text.replaceAll(" ", "-")
+
 export const removeNumbers = (text: string) => text.split("").filter((x)=>isNaN(Number(x)) ? x : '').join("")
 
 export const userId = ()=> Math.random().toString(32).slice(2)

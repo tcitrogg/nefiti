@@ -92,7 +92,7 @@
       </section>
   
       <section class="w-full md:h-2/6 lg:h-auto {isAsideBarMinimised ? 'md:hidden lg:flex' : ''} md:overflow-y-auto lg:overflow-auto rounded-lg bg-zinc-200/40 dark:bg-zinc-900/60 flex flex-col gap-1 p-1">
-        <a href={`/m/tag/${dgData.tag.id}`} title={Object.values(dgData.tag.attributes.name)[0]} class="w-full h-full focus:ring-2 focus:ring-main/50 focus:outline-none flex flex-col gap-2 relative">
+        <a href={`/m/tag?id=${dgData.tag.id}`} title={Object.values(dgData.tag.attributes.name)[0]} class="w-full h-full focus:ring-2 focus:ring-main/50 focus:outline-none flex flex-col gap-2 relative">
           <section class="w-full rounded-lg hover:bg-zinc-200 dark:hover:bg-zinc-900 p-2 flex items-center {isAsideBarMinimised ? 'justify-center' : ''} gap-2">
             <Avatar
               name={dgData.tag.id}
@@ -108,13 +108,13 @@
           </section>
         </a>
         {#each data as eachTag}
-          <a href={`/m/tag/${eachTag.id}`} title={`${Object.values(eachTag.attributes.name)[0]}`} class="w-full h-full focus:ring-2 focus:ring-main/50 focus:outline-none flex flex-col gap-2 relative">
+          <a href={`/m/tag?id=${eachTag.id}`} title={`${Object.values(eachTag.attributes.name)[0]}`} class="w-full h-full focus:ring-2 focus:ring-main/50 focus:outline-none flex flex-col gap-2 relative">
             <section class="w-full rounded-lg hover:bg-zinc-200 dark:hover:bg-zinc-900 p-2 flex items-center {isAsideBarMinimised ? 'justify-center' : ''} gap-2">
               <Avatar
                 name={eachTag.id}
                 size={35}
                 square={false}
-                colors={Array.from({ length: 3 }, () => getRandomColor())}
+                colors={Array.from({ length: 2 }, () => getRandomColor())}
                 variant={"sunset"}
               />
               {#if !isAsideBarMinimised}

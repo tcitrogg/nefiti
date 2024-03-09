@@ -35,7 +35,7 @@ export const GET = function get({ setHeaders }: any) {
           { "src": "/favicon-192x192.svg", "sizes": "192x192" }]
       },
       {
-        "name": "Lib.ni",
+        "name": "Your Library.ni",
         "short_name": metainfo.short_name,
         "description": metainfo.caption,
         "url": "/lib",

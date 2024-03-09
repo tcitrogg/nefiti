@@ -6,12 +6,24 @@
   import Avatar from 'svelte-boring-avatars';
   import dgData from "$lib/dgData.json";
     import { metainfo } from '$lib/config';
+    import { slide } from 'svelte/transition';
+    import YoursTcitrogg from '$lib/components/YoursTcitrogg.svelte';
+    import { getRandomColor, shuffle } from '$lib/utils';
   // import type { PageData } from './$types';
 
   // export let data: PageData;
-  const title = "Thy demigod"
-  const description = `data.data.attributes.description.en ? data.data.attributes.description.en : Object.values(data.data.attributes.description)[0]`
+  const title = "Tsurgeon"
+  // const description = data.data.attributes.description.en ? data.data.attributes.description.en : Object.values(data.data.attributes.description)[0]
+
+  // Just placeholder for now
+  const description = dgData.tag.attributes.description.en ? dgData.tag.attributes.description.en : Object.values(dgData.tag.attributes.description)[0]
   const year = 2023
+
+  let tagId = $page.params["id"]
+  tagId = tagId === null ? "Not known" : tagId.toLocaleLowerCase()
+  const isTsurgeonTag = tagId === "tsurgeon" ? true : false
+  let tagColor = isTsurgeonTag ? metainfo.color_band : Array.from({ length: 2 }, () => getRandomColor())
+
   // handleFetch()
 
   // let avatarColors = ["#1DB954", "#121212"]
@@ -30,64 +42,88 @@
 
 <Nav/>
 
-<!-- <section class="w-full h-full hidden md:block bg-gradient-to-b from-neutral-100/50 to-neutral-100 dark:from-neutral-950/50 dark:to-neutral-950 -z-10 absolute top-0"/> -->
+<section transition:slide={{duration:80}} class="w-full h-smscreen md:h-screen sticky flex flex-col">
+  <section class="w-full h-full overflow-y-auto md:py7 lg:px-10">
 
-<section class="w-full h-full relative">
-  <img src="/imgs/thumbnails/extended-realm.jfif" alt={`extended-realm.jfif`} class="w-full h-full object-cover fixed top-0 left-0 blur-sm opacity-20 dark:opacity-40"/>
-  <section class="w-full h-smscreen md:h-screen fixed top-0 left-0 z-0 bg-gradient-to-b from-zinc-100/80 dark:from-zinc-950/80 via-zinc-100/95 dark:via-zinc-950/95 to-zinc-100 dark:to-zinc-950"/>
-  
-  <section class="w-full h-full overflow-y-auto relative z-10">
-    <section class="w-full flex flex-col gap-4 md:gap-8">
-      <section class="w-full flex flex-col gap-6 p-4 pt-20 md:p-10 bg-zinc-200/20 dark:bg-zinc-950/20 backdrop-blur-2xl sticky -top-14 lg:top-0 left-0 z-10 justify-center">
-        <section class="flex flex-col gap-3">
-          <section class="flex items-start gap-4">
-
-            <section class="w-12 md:w-20 h-12 md:h-20 bg-gradient-to-brfrom-slate-700to-amber-500 ring-4 ring-emerald-500/50 rounded-full overflow-hidden flex items-center justify-center">
-              <Avatar
-                name={title}
-                size={100}
-                square={false}
-                colors={metainfo.color_band}
-                variant={"sunset"}
-              />
-            </section>
-  
-            <h2 class="font-semibold text-3xl pt-0.5">{title}</h2>
+    <section class="w-full md:w-9/12 md:mx-auto">
+      <!-- Account -->
+      <section class="w-full bg-zinc-50/90 dark:bg-zinc-950/90 backdrop-blur-md rounded-b-lg md:roundedlg py-5 md:p-4 px-3 flex justify-between items-center sticky top-0 z-10">
+        <section class="flex items-center gap-3 md:py-3 px4">
+          <section class="rounded-full relative bg-green-400">
+            <!-- name={`${metainfo.avatar_prefix}${user.username}`} -->
+            <Avatar
+              name={tagId}
+              size={55}
+              square={false}
+              colors={tagColor}
+              variant={"sunset"}
+            />
+            {#if isTsurgeonTag}
+              <i class="icon icon-ic_fluent_circle_off_20_filled flex text-xl absolute -bottom-2 -right-1 rounded-full bg-zinc-50/70 dark:bg-zinc-950/70 md:bg-zinc-100/70 md:dark:bg-zinc-900/70 backdrop-blur-sm p-1 text-main"/>
+            {:else}
+              <i class="icon icon-ic_fluent_tag_20_filled flex text-xl absolute top-1/4 right-1/4 rounded-full bg-zinc-50/70 dark:bg-zinc-950/70 md:bg-zinc-100/70 md:dark:bg-zinc-900/70 backdrop-blur-sm p-1"/>
+            {/if}
+          </section>
+      
+          <section class="flex flex-col -space-y-0.5">
+            <h3 class="font-medium text-xl flex">
+              <span>{tagId}</span>
+              <span class="opacity-10">.tag</span>
+            </h3>
           </section>
         </section>
       </section>
-  
-      <section class="w-full px-4">
+      
+      <!-- <section class="w-full px-5">
         <hr class="border-zinc-200 dark:border-zinc-800 rounded-full">
-      </section>
-  
-      <!-- {/* books */} -->
-      <section class="w-full md:w-10/12 md:mx-auto lg:w-9/12 flex flex-col py-4">
-        <h4 class="text-lg px-4">
-          <span class="opacity-50">#</span>
-          <!-- <span class="font-semibold">Volumes & Books</span> -->
-          <span class="font-semibold">Books</span>
-        </h4>
-        
-        <section class="w-full space-y-2 pt-2 md:pt-4 flex flex-col gap-1">
-          {#each listOfBook as eachBook, index}
-            <a href={`/eachBook`} class="">
-              <section class="w-full hover:bg-main/10 border-bborder-b-main-green/5 flex px-4 py-1 divide-xdivide-zinc-300dark:divide-zinc-700 gap-1">
-                <!-- <section class="w-1/12 flex items-center justify-center gap-2">
-                  <article class="" title="Book">00{index+1}</article>
-                </section> -->
-                <section class="w-12 h-16 bg-gradient-to-br from-slate-700 to-amber-500 overflow-hidden rounded-lg">
-                  <img src="{eachBook.thumbnail}" alt="" class="z-0 w-full h-full object-cover"/>
+      </section> -->
+
+      <!-- Results -->
+      <section class="w-full md:bg-zinc-100md:dark:bg-zinc-900/60 rounded-lg md:py-4 px-3 flex flex-col gap-2 justify-between">
+        <section class="h-full flex flex-col gap-2">
+          <p class="opacity-80">
+            <span class="opacity-50">#</span>
+            <span class="font-semibold">Books</span>
+          </p>
+
+          <ul class="h-full flex flex-col gap-2">
+            {#each shuffle(dgData.books) as eachItem}
+              <a href={`/m/${eachItem.id}`} class="ring-2 ring-transparent focus:ring-main/50 focus:outline-none">
+                <section class="w-full flex rounded-xl p-1 gap-3 hover:bg-zinc-200 dark:hover:bg-zinc-900">
+                  <section class="w-16 h-20 bg-gradient-to-br from-main to-zinc-950 rounded-lg overflow-hidden">
+                    <img src="{eachItem.thumbnail}" alt="" class="z-0 w-full h-full object-cover"/>
+                  </section>
+                  <h4 class="w-9/12 line-clamp-3 py-2">{eachItem.title}</h4>
                 </section>
-                <article class="flex items-center pl-3">{eachBook.title}</article>
+              </a>
+            {:else}
+              <section class="h-full flex flex-col gap-4 justify-between">
+                <section class="flex gap-3">
+                  <i class="icon icon-ic_fluent_box_multiple_search_20_regular flex text-5xl py-1"/>
+
+                  <h4 class="font-medium text-2xl">Sorry! don't think there is something like that.</h4>
+                </section>
+
+                <section class="">
+                  <button class="py-2 px-3 md:px-6 flex items-center bg-zinc-200/50 hover:bg-zinc-200 dark:bg-zinc-800/50 dark:hover:bg-zinc-800 focus:ring-2 focus:ring-main/50 focus:outline-none rounded-lg gap-4">
+                    <i class="icon icon-ic_fluent_home_20_regular flex text-2xl md:text-3xl"/>
+                    <p class="">Go Home</p>
+                  </button>
+                </section>
               </section>
-            </a>
-          {/each}
-          <section class="h-20"></section>
+            {/each}
+    
+            <section class="py-10 opacity-0 text-center block md:py-5"><em>That's all we've got</em></section>
+          </ul>
         </section>
       </section>
-  
-      <section class="w-full py-5 opacity-10 flex items-center justify-center">thy tsurgeon</section>
     </section>
+
+    <!-- yours Tcitrogg -->
+    {#if isTsurgeonTag}
+      <section class="w-full py-10">
+        <YoursTcitrogg/>
+      </section>
+    {/if}
   </section>
 </section>

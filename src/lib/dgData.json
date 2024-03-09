@@ -1,13 +1,15 @@
 {
     "tag": {
-      "id": "thy-demigod",
+      "id": "tsurgeon",
       "long_id": "1987l80i-l492-7i93-2j5l-8h84b7255c2i",
       "type": "tag",
       "attributes": {
         "name": {
-          "en": "Thy Demigod"
+          "en": "Tsurgeon"
         },
-        "description": {},
+        "description": {
+            "en": "Tales rom yours truly, thy demigod"
+        },
         "group": "format",
         "version": 1
       },
@@ -52,7 +54,7 @@
         },
         {
             "id": "tcne-0001ts",
-            "title": "Tsurgeon Syndrome",
+            "title": "Tsyndrome",
             "description": "",
             "tags": [
                 "Comedy", "Action", "Drama"
@@ -129,7 +131,7 @@
         },
         {
             "id": "tcne-0008nr",
-            "title": "Not beyond repair",
+            "title": "Not beyond",
             "description": "",
             "tags": [
                 "Drama", "Slice of life"

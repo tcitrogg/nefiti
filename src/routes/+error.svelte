@@ -3,17 +3,17 @@
   import { page } from '$app/stores';
   import Metahead from "$lib/components/Metahead.svelte";
   import { metainfo } from "$lib/config";
+    import Logo from "$lib/components/Logo.svelte";
 
   const focusStyle = "focus:outline-none focus:ring-1 focus:ring-blue-700/70"
 </script>
 
 <Metahead title={`${$page.status} Error`} description={`${$page.status} | ${$page.error?.message}`}/>
 
-<section class="w-full md:w-11/12 md:ml-auto h-smscreen md:h-screen flex flex-col justify-center p-4 gap-10">
+<section transition:slide={{axis: 'x'}} class="w-full md:w-11/12 md:ml-auto h-smscreen md:h-screen flex flex-col justify-center p-4 gap-10">
   <section class={`flex md:hidden items-center gap-2 text-3xl md:text-4xl font-medium`}>
-    <img src="/favicon.svg" alt="[ni]" class="w-7 md:w-10 block dark:hidden">
-    <img src="/favicon-light.svg" alt="[ni]" class="w-7 md:w-10 hidden dark:block">
-    <h1 class="font-semibold">
+    <Logo/>
+    <h1 class="font-semibold text-xl">
       {metainfo.title}
     </h1>
   </section>
