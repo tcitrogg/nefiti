@@ -5,6 +5,7 @@
     import { page } from '$app/stores';
 
   export let thisPage = 0;
+  thisPage = isNaN(Number(thisPage)) ? Number(thisPage) : thisPage
   export let imgSrc = "";
   export let chapterLength = 1;
   const chapterLink = $page.url.href.split("?pg=")[0]
@@ -44,8 +45,8 @@
   {/if}
 
 <!-- {#if isMenuVisible} -->
-  <section transition:slide class="w-6/12 h-full bg-green-50050 absolute left-[25%] top-0">
-  </section>
+  <!-- <section transition:slide class="w-6/12 h-full bg-green-50050 absolute left-[25%] top-0">
+  </section> -->
 <!-- {/if} -->
 
   {#if !(thisPage >= chapterLength)}

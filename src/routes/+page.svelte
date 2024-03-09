@@ -78,11 +78,12 @@
       </h1>
     </section>
 
+    <!-- Tags -->
     <section class="w-full my-1 flex overflow-x-scroll sm-scrollbar rounded-scrollbar sm-hide-scrollbar md:py-1 px-4 md:px-0 rounded-l-lg">
       <section class="flex flex-nowrap gap-2.5 snap-x snap-mandatory">
         {#each listOfTags as eachTag}
           <section class="flex"><Pill
-            link={`/tag/${eachTag.id}`}
+            link={`/m/tag/${eachTag.id}`}
             title={`${Object.values(eachTag.attributes.name)[0]}`}
           /></section>
         {:else}

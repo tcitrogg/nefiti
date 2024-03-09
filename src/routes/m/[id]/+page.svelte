@@ -7,9 +7,12 @@
   import Image from '$lib/components/Image.svelte';
   import { getThumbnail, sortWithVolume, titleCase } from '$lib/utils';
   import { fly, scale, slide } from 'svelte/transition';
-    import Nav from '$lib/components/Nav.svelte';
+  import Nav from '$lib/components/Nav.svelte';
 
   export let data: PageData;
+
+  console.log(data)
+
   const mangaData = data
 
   const title = `${Object.values(mangaData.attributes.title)[0]}`
