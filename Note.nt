@@ -14,7 +14,9 @@ Online
   : One page for all
 
 ## Fix
-- [ ] pages in each chapter - the next and prev buttons
+- [ ] pages in each chapter
+  - the next and prev buttons
+  - next and prev buttons for Chapters
 - [ ] Fetch tags
 - [ ] Search
 - [ ] Displaying tsurgeon's books
