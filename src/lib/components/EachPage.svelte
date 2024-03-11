@@ -5,13 +5,14 @@
     import { page } from '$app/stores';
 
   export let thisPage = 0;
-  thisPage = isNaN(Number(thisPage)) ? Number(thisPage) : thisPage
+  thisPage = Number(thisPage)
+  console.log(thisPage, typeof(thisPage))
   export let imgSrc = "";
   export let chapterLength = 1;
   const chapterLink = $page.url.href.split("?pg=")[0]
   // export let imgAlt = "";
 
-  console.log($page.url)
+  // console.log($page.url)
 </script>
 
 
@@ -29,7 +30,7 @@
   </section>
 </IntersectionObserver> -->
 
-<section in:fade id={``} class="w-full relative overflow-hidden bg-gradient-to-b from-zinc-200 to-zinc-300 dark:from-zinc-800 dark:to-zinc-700 flex">
+<section in:fade id={``} class="w-full relative overflow-hidden flex bg-gradient-to-bfrom-zinc-200 to-zinc-300dark:from-zinc-800dark:to-zinc-700">
   <Image
     src={imgSrc}
     style={"relative"}
@@ -50,7 +51,7 @@
 <!-- {/if} -->
 
   {#if !(thisPage >= chapterLength)}
-  <a href={`?pg=${thisPage + 1}`} class="w-3/12 h-full focus:outline-none focus:ring-0 focus:border-none absolute right-0 top-0">
+  <a href={`${thisPage + 1}`} class="w-3/12 h-full focus:outline-none focus:ring-0 focus:border-none absolute right-0 top-0">
     <section class="w-full h-full bg-amber-50050">
       <!-- next: nextPage -->
     </section>

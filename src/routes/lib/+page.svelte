@@ -25,10 +25,10 @@
   let whoiam = $page.url.searchParams.get("who")
 
   const joyboy = {
-    name: "tcitrogg thy tsurgeon",
+    name: "tcitrogg",
     // name: "Akagami Acaski",
     username: "rogge",
-    fav_suffix: "tsurgeon",
+    fav_suffix: "el",
     icon: "ic_fluent_lasso_20_filled",
     invites: cookRandomNumber(3),
     level: cookRandomNumber(4)
@@ -273,10 +273,10 @@
     </section>
 
     <!-- Logout -->
-    <button on:click={handleLogout} class="py-2 px-3 md:px-6 flex items-center bg-zinc200 hover:bg-zinc-300/80 dark:bg-zinc800 dark:hover:bg-zinc-700/80 focus:ring-2 focus:ring-main/50 focus:outline-none rounded-lg gap-4">
+    <a href="/lib" on:click={handleLogout} class="py-2 px-3 md:px-6 flex items-center bg-zinc200 hover:bg-zinc-300/80 dark:bg-zinc800 dark:hover:bg-zinc-700/80 focus:ring-2 focus:ring-main/50 focus:outline-none rounded-lg gap-4">
       <i class="icon icon-ic_fluent_arrow_exit_20_regular flex text-2xl md:text-3xl"/>
       <p class="">Logout</p>
-    </button>
+    </a>
     
     <!-- Help & Feedback, Theme, About -->
     <section class="w-full rounded-lg bg-zinc-100 dark:bg-zinc-900/60 flex flex-col gap-2 p-1 md:p-4">

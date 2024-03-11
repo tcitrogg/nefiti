@@ -88,11 +88,13 @@ _from ${metainfo.url}_`
 
 
 let thisPage = 0;
+
+console.log(data)
 </script>
 
 
 <Metahead
-  title={`${mangaTitle} Ch. ${chapterLength}`}
+  title={`${mangaTitle} Ch. ${currentChapter?.chapter} Pg. ${Number(data.pageNumber??0)+1}`}
   description={`${mangaDescription}`}
   keywords={mangaKeywords}
   seoType="NewsArticle"
@@ -235,8 +237,8 @@ let thisPage = 0;
     <section class="displayBody w-full h-full">
       <!-- {#each data.usingData as eachData, index} -->
       <!-- {#if isInView} -->
-        <!-- <EachPage imgSrc={fetchImage(`${data.baseUrl}/data-saver/${data.chapterHash}/${data.usingDataSaver[data.pageNumber]}`)} thisPage={data.pageNumber}/> -->
-        <EachPage imgSrc={fetchImage(`${data.baseUrl}/data/${data.chapterHash}/${data.usingData[data.pageNumber]}`)} thisPage={data.pageNumber}/>
+        <EachPage imgSrc={fetchImage(`${data.baseUrl}/data-saver/${data.chapterHash}/${data.usingDataSaver[data.pageNumber]}`)} thisPage={data.pageNumber} chapterLength={data.usingDataSaver.length}/>
+        <!-- <EachPage imgSrc={fetchImage(`${data.baseUrl}/data/${data.chapterHash}/${data.usingData[data.pageNumber]}`)} thisPage={data.pageNumber} chapterLength={data.usingData.length}/> -->
       <!-- {/if} -->
       <!-- {#each data.usingDataSaver as eachData, index}
       {/each} -->
