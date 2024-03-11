@@ -1,13 +1,13 @@
 import { appinfo } from '$lib/config';
 import { getThumbnail } from '$lib/utils';
-import type { PageLoad } from './$types';
+// import type { PageLoad } from './$types';
 
 
 import axios from 'axios';
 
 // const chapterID = '27cd0902-ad4c-490a-b752-ae032f0503c9';
 
-export const load: PageLoad = async ({ params, url }:any) => {
+export const load = async ({ params, url }:any) => {
 
   // console.log(params)
 
@@ -54,7 +54,7 @@ export const load: PageLoad = async ({ params, url }:any) => {
   
   const result = {
     id: params.cid,
-    pageNumber: url.searchParams.get("pg"),
+    pageNumber: params.pgid,
     baseUrl, chapterHash, usingData, usingDataSaver,
     result: resp.data.result,
     mangaInfo: {

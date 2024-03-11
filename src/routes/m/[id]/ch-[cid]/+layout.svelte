@@ -1,6 +1,7 @@
 <script lang="ts">
-  import type { PageData } from './$types';
-  export let data: PageData;
+  import type { LayoutData } from './$types';
+    
+  export let data: LayoutData;
   import { appinfo, metainfo } from '$lib/config';
   import { page } from '$app/stores';
   
@@ -21,7 +22,7 @@
   import { Button } from '$lib/components/ui/button';
   // import sampleData from "$lib/sampleData.json";
   import Readotron from '@untemps/svelte-readotron'
-  import { currentChapterData, nextChapterData, previousChapterData } from '../../../../../stores/eachPage';
+  import { currentChapterData, nextChapterData, previousChapterData } from '../../../../stores/eachPage';
   import { inview } from 'svelte-inview';
   import EachPage from '$lib/components/EachPage.svelte';
 
@@ -234,15 +235,7 @@ console.log(data)
     </Drawer.Root>
     
     <!-- Pages -->
-    <section class="displayBody w-full h-full">
-      <!-- {#each data.usingData as eachData, index} -->
-      <!-- {#if isInView} -->
-        <EachPage imgSrc={fetchImage(`${data.baseUrl}/data-saver/${data.chapterHash}/${data.usingDataSaver[data.pageNumber]}`)} thisPage={data.pageNumber} chapterLength={data.usingDataSaver.length}/>
-        <!-- <EachPage imgSrc={fetchImage(`${data.baseUrl}/data/${data.chapterHash}/${data.usingData[data.pageNumber]}`)} thisPage={data.pageNumber} chapterLength={data.usingData.length}/> -->
-      <!-- {/if} -->
-      <!-- {#each data.usingDataSaver as eachData, index}
-      {/each} -->
-    </section>
+    <slot/>
   </section>
   
   <section class="hidden lg:flex sticky top-0 md:w-3/12 h-screen p-1">
@@ -324,7 +317,7 @@ console.log(data)
 
       <section class="flex items-center justify-between p-3">
         {#if previousChapter !== null}
-          <a href={`/m/${mangaData.id}/c/${previousChapter.id}`} title={`Previous Chapter`} class="focus:ring-0 focus:outline-none relative bg-zinc-300/50 hover:bg-zinc-300 dark:bg-zinc-800/50 dark:hover:bg-zinc-800 px-3 py-1 rounded-lg flex items-center justify-center">
+          <a href={`/m/${mangaData.id}/ch-${previousChapter.id}`} title={`Previous Chapter`} class="focus:ring-0 focus:outline-none relative bg-zinc-300/50 hover:bg-zinc-300 dark:bg-zinc-800/50 dark:hover:bg-zinc-800 px-3 py-1 rounded-lg flex items-center justify-center">
             Previous
           </a>
         {:else}
@@ -334,7 +327,7 @@ console.log(data)
         {/if}
 
         {#if nextChapter !== null}
-          <a href={`/m/${mangaData.id}/c/${nextChapter.id}`} title={`Next Chapter`} class="focus:ring-0 focus:outline-none relative bg-zinc-300/50 hover:bg-zinc-300 dark:bg-zinc-800/50 dark:hover:bg-zinc-800  px-3 py-1 rounded-lg flex items-center justify-center">
+          <a href={`/m/${mangaData.id}/ch-${nextChapter.id}`} title={`Next Chapter`} class="focus:ring-0 focus:outline-none relative bg-zinc-300/50 hover:bg-zinc-300 dark:bg-zinc-800/50 dark:hover:bg-zinc-800  px-3 py-1 rounded-lg flex items-center justify-center">
             Next
           </a>
         {:else}
