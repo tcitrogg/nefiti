@@ -2,16 +2,22 @@
 
 ## Todo
 - PWA
-- Order instead of Hiding section
+* Order instead of Hiding section
 - OGimage
-- Chapters
-    - listing
-    - displaying
+x Chapters
+    x listing
+    x displaying
 
 
 Online
   ? Each page for itself 
   : One page for all
+
+## Fix
+- [ ] pages in each chapter - the next and prev buttons
+- [ ] Fetch tags
+- [ ] Search
+- [ ] Displaying tsurgeon's books
 
 
 ### List of Libraries
