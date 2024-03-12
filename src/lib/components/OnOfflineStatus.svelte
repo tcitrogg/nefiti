@@ -22,9 +22,14 @@
   });
 </script>
 
+<!-- 
+<section class="w-full rounded-full bg-zinc-300 dark:bg-zinc-800 h-1">
+  <section class="bg-main ring-2 ring-main/20 py-0.5 rounded-full" style="width: {pageProgress}0%;"/>
+</section> -->
 <h1>
   {#if isOnline}
     You are online!
+
   {:else}
     You are offline.
   {/if}

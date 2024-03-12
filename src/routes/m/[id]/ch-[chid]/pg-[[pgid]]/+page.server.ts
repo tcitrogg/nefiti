@@ -44,7 +44,7 @@ export const load: PageLoad = async ({ params, url }:any) => {
     const resp = await axios({
       method: 'GET',
       // url: `${appinfo.baseUrl}/at-home/server/${chapterID}`,
-      url: `${appinfo.baseUrl}/at-home/server/${params.cid}`,
+      url: `${appinfo.baseUrl}/at-home/server/${params.chid}`,
     }); 
   
   const baseUrl = resp.data.baseUrl;

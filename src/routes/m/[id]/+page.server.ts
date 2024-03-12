@@ -1,12 +1,12 @@
 import { appinfo } from '$lib/config';
 import { getThumbnail } from '$lib/utils';
 // import { mangaData } from '../../../stores/eachPage';
-import type { PageLoad } from './$types';
+import type { PageServerLoad } from './$types';
 
 
 import axios from 'axios';
 
-export const load: PageLoad = async ({ params }:any) => {
+export const load: PageServerLoad = async ({ params }:any) => {
   try {
     const dataResp = await axios({
       method: 'GET',
@@ -17,6 +17,7 @@ export const load: PageLoad = async ({ params }:any) => {
     // Chapters
     const chaptersResp = await axios({
       method: 'GET',
+      // &lang=en
       url: `${appinfo.baseUrl}/manga/${params.id}/feed?includeFuturePublishAt=0`,
     });
     const chapters = chaptersResp.data.data;

@@ -1,13 +1,13 @@
 import { appinfo } from '$lib/config';
 import { getThumbnail } from '$lib/utils';
-// import type { PageLoad } from './$types';
+import type { LayoutServerLoad } from './$types';
 
 
 import axios from 'axios';
 
 // const chapterID = '27cd0902-ad4c-490a-b752-ae032f0503c9';
 
-export const load = async ({ params, url }:any) => {
+export const load: LayoutServerLoad = async ({ params, url }:any) => {
 
   // console.log(params)
 
@@ -44,7 +44,7 @@ export const load = async ({ params, url }:any) => {
     const resp = await axios({
       method: 'GET',
       // url: `${appinfo.baseUrl}/at-home/server/${chapterID}`,
-      url: `${appinfo.baseUrl}/at-home/server/${params.cid}`,
+      url: `${appinfo.baseUrl}/at-home/server/${params.chid}`,
     }); 
   
   const baseUrl = resp.data.baseUrl;
@@ -53,8 +53,6 @@ export const load = async ({ params, url }:any) => {
   const usingDataSaver = resp.data.chapter.dataSaver;
   
   const result = {
-    id: params.cid,
-    pageNumber: params.pgid,
     baseUrl, chapterHash, usingData, usingDataSaver,
     result: resp.data.result,
     mangaInfo: {

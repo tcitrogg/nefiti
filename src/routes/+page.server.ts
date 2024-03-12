@@ -2,14 +2,14 @@
 import axios from 'axios';
 import { writable } from 'svelte/store';
 import { appinfo } from '$lib/config';
-import type { PageLoad } from './$types';
+import type { PageServerLoad } from './$types';
 import { layoutData } from '../stores/layoutData';
 import { shuffle } from '$lib/utils';
 
 // Define a writable store to hold the fetched data
 const data = writable<any>(null);
 
-export const load: PageLoad = async ({ url, fetch, setHeaders }: any) => {
+export const load: PageServerLoad = async ({ url, fetch, setHeaders }: any) => {
   try {
     // Fetch tags
     const tagsResponse = await axios.get(`${appinfo.baseUrl}/manga/tag`);

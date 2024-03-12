@@ -21,6 +21,7 @@
   // const date = new Date(mangaData.attributes.createdAt)
   const year = mangaData.attributes.year ?? mangaData.attributes.createdAt.slice(0,4)
   const status = titleCase(mangaData.attributes.status) ?? "Don't Know"
+  const lang = titleCase(mangaData.attributes.originalLanguage) ?? "Don't Know"
 
   let mangaThumbnail = getThumbnail(mangaData);
 
@@ -94,6 +95,12 @@
               <Pill
                 link={`#`}
                 title={`# ${status}`}
+                style={"text-sm py-1"}
+                isActive={true}
+              />
+              <Pill
+                link={`#`}
+                title={lang}
                 style={"text-sm py-1"}
                 isActive={true}
               />

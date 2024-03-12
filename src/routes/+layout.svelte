@@ -7,11 +7,13 @@
   import { ProgressBar } from "@prgm/sveltekit-progress-bar";
   import Loading from "$lib/components/Loading.svelte";
   import SearchBox from "$lib/components/SearchBox.svelte";
+  // import OnOfflineStatus from "$lib/components/OnOfflineStatus.svelte";
 </script>
 
 <Toaster/>
 <Loading/>
 <SearchBox/>
+<!-- <OnOfflineStatus/> -->
 <section class="fixed top-0 left-0 z-[70]">
   <ProgressBar class="text-main z-[70]"/>
 </section>
