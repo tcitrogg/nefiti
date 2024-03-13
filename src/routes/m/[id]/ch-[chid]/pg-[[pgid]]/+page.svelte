@@ -7,6 +7,7 @@
   import CopyBtn from '$lib/components/CopyBtn.svelte';
   import Pill from '$lib/components/Pill.svelte';
   import * as Drawer from "$lib/components/ui/drawer";
+  import { Skeleton } from "$lib/components/ui/skeleton";
   import { currentChapterData, nextChapterData, previousChapterData } from "../../../../../stores/eachPage";
     import Image from '$lib/components/Image.svelte';
   export let data: PageData;
@@ -51,28 +52,48 @@ _from ${metainfo.url}_`
     isMenuVisible = !isMenuVisible
   }
 
+  // Image is loading
+  let imgSrc = fetchImage(`${data.baseUrl}/data-saver/${data.chapterHash}/${data.usingDataSaver[Number($page.params.pgid)]}`);
+
+  let isImageLoaded = false
+  const handleLoadingImg = ()=> isImageLoaded = true
+
 </script>
 
 <section class="w-full h-full">
   <section in:fade id={``} class="w-full h-full relative flex">
     <section class="w-full h-full flex flex-col">
-      <img src={fetchImage(`${data.baseUrl}/data-saver/${data.chapterHash}/${data.usingDataSaver[Number($page.params.pgid)]}`)} alt="" class="w-full">
+      {#await imgSrc}
+        <!-- imgSrc is pending -->
+        <Skeleton class="h-full w-full md:rounded-lg"/>
+      {:then value}
+        <!-- imgSrc was fulfilled -->
+        <img src={value} data-sveltekit-reload alt="" class="w-full" on:load={handleLoadingImg}>
+      {:catch error}
+        <!-- imgSrc was rejected -->
+        <!-- <section class="w-full h-full p-4 md:p-0"></section> -->
+        <Skeleton class="h-full w-full md:rounded-lg p-4 md:p-0">
+
+          <h4 class="font-medium text-2xl">Oops!</h4>
+          <p class="">Error loading image: {error.message}</p>
+        </Skeleton>
+      {/await}
     
       <!-- <section class="py-7 opacity-0">Next page</section> -->
     </section>  
     {#if Number($page.params.pgid) !== 0}
-    <a href="pg-{Number($page.params.pgid)-1}" class="w-2/12 h-full focus:outline-none focus:ring-0 focus:border-none absolute left-0 top-0">
+    <a href="pg-{Number($page.params.pgid)-1}" class="w-2/12 h-full focus:outline-none focus:ring-0 focus:border-none fixed md:sticky left-0 top-0">
       <section class="w-full h-full bg-amber-50050">
         <!-- prev: prevPage -->
       </section>
     </a>
     {/if}
   
-    <section transition:slide on:click={handleMenu} class="w-8/12 h-full absolute left-[25%] top-0">
+    <section transition:slide on:click={handleMenu} class="w-8/12 h-full fixed md:sticky left-[16.667%] top-0">
     </section>
   
     {#if !(Number($page.params.pgid)+1 == data.usingData.length)}
-    <a href="pg-{Number($page.params.pgid)+1}" class="w-2/12 h-full focus:outline-none focus:ring-0 focus:border-none absolute right-0 top-0">
+    <a href="pg-{Number($page.params.pgid)+1}" class="w-2/12 h-full focus:outline-none focus:ring-0 focus:border-none fixed md:sticky right-0 top-0">
       <section class="w-full h-full bg-amber-50050">
         <!-- next: nextPage -->
       </section>
@@ -187,17 +208,19 @@ _from ${metainfo.url}_`
                 Previous
               </a>
             {:else}
-              <p title={`No Previous Chapter`} class="relative px-3 py-1 rounded-lg flex items-center justify-center">
-                Previous
+              <p title={`No Previous Chapter`} class="relative px-3 py-1 rounded-lg flex items-center justify-center opacity-20">
+                Beginning
               </p>
             {/if}
+
+            <p class="opacity-60">Chapter</p>
 
             {#if nextChapter !== null}
               <a  href={`${nextChapter.id}`} title={`Next Chapter`} class="focus:ring-0 focus:outline-none relative bg-zinc-300/50 hover:bg-zinc-300 dark:bg-zinc-800/50 dark:hover:bg-zinc-800  px-3 py-1 rounded-lg flex items-center justify-center">
                 Next
               </a>
             {:else}
-              <p title={`No Next Chapter`} class="relative px-3 py-1 rounded-lg flex items-center justify-center">
+              <p title={`No Next Chapter`} class="relative px-3 py-1 rounded-lg flex items-center justify-center opacity-20">
                 The end
               </p>
             {/if}
@@ -299,17 +322,19 @@ _from ${metainfo.url}_`
               Previous
             </a>
           {:else}
-            <p title={`No Previous Chapter`} class="relative px-3 py-1 rounded-lg flex items-center justify-center">
-              Previous
+            <p title={`No Previous Chapter`} class="relative px-3 py-1 rounded-lg flex items-center justify-center opacity-20">
+              Beginning
             </p>
           {/if}
-  
+
+          <p class="opacity-60">Chapter</p>
+
           {#if nextChapter !== null}
-            <a href={`/m/${mangaData.id}/ch-${nextChapter.id}`} title={`Next Chapter`} class="focus:ring-0 focus:outline-none relative bg-zinc-300/50 hover:bg-zinc-300 dark:bg-zinc-800/50 dark:hover:bg-zinc-800  px-3 py-1 rounded-lg flex items-center justify-center">
+            <a  href={`/m/${mangaData.id}/ch-${nextChapter.id}`} title={`Next Chapter`} class="focus:ring-0 focus:outline-none relative bg-zinc-300/50 hover:bg-zinc-300 dark:bg-zinc-800/50 dark:hover:bg-zinc-800  px-3 py-1 rounded-lg flex items-center justify-center">
               Next
             </a>
           {:else}
-            <p title={`No Next Chapter`} class="relative px-3 py-1 rounded-lg flex items-center justify-center">
+            <p title={`No Next Chapter`} class="relative px-3 py-1 rounded-lg flex items-center justify-center opacity-20">
               The end
             </p>
           {/if}

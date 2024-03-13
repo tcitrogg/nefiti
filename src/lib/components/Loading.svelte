@@ -15,7 +15,8 @@
   <section transition:slide class="absolute z-[70] w-full h-full bg-zinc-900 text-zinc-100 dark:bg-zinc-100 dark:text-zinc-900 backdrop-blur-md flex flex-col items-center justify-center space-y-4">
     <section class={`flex items-center gap-2 text-3xl md:text-4xl font-medium`}>
       <img src="/favicon.svg" alt="[ni]" class="w-7 md:w-10 dark:block hidden">
-<img src="/favicon-light.svg" alt="[ni]" class="w-7 md:w-10 dark:hidden block">
+      <img src="/favicon-light.svg" alt="[ni]" class="w-7 md:w-10 dark:hidden block">
+      <!-- <Logo/> -->
       <h1 class="font-semibold">
         {metainfo.title}
       </h1>

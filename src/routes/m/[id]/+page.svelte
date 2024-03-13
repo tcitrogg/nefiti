@@ -157,7 +157,15 @@
       <!-- <section>{@html JSON.stringify(data.chapters, null, 3)}</section> -->
       <!-- <p class="">{$page.params.id}</p> -->
   
-      <section class="w-full py-5 opacity-5 flex items-center justify-center">rogg</section>
+      <!-- below mark -->
+      <section class="w-full py-5 flex items-center justify-center">
+        <a href="http://github.com/tcitrogg" class="">
+          <h2 class="opacity-0 hover:opacity-70">
+            <span class="italic">thy</span>
+            <span class="">tsurgeon</span>
+          </h2>
+        </a>
+      </section>
     </section>
 
   </section>

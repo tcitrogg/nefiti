@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
     font-family: 'Space Grotesk';
     src: url('SpaceGrotesk/SpaceGrotesk-VariableFontwght.eot');
     src: url('SpaceGrotesk/SpaceGrotesk-VariableFontwght.eot?#iefix') format('embedded-opentype'),
@@ -53,7 +53,7 @@
 }
 
 
-/*  */
+/*
 @font-face{
     font-family: "Roc Grotesk W05 Wide Bold";
     src: url("RocGrotesk/dc0c9cb78690bb482ae3bb782c3cc693.eot");
@@ -70,7 +70,7 @@
 .font-roc_grotesk{
     font-family: "Roc Grotesk W05 Wide Bold";
     font-weight: normal;
-}
+} */
 
 
 /*  */

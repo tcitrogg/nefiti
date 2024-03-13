@@ -401,7 +401,7 @@
   <!-- below mark -->
   <section class="w-full py-5 flex items-center justify-center">
     <a href="http://github.com/tcitrogg" class="">
-      <h2 class="opacity-50 hover:opacity-70">
+      <h2 class="opacity-0 hover:opacity-70">
         <span class="italic">thy</span>
         <span class="">tsurgeon</span>
       </h2>

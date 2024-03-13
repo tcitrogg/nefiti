@@ -10,6 +10,7 @@
 <!-- OnlineStatus.svelte -->
 
 <script>
+
   let isOnline = navigator.onLine; // Initialize with the current online status
 
   // Add event listeners to detect changes in online status

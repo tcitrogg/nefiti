@@ -152,7 +152,7 @@
         <section class="flex flex-nowrap gap-2 md:gap-3 snap-x snap-mandatory">
           {#each shuffle(dgData.books).slice(0, 10) as eachItem}
             <section class="inline-block w-24 lg:w-52">
-              <a href={`/m/${eachItem.id}`} title={`${eachItem.title}`} class="w-full h-full focus:ring-2 focus:outline-none focus:ring-main/70 flex flex-col gap-1 relative overflow-hidden rounded-lg">
+              <a href={`/m/ts-${eachItem.id}`} title={`${eachItem.title}`} class="w-full h-full focus:ring-2 focus:outline-none focus:ring-main/70 flex flex-col gap-1 relative overflow-hidden rounded-lg">
                 <section class={`w-full h-28 lg:h-60 overflow-hidden rounded-lg relative flex flex-col bg-zinc-100 dark:bg-zinc-900`}>
                   <Image
                     src={eachItem.thumbnail}
@@ -209,7 +209,7 @@
         <section class="flex flex-nowrap gap-2 md:gap-3 snap-x snap-mandatory">
           {#each shuffle(dgData.books).slice(0, 10) as eachItem}
             <section class="inline-block w-24 lg:w-52">
-              <a href={`/m/${eachItem.id}`} title={`${eachItem.title}`} class="w-full h-full focus:ring-2 focus:outline-none focus:ring-main/70 flex flex-col gap-1 relative overflow-hidden rounded-lg">
+              <a href={`/m/ts-${eachItem.id}`} title={`${eachItem.title}`} class="w-full h-full focus:ring-2 focus:outline-none focus:ring-main/70 flex flex-col gap-1 relative overflow-hidden rounded-lg">
                 <section class={`w-full h-28 lg:h-60 overflow-hidden rounded-lg relative flex flex-col bg-zinc-100 dark:bg-zinc-900`}>
                   <Image
                     src={eachItem.thumbnail}
@@ -388,7 +388,7 @@
 
       <section class="w-full flex flex-col gap-1 px-1 py-1">
         {#each shuffle(dgData.books).slice(0,4) as eachBook, index}
-          <a href={`#`} class="">
+          <a href={`/m/ts-${eachBook.id}`} class="">
             <section class="w-full hover:bg-main/10 border-bborder-b-main-green/5 flex divide-xdivide-zinc-300dark:divide-zinc-700 gap-1 rounded-lg px-3 py-2">
               <section class="w-12 h-12 bg-gradient-to-br from-slate-700 to-amber-500 overflow-hidden rounded-lg">
                 <img src="{eachBook.thumbnail}" alt="" class="z-0 w-full h-full object-cover"/>
@@ -414,7 +414,7 @@
 
       <section class="w-full flex flex-col gap-1 px-1 py-1">
         {#each shuffle(dgData.books).slice(4,7) as eachBook, index}
-          <a href={`#`} class="">
+          <a href={`/m/ts-${eachBook.id}`} class="">
             <section class="w-full hover:bg-main/10 border-bborder-b-main-green/5 flex divide-xdivide-zinc-300dark:divide-zinc-700 gap-1 rounded-lg px-3 py-2">
               <section class="w-12 h-12 bg-gradient-to-br from-slate-700 to-amber-500 overflow-hidden rounded-lg">
                 <img src="{eachBook.thumbnail}" alt="" class="z-0 w-full h-full object-cover"/>

@@ -9,6 +9,7 @@ export const GET = function get({ setHeaders }: any) {
   // const { backgroundColor, description, siteShortTitle, siteTitle, themeColor } = website;
 
   const manifest = {
+    // name: metainfo.title,
     name: metainfo.title,
     short_name: metainfo.short_name,
     description: metainfo.description,
