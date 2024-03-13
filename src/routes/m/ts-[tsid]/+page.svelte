@@ -7,6 +7,7 @@
     import Image from '$lib/components/Image.svelte';
     import Metahead from '$lib/components/Metahead.svelte';
     import Nav from '$lib/components/Nav.svelte';
+    import { titleCase } from '$lib/utils';
     
     export let data: PageData;
 
@@ -72,13 +73,13 @@
                 />
                 <Pill
                   link={`#`}
-                  title={`# ${data.status}`}
+                  title={`# ${titleCase(`${data.status}`)}`}
                   style={"text-sm py-1"}
                   isActive={true}
                 />
                 <Pill
                   link={`#`}
-                  title={data.language}
+                  title={titleCase(`${data.language}`)}
                   style={"text-sm py-1"}
                   isActive={true}
                 />
