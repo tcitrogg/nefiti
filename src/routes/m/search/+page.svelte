@@ -43,6 +43,10 @@
       <section class="h-full flex flex-col gap-2">
         <p class="opacity-80">Results:</p>
 
+        <section>
+          {@html JSON.stringify(data)}
+        </section>
+
         <ul class="h-full flex flex-col gap-2">
           {#each sampleData.data as eachItem}
             <a href={`/m/${eachItem.id}`} class="ring-2 ring-transparent focus:ring-main/50 focus:outline-none">

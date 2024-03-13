@@ -60,6 +60,26 @@ _from ${metainfo.url}_`
 
 </script>
 
+
+
+{#if isMenuVisible}
+  <header transition:slide={{axis: 'y', duration: 300}} class="w-full md:w-7/12 lg:w-[48%] flex items-center justify-between px-4 py-1 gap-2 fixed top-1 md:top-0 md:left-[36%] z-20">
+    <!-- prev button -->
+    {#if Number($page.params.pgid) !== 0}
+      <a href="pg-{Number($page.params.pgid)-1}" title="Previous Page" class="p-2 bg-zinc-300/60 dark:bg-zinc-800/60 text-zinc-100 backdrop-blur-[2px] focus:ring-2 focus:ring-main/50 focus:outline-none rounded-full">
+        <i transition:slide class="icon icon-ic_fluent_chevron_left_20_filled flex text-2xl"/>
+      </a>
+    {/if}
+
+    <!-- next button -->
+    {#if !(Number($page.params.pgid)+1 == data.usingData.length)}
+      <a href="pg-{Number($page.params.pgid)+1}" title="Next Page" class="p-2 bg-zinc-300/60 dark:bg-zinc-800/60 text-zinc-100 backdrop-blur-[2px] focus:ring-2 focus:ring-main/50 focus:outline-none rounded-full">
+        <i transition:slide class="icon icon-ic_fluent_chevron_right_20_filled flex text-2xl"/>
+      </a>
+    {/if}
+  </header>
+{/if}
+
 <section class="w-full h-full">
   <section in:fade id={``} class="w-full h-full relative flex">
     <section class="w-full h-full flex flex-col">
@@ -68,7 +88,11 @@ _from ${metainfo.url}_`
         <Skeleton class="h-full w-full md:rounded-lg"/>
       {:then value}
         <!-- imgSrc was fulfilled -->
-        <img src={value} data-sveltekit-reload alt="" class="w-full" on:load={handleLoadingImg}>
+        <!-- <Image
+          src={value}
+          classes={"w-full"}
+        /> -->
+        <img src={value} data-sveltekit-reload alt="" class="w-full" on:load={handleLoadingImg} data-loaded={isImageLoaded} data-src={value} srcset={value} data-srcset={value}>
       {:catch error}
         <!-- imgSrc was rejected -->
         <!-- <section class="w-full h-full p-4 md:p-0"></section> -->
@@ -80,21 +104,22 @@ _from ${metainfo.url}_`
       {/await}
     
       <!-- <section class="py-7 opacity-0">Next page</section> -->
-    </section>  
+    </section>
+
     {#if Number($page.params.pgid) !== 0}
-    <a href="pg-{Number($page.params.pgid)-1}" class="w-2/12 h-full focus:outline-none focus:ring-0 focus:border-none fixed md:sticky left-0 top-0">
-      <section class="w-full h-full bg-amber-50050">
+    <a href="pg-{Number($page.params.pgid)-1}" class="w-2/12 h-full block md:hidden focus:outline-none focus:ring-0 focus:border-none fixed md:absolute left-0 top-0">
+      <section class="w-full h-full">
         <!-- prev: prevPage -->
       </section>
     </a>
     {/if}
   
-    <section transition:slide on:click={handleMenu} class="w-8/12 h-full fixed md:sticky left-[16.667%] top-0">
+    <section transition:slide on:click={handleMenu} class="w-8/12 h-full fixed md:absolute left-[16.667%] top-0">
     </section>
   
     {#if !(Number($page.params.pgid)+1 == data.usingData.length)}
-    <a href="pg-{Number($page.params.pgid)+1}" class="w-2/12 h-full focus:outline-none focus:ring-0 focus:border-none fixed md:sticky right-0 top-0">
-      <section class="w-full h-full bg-amber-50050">
+    <a href="pg-{Number($page.params.pgid)+1}" class="w-2/12 h-full block md:hidden focus:outline-none focus:ring-0 focus:border-none fixed md:absolute right-0 top-0">
+      <section class="w-full h-full">
         <!-- next: nextPage -->
       </section>
     </a>
@@ -107,7 +132,6 @@ _from ${metainfo.url}_`
   <footer transition:slide={{axis: 'y', duration: 300}} class="w-full md:w-7/12 lg:w-[48%] flex items-center justify-center p-2 py-1 gap-2 fixed bottom-1 md:bottom-0 md:left-[36%] z-20">
     <!-- Pager -->
     <p class="bg-zinc-300/60 dark:bg-zinc-800/60 backdrop-blur-lg py-1 px-2.5 whitespace-nowrap text-xs rounded-lg">
-      <span class="">P.</span>
       <span class="">{Number($page.params.pgid)+1}</span>
     </p>
 
