@@ -82,8 +82,9 @@
   for the page when the changes are made -->
 <Metahead
   title={metaTitle}
-  description={`${titleCase(user.name)}'s Library'`}
+  description={`Explore your library'`}
 />
+  <!-- description={`${titleCase(user.name)}'s Library'`} -->
 
 <Nav/>
 
