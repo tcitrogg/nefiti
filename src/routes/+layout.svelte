@@ -1,5 +1,7 @@
 <script>
   import "../app.pcss";
+  import { inject } from '@vercel/analytics'
+  
   import Nav from "$lib/components/Nav.svelte";
   import NavAside from "$lib/components/NavAside.svelte";
   import { storeAsideBarMinimised } from "../stores/layoutData";

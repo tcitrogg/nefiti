@@ -30,6 +30,7 @@
     "@ethercorps/sveltekit-og": "^3.0.0",
     "@unpic/svelte": "^0.0.50",
     "@untemps/svelte-readotron": "^2.0.0",
+    "@vercel/analytics": "^1.2.2",
     "axios": "^1.6.7",
     "bits-ui": "^0.18.1",
     "clsx": "^2.1.0",
