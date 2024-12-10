@@ -43,5 +43,5 @@ export const metainfo = {
 export const appinfo = {
   baseUrl:'https://api.mangadex.org',
   includedTagNames:['Action', 'Romance'],
-  excludedTagNames:["Harem", "Hentai", "Ecchi", "Girls' Love", "Sexual Violence", "Boys' Love", "Incest", "Rape", "Genderswap", "Crossdressing"],
+  excludedTagNames:["Harem", "Loli", "Hentai", "Ecchi", "Girls' Love", "Sexual Violence", "Boys' Love", "Incest", "Rape", "Genderswap", "Crossdressing"],
 }
